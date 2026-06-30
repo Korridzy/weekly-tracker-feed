@@ -1,0 +1,2568 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Notes and experiments by Korridzy.">
+      
+      
+        <meta name="author" content="Korridzy">
+      
+      
+        <link rel="canonical" href="https://wtf.korridzy.com/ru/gibel-bogov/">
+      
+      
+      
+      
+        
+          <link rel="alternate" href="/" hreflang="en">
+        
+          <link rel="alternate" href="/ru/" hreflang="ru">
+        
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Гибель богов - wtf</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+  <script defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="UMAMI_WEBSITE_ID_PLACEHOLDER"></script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#гибель-богов-сравнение-подходов-11-llm-к-задаче-реорганизации-кода" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="wtf" class="md-header__button md-logo" aria-label="wtf" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            wtf
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Гибель богов
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/ru/" hreflang="ru" class="md-select__link">
+              Русский
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../archive/2026/" class="md-tabs__link">
+          
+  
+  
+  Archive
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../category/ai-agents/" class="md-tabs__link">
+          
+  
+  
+  Categories
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="wtf" class="md-nav__button md-logo" aria-label="wtf" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    wtf
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archive
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Archive
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archive/2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Categories
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Categories
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../category/ai-agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI agents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../category/llm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../category/langgraph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LangGraph
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../category/python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../category/refactoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Refactoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#исходная-задача" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Исходная задача
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Исходная задача">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#что-именно-делала-нода-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Что именно делала нода plan
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#лимонад-из-лимонов" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Лимонад из лимонов
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#первый-этап-модели-генерируют-предложения" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Первый этап. Модели генерируют предложения
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Первый этап. Модели генерируют предложения">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#таблица-предложений" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Таблица предложений
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#чуть-более-подробно-о-каждом-предложении" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Чуть более подробно о каждом предложении
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Чуть более подробно о каждом предложении">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fable-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fable-5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpt-54" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GPT-5.4
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpt-55" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GPT-5.5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deepseek-4-pro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeepSeek-4-pro
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gemini-31-pro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gemini-3.1-pro
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#glm-51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GLM-5.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kimi-26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kimi-2.6
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mimo-25-pro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MiMo-2.5-pro
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opus-47" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opus-4.7
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qwen-36-plus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qwen-3.6-plus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qwen-37-max" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qwen-3.7-max
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#второй-этап-модели-оценивают-предложения" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Второй этап. Модели оценивают предложения
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Второй этап. Модели оценивают предложения">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#таблица-разборов" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Таблица разборов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#подробнее-о-каждом-разборе" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Подробнее о каждом разборе
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Подробнее о каждом разборе">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fable-5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fable-5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpt-54_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GPT-5.4
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpt-55_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GPT-5.5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deepseek-4-pro_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeepSeek-4-pro
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gemini-31-pro_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gemini-3.1-pro
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#glm-51_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GLM-5.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kimi-26_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kimi-2.6
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mimo-25-pro_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MiMo-2.5-pro
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opus-47_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opus-4.7
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qwen-36-plus_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qwen-3.6-plus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qwen-37-max_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qwen-3.7-max
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#третий-этап-конкурс-мокрых-купальников" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Третий этап. Конкурс мокрых купальников
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Третий этап. Конкурс мокрых купальников">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#подход-первый-сходятся-ли-оценки" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Подход первый. Сходятся ли оценки
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Подход первый. Сходятся ли оценки">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#сводный-результат-по-лучшим-предложениям" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Сводный результат по лучшим предложениям
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#подход-второй-сравнение-анализов-по-тезисам" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Подход второй. Сравнение анализов по тезисам
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#подход-третий-центр-мнений-и-медоид" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Подход третий. Центр мнений и медоид
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deus-ex-machina" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deus ex machina
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deus ex machina">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#методики-оценки-аналитиков" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Методики оценки аналитиков
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#непосредственно-оценки" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Непосредственно оценки
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#выводы" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Выводы
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://github.com/Korridzy.png" alt="Korridzy">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          <a href="https://github.com/Korridzy">Korridzy</a>
+                        
+                      </strong>
+                      <br>
+                      
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2026-06-30 00:00:00+00:00" class="md-ellipsis">June 30, 2026</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../category/langgraph/">LangGraph</a>, 
+                              <a href="../category/llm/">LLM</a>, 
+                              <a href="../category/ai-agents/">AI agents</a>, 
+                              <a href="../category/refactoring/">Refactoring</a>, 
+                              <a href="../category/python/">Python</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              34 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+
+
+<h1 id="гибель-богов-сравнение-подходов-11-llm-к-задаче-реорганизации-кода">Гибель богов. Сравнение подходов 11 LLM к задаче реорганизации кода.<a class="headerlink" href="#гибель-богов-сравнение-подходов-11-llm-к-задаче-реорганизации-кода" title="Permanent link">&para;</a></h1>
+<div class="admonition info">
+<p class="admonition-title">Other languages</p>
+<p>This article is also available in English: <a href="/twilight-of-the-gods/">Twilight of the Gods</a>.</p>
+</div>
+<p>Это подробный разбор одного эксперимента. Я взял god node из реального LangGraph агента и попросил 5 американских и 6 китайских моделей сначала предложить, как её распутать, а потом оценить предложения друг друга. Дальше тремя разными способами пытался понять, кому из них в этом деле верить.</p>
+<!-- more -->
+
+<p><strong>Оглавление</strong></p>
+<ul>
+<li><a href="#исходная-задача">Исходная задача</a> Что за god node и чем она опасна</li>
+<li><a href="#что-именно-делала-нода-plan">Что именно делала нода <code>plan</code></a></li>
+<li><a href="#лимонад-из-лимонов">Лимонад из лимонов</a> Зачем это всё и как устроен эксперимент</li>
+<li><a href="#первый-этап-модели-генерируют-предложения">Первый этап. Модели генерируют предложения</a></li>
+<li><a href="#таблица-предложений">Таблица предложений</a></li>
+<li><a href="#чуть-более-подробно-о-каждом-предложении">Чуть более подробно о каждом предложении</a></li>
+<li><a href="#второй-этап-модели-оценивают-предложения">Второй этап. Модели оценивают предложения</a></li>
+<li><a href="#таблица-разборов">Таблица разборов</a></li>
+<li><a href="#подробнее-о-каждом-разборе">Подробнее о каждом разборе</a></li>
+<li><a href="#третий-этап-конкурс-мокрых-купальников">Третий этап. Конкурс мокрых купальников</a> Выбираем кто в чём хорош</li>
+<li><a href="#подход-первый-сходятся-ли-оценки">Подход первый. Сходятся ли оценки</a> Выбираем лучшее предложение</li>
+<li><a href="#подход-второй-сравнение-анализов-по-тезисам">Подход второй. Сравнение анализов по тезисам</a> Выбираем лучшего аналитика</li>
+<li><a href="#подход-третий-центр-мнений-и-медоид">Подход третий. Центр мнений и медоид</a> Опять выбираем лучшего аналитика</li>
+<li><a href="#deus-ex-machina">Deus ex machina</a>. Ещё разок выбираем лучшего аналитика</li>
+<li><a href="#выводы">Выводы</a> Какую модель брать в генераторы, какую в оценщики и на чём сердце успокоится</li>
+</ul>
+<h2 id="исходная-задача">Исходная задача<a class="headerlink" href="#исходная-задача" title="Permanent link">&para;</a></h2>
+<p>Знаете, бывает порой, что пишешь с ребятами учебного ИИ-агента для курса от <a href="https://datasanity.dev/">Data Sanity</a> и в пёстром вихре быстро нарастающего функционала вдруг обнаруживаешь, что у тебя в одном из внутренних агентов проекта граф состояний (LangGraph) выглядит вот так:</p>
+<pre class="mermaid"><code>flowchart TD
+    planner_start([START]) --&gt; plan[plan]
+
+    plan --&gt;|search| search[search]
+    plan --&gt;|ask_user| ask_user[ask_user / interrupt]
+    plan --&gt;|reflect| reflect[reflect]
+    plan --&gt;|calculate| calculate[calculate]
+    plan --&gt;|finish| finish[finish]
+
+    search --&gt;|last_observation| observe[observe]
+    search --&gt;|no hits / backend failure| plan
+    observe --&gt; plan
+    calculate --&gt; plan
+    ask_user --&gt; observe_user[observe_user]
+    observe_user --&gt; plan
+    reflect --&gt; plan
+    finish --&gt; planner_end([END])</code></pre>
+<p>Казалось бы, перед нами просто симпатичный осьминожек, чего волноваться. Но если знать, как много логики должен удерживать этот осьминожек в своей скромной восьминогой голове, сразу станет понятно, что перед нами антипаттерн. В данном случае назовём его god node.</p>
+<p>В узле plan упрятано около 350 строк логики, внутри которых и итерационные проверки, и bootstrap-вопросы про регион и валюту, и подготовка схемы, и маршрутизация acquisition-задач, и вызов LLM, и последующая коррекция решения, и всё такое прочее.</p>
+<p>Проблема не только в размере функции. Когда важная оркестрация скрыта внутри одной ноды, граф перестаёт быть представлением системы. Его сложнее объяснять, сложнее отлаживать, сложнее тестировать и опаснее менять. Поэтому есть очевидная задача не просто «разделить большую функцию на куски», а вынести скрытую управляющую логику на уровень графа так, чтобы итоговая архитектура стала нагляднее и пригоднее для дальнейшей разработки.</p>
+<h3 id="что-именно-делала-нода-plan">Что именно делала нода <code>plan</code><a class="headerlink" href="#что-именно-делала-нода-plan" title="Permanent link">&para;</a></h3>
+<p>Вообще, агент, который должен был описываться этим графом, занимался сбором различных параметров для дальнейших расчётов. Часть этих параметров он хитро искал в интернете, часть узнавал у пользователя. И всё это по не до конца детерминированному алгоритму, поскольку от контекста конкретного разговора с пользователем правильный способ получения одного и того же параметра мог сильно варьироваться. Вот такой набор реальных функций был упакован в ноду <code>plan</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Зона ответственности</th>
+<th>Какая логика была спрятана внутри <code>plan</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Итерационный цикл</td>
+<td>Увеличение <code>iterations</code>, вход в новый шаг планирования, проверки <code>status == "aborted"</code> и <code>max_iters</code></td>
+</tr>
+<tr>
+<td>Bootstrap-вопрос про регион</td>
+<td>Проверка <code>_needs_region_question()</code> и принудительный переход в <code>ask_user</code> для <code>core.region</code></td>
+</tr>
+<tr>
+<td>Bootstrap-вопрос про валюту</td>
+<td>Проверка <code>_needs_currency_question()</code> и принудительный переход в <code>ask_user</code> для <code>core.currency</code></td>
+</tr>
+<tr>
+<td>Проактивная декомпозиция</td>
+<td>Генерация <code>dynamic_decompositions</code> для полей, которые нужно разложить на компоненты</td>
+</tr>
+<tr>
+<td>Сборка acquisition-рецептов</td>
+<td>Вызов <code>build_dynamic_recipes()</code> и подготовка структуры задач для дальнейшего сбора полей</td>
+</tr>
+<tr>
+<td>Подготовка схемы</td>
+<td>Вызов <code>compose_ready_fields()</code>, слияние готовых компонентных полей в агрегаты и обновление <code>schema</code></td>
+</tr>
+<tr>
+<td>Ограничения калькулятора</td>
+<td>Проверки лимита попыток калькулятора, успешного и уже актуального расчёта, а также других условий остановки</td>
+</tr>
+<tr>
+<td>Восстановление после заблокированного расчёта</td>
+<td>Разбор сценария с заблокированным калькулятором, поиск следующей задачи сбора данных и, при необходимости, резервная декомпозиция для проблемного поля</td>
+</tr>
+<tr>
+<td>Общая маршрутизация сбора данных</td>
+<td>Выбор следующей задачи сбора данных без LLM, включая быстрый проход по уже открытым и компонентным задачам</td>
+</tr>
+<tr>
+<td>Логика автозавершения</td>
+<td>Проверка, собраны ли все исходные данные, остались ли ещё поля, по которым можно действовать, и можно ли завершать цикл без дополнительных шагов</td>
+</tr>
+<tr>
+<td>LLM-планирование</td>
+<td>Сбор контекста для промта, вызов <code>_llm().structured(...)</code> и получение <code>PlannerDecision</code></td>
+</tr>
+<tr>
+<td>Декомпозиция после LLM</td>
+<td>Догенерация декомпозиции для выбранного моделью поля, если его нужно разложить на компоненты</td>
+</tr>
+<tr>
+<td>Перенаправление и нормализация решений</td>
+<td>Перенаправление решений по производным полям, принудительный <code>ask_user -&gt; search</code> для полей, которые лучше искать через поиск, и другие детерминированные переписывания после LLM</td>
+</tr>
+<tr>
+<td>Повторы и лимиты по полям</td>
+<td>Выявление повторных поисков, лимиты на <code>search</code> и <code>ask_user</code>, а также перевод в <code>ask_user</code>, <code>reflect</code> или <code>finish</code>, когда лимиты уже исчерпаны</td>
+</tr>
+<tr>
+<td>Корректировка решения по расчёту</td>
+<td>Исправление слишком раннего <code>finish</code>: если расчёт ещё не доведён до конца, решение переписывается в <code>calculate</code> или переводится в дополнительный шаг переоценки</td>
+</tr>
+<tr>
+<td>Служебное ведение состояния</td>
+<td>Сброс или обновление <code>decision</code>, <code>decision_origin</code>, <code>llm_failed</code>, <code>status</code> и других временных флагов, сопровождавших ветвления</td>
+</tr>
+<tr>
+<td>Логирование и отправка событий</td>
+<td>Лог финального решения, отправка событий прогресса и сборка итогового обновления состояния перед возвратом из ноды</td>
+</tr>
+</tbody>
+</table>
+<h2 id="лимонад-из-лимонов">Лимонад из лимонов<a class="headerlink" href="#лимонад-из-лимонов" title="Permanent link">&para;</a></h2>
+<p>Итак, мы в очень узнаваемой ныне для многих ситуации. Мсье Клод слепил нам поделку из лапши. Причёсывать эту лапшу — занятие совсем не такое весёлое, как навешивать функционал за функционалом без всякого ревью. Но это только до тех пор, пока не догадаешься, что снижать энтропию можно тем же инструментом, которым её повышали. А это уже гораздо приятнее.</p>
+<p>Но можно ли доверить распутывание кода той же модели, которая, дай только волю, с такой радостью его запутывает?</p>
+<p>Для ответа на этот вопрос я решил собрать несколько независимых архитектурных предложений от разных моделей. И сравнить, что они насоветуют.</p>
+<p>Для оценки на подиум были приглашены 11 моделей:</p>
+<ul>
+<li>GPT-5.4</li>
+<li>GPT-5.5</li>
+<li>DeepSeek-4-pro</li>
+<li>Gemini-3.1-pro</li>
+<li>GLM-5.1</li>
+<li>Kimi-2.6</li>
+<li>MiMo-2.5-pro</li>
+<li>Opus-4.7</li>
+<li>Qwen-3.6-plus</li>
+<li>Qwen-3.7-max</li>
+<li>Fable-5</li>
+</ul>
+<p>Сначала каждая из них делала собственное предложение по разбиению <code>plan</code>. А потом модели переходили в режим оценщиков, читали весь набор готовых предложений и ранжировали их.</p>
+<p>Чтобы обеспечить сбор независимых мнений, а не эстафету пересказов одного удачного текста, были обеспечены следующие условия:</p>
+<ul>
+<li>Когда генерировались предложения, модели не видели результаты работы друг друга.</li>
+<li>Когда генерировались анализы, они видели все предложения, но не видели ни одного чужого анализа.</li>
+<li>Каждый запуск шёл в новой сессии.</li>
+</ul>
+<p>Все работы проводились в OpenCode с плагином Oh My Openagent, с максимальным reasoning effort для всех моделей.</p>
+<h2 id="первый-этап-модели-генерируют-предложения">Первый этап. Модели генерируют предложения<a class="headerlink" href="#первый-этап-модели-генерируют-предложения" title="Permanent link">&para;</a></h2>
+<p>На первом этапе каждая модель предлагала свой способ вынести логику ноды <code>plan</code> на уровень графа. Запрос, которым генерировалось каждое предложение (менялось только имя выходного файла):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>look at docs/planner-graph-ref/current-graph.md. Looks like &quot;plan&quot; node contains too many logic in it. give a proposal of how to move this logic to graph level in &lt;model&gt;-proposal.md
+</code></pre></div>
+<h3 id="таблица-предложений">Таблица предложений<a class="headerlink" href="#таблица-предложений" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Модель</th>
+<th>Характер графа</th>
+<th>Основная идея</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fable-5</td>
+<td>Сбалансированный, 5-стадийный</td>
+<td>Разделить <code>plan</code> на <code>tick -&gt; prepare -&gt; select -&gt; decide -&gt; guard</code>: первичные вопросы и лимиты вынести в <code>tick</code>, подготовку состояния — в <code>prepare</code>, детерминированные развилки — в <code>select</code>, вызов модели — в <code>decide</code>, а исправление решений после модели — в <code>guard</code></td>
+</tr>
+<tr>
+<td>GPT-5.4</td>
+<td>Умеренный, фазовый</td>
+<td>Почти тот же расклад, что у Fable-5, но первичные вопросы про регион и валюту вынесены из входной ноды в отдельную <code>bootstrap_gate</code></td>
+</tr>
+<tr>
+<td>GPT-5.5</td>
+<td>Более подробный, дисциплинарный</td>
+<td>Максимально формализовать служебную логику цикла: отдельно вынести подготовку схемы, нормализацию решения, retry и calculator policy</td>
+</tr>
+<tr>
+<td>DeepSeek-4-pro</td>
+<td>Компактный, 4-фазный</td>
+<td>Собрать весь цикл в четыре крупные фазы и держать post-LLM корректировки в одном узле <code>adjust</code></td>
+</tr>
+<tr>
+<td>Gemini-3.1-pro</td>
+<td>Укрупнённый, минималистичный</td>
+<td>Сильно укрупнить graph: почти всю детерминированную проверку собрать в <code>evaluate_rules</code>, а LLM оставить отдельной финальной фазой</td>
+</tr>
+<tr>
+<td>GLM-5.1</td>
+<td>Консервативный, двухшаговый</td>
+<td>Сделать минимальное безопасное разбиение: один pre-check перед циклом и один общий узел, где выбирается дальнейшее действие</td>
+</tr>
+<tr>
+<td>Kimi-2.6</td>
+<td>Детализированный pipeline</td>
+<td>Явно развести bootstrap, calculator gate, сбор задачи и отдельный слой принудительной policy после решения</td>
+</tr>
+<tr>
+<td>MiMo-2.5-pro</td>
+<td>Умеренно укрупнённый</td>
+<td>Разбить graph на крупные блоки <code>guards -&gt; acquire -&gt; decide</code>, не вытаскивая наружу каждую отдельную policy-проверку</td>
+</tr>
+<tr>
+<td>Opus-4.7</td>
+<td>Максимально декомпозированный</td>
+<td>Почти каждую скрытую политику превратить в отдельный gate или corrector, а затем сводить всё в <code>dispatch</code></td>
+</tr>
+<tr>
+<td>Qwen-3.6-plus</td>
+<td>Средняя детализация</td>
+<td>Выделить preflight и decomposition как отдельные фазы, а завершение проводить через дополнительную finish-проверку</td>
+</tr>
+<tr>
+<td>Qwen-3.7-max</td>
+<td>Очень подробный pipeline</td>
+<td>Почти полностью развернуть скрытый state machine наружу: отдельные проверки, post-process, cap enforcement и финальный routing</td>
+</tr>
+</tbody>
+</table>
+<h3 id="чуть-более-подробно-о-каждом-предложении">Чуть более подробно о каждом предложении<a class="headerlink" href="#чуть-более-подробно-о-каждом-предложении" title="Permanent link">&para;</a></h3>
+<h4 id="fable-5">Fable-5<a class="headerlink" href="#fable-5" title="Permanent link">&para;</a></h4>
+<pre class="mermaid"><code>flowchart TD
+    planner_start([START]) --&gt; tick[tick]
+
+    tick --&gt;|aborted / max_iters| finish[finish]
+    tick --&gt;|region or currency missing| ask_user[ask_user / interrupt]
+    tick --&gt;|otherwise| prepare[prepare]
+
+    prepare --&gt; select[select]
+    select --&gt;|deterministic decision found| guard[guard]
+    select --&gt;|no decision| decide[decide / LLM]
+    decide --&gt; guard
+
+    guard --&gt;|search| search[search]
+    guard --&gt;|ask_user| ask_user
+    guard --&gt;|reflect| reflect[reflect]
+    guard --&gt;|calculate| calculate[calculate]
+    guard --&gt;|finish| finish
+
+    search --&gt;|last_observation present| observe[observe]
+    search --&gt;|no hits or backend failure| tick
+    observe --&gt; tick
+    calculate --&gt; tick
+    ask_user --&gt; observe_user[observe_user]
+    observe_user --&gt; tick
+    reflect --&gt; tick
+    finish --&gt; planner_end([END])</code></pre>
+<p>Fable-5 предложил разложить скрытую логику по пяти стадиям. На <code>tick</code> ложится начало итерации. Сюда входят счётчик шагов, остановка по <code>status == "aborted"</code>, лимит <code>max_iters</code> и первичные вопросы про <code>region</code> и <code>currency</code>.</p>
+<p>В <code>prepare</code> уходит подготовительный слой. Это проактивная декомпозиция, сбор рецептов для дальнейшего получения данных и вызов <code>compose_ready_fields</code>.</p>
+<p>Дальше в <code>select</code> отрабатывает цепочка детерминированного выбора без основного вызова модели. Сюда попадают проверки калькулятора, быстрый проход по уже собранным данным, автозавершение и ветки сбора данных после заблокированного расчёта.</p>
+<p>Если в <code>select</code> не нашлось детерминированного ответа, управление переходит в <code>decide</code>. Там происходит только вызов модели и построение структурированного решения.</p>
+<p>Затем <code>guard</code> собирает в одном месте перенаправление решений по производным полям, принудительный перевод в поиск для полей, которые лучше искать в интернете, лимиты на повторные действия и корректировку перед финальной маршрутизацией в <code>search</code>, <code>ask_user</code>, <code>reflect</code>, <code>calculate</code> или <code>finish</code>. Раньше все эти переписывания и ограничения были размазаны по хвосту <code>plan</code>. Ноды действий при этом не меняются, они просто возвращаются уже не в старую ноду <code>plan</code>, а обратно в <code>tick</code>.</p>
+<p>Такое разбиение делает архитектуру более наблюдаемой. По графу уже понятно, где принимается детерминированное решение, где нужен LLM, а где решение проходит через слой ограничений и исправлений. Самая важная находка — decision_origin. Благодаря ей общий guard понимает, какое решение пришло от LLM, а какое было найдено детерминированно, и не применяет одну и ту же policy ко всем веткам подряд. Слабые места у схемы тоже есть: не все LLM-вызовы вынесены в decide, а guard остаётся довольно насыщенной нодой.</p>
+<h4 id="gpt-54">GPT-5.4<a class="headerlink" href="#gpt-54" title="Permanent link">&para;</a></h4>
+<pre class="mermaid"><code>flowchart TD
+    START --&gt; tick
+    tick --&gt;|continue| bootstrap_gate
+    tick --&gt;|terminal| finish
+
+    bootstrap_gate --&gt;|needs region/currency| ask_user
+    bootstrap_gate --&gt;|ready| prepare_context
+
+    prepare_context --&gt; acquisition_gate
+    acquisition_gate --&gt;|deterministic decision| decision_policy
+    acquisition_gate --&gt;|needs LLM| llm_plan
+
+    llm_plan --&gt; decision_policy
+
+    decision_policy --&gt;|search| search
+    decision_policy --&gt;|ask_user| ask_user
+    decision_policy --&gt;|reflect| reflect
+    decision_policy --&gt;|calculate| calculate
+    decision_policy --&gt;|finish| finish
+
+    search --&gt;|last_observation| observe
+    search --&gt;|no observation| tick
+    observe --&gt; tick
+    calculate --&gt; tick
+    reflect --&gt; tick
+    ask_user --&gt; observe_user
+    observe_user --&gt; tick
+    finish --&gt; END</code></pre>
+<p>GPT-5.4 устроен почти так же, как Fable-5. Здесь тоже есть входная нода цикла, подготовка контекста, детерминированная развилка перед моделью, отдельный вызов модели и единый слой исправления решений после неё.</p>
+<p>Главное отличие в том, что первичные вопросы про регион и валюту не остаются внутри <code>tick</code>, а выносятся в отдельную <code>bootstrap_gate</code>. Поэтому <code>tick</code> отвечает только за начало шага, счётчик итераций и проверки остановки, а <code>bootstrap_gate</code> уже решает, можно ли идти дальше или нужно сначала отправить пользователя в <code>ask_user</code>.</p>
+<p>Остальные стадии в основном совпадают с Fable-5 по смыслу, только названы более явно.</p>
+<p>GPT-5.4 даёт ясные рабочие установки. Его раздел про антипаттерны даёт возможность качественно, с пониманием целей, провести рефакторинг.</p>
+<h4 id="gpt-55">GPT-5.5<a class="headerlink" href="#gpt-55" title="Permanent link">&para;</a></h4>
+<pre class="mermaid"><code>flowchart TD
+    planner_start([START]) --&gt; enter_iteration
+
+    enter_iteration --&gt;|aborted or max_iters| finish
+    enter_iteration --&gt; prepare_schema
+
+    prepare_schema --&gt;|region missing| require_region
+    prepare_schema --&gt;|currency missing| require_currency
+    prepare_schema --&gt;|calculator cap hit| finish
+    prepare_schema --&gt;|calculator current| finish
+    prepare_schema --&gt; acquisition_gate
+
+    require_region --&gt; ask_user
+    require_currency --&gt; ask_user
+
+    acquisition_gate --&gt;|component task| normalize_decision
+    acquisition_gate --&gt;|all raw inputs ready| maybe_calculate
+    acquisition_gate --&gt;|LLM needed| plan
+
+    plan --&gt; normalize_decision
+    normalize_decision --&gt; retry_gate
+    retry_gate --&gt; maybe_calculate
+
+    maybe_calculate --&gt;|calculator required| calculate
+    maybe_calculate --&gt;|search| search
+    maybe_calculate --&gt;|ask_user| ask_user
+    maybe_calculate --&gt;|reflect| reflect
+    maybe_calculate --&gt;|finish| finish
+
+    search --&gt;|last_observation| observe
+    search --&gt;|no hits| enter_iteration
+    observe --&gt; enter_iteration
+    calculate --&gt; enter_iteration
+    ask_user --&gt; observe_user
+    observe_user --&gt; enter_iteration
+    reflect --&gt; enter_iteration
+    finish --&gt; planner_end([END])</code></pre>
+<p>GPT-5.5 идёт дальше первых двух вариантов и сильнее дробит служебную часть цикла. <code>enter_iteration</code> остаётся входной нодой. Она увеличивает счётчик и проверяет остановку. Затем <code>prepare_schema</code> собирает подготовку состояния, отдельно проверяет наличие <code>region</code> и <code>currency</code>, а также держит ранние выходы по лимиту калькулятора и уже готовому расчёту. Если нужны регион или валюта, управление уходит в <code>require_region</code> или <code>require_currency</code>, а затем в обычную <code>ask_user</code>.</p>
+<p>Дальше <code>acquisition_gate</code> пытается найти детерминированный ответ до вызова модели: определить, какой недостающий компонент составного поля нужно собрать следующим, понять, что все исходные данные уже собраны, или признать, что нужен вызов LLM (<code>plan</code>).</p>
+<p>После модели решение проходит через <code>normalize_decision</code>, где собираются исправления вроде перенаправления производных полей и догенерации декомпозиции.</p>
+<p>Потом <code>retry_gate</code> отдельно занимается лимитами повторных поисков и вопросов, а <code>maybe_calculate</code> решает, нужно ли перед финальным переходом отправить управление в <code>calculate</code>.</p>
+<p>То есть это всё ещё тот же общий подход, но GPT-5.5 выносит наружу не только крупные стадии, а ещё и правила обработки <code>PlannerDecision</code>: как исправлять выбранное действие, когда останавливать повторные поиски и вопросы, и когда вместо финала отправлять управление в <code>calculate</code>.</p>
+<h4 id="deepseek-4-pro">DeepSeek-4-pro<a class="headerlink" href="#deepseek-4-pro" title="Permanent link">&para;</a></h4>
+<pre class="mermaid"><code>flowchart TD
+    planner_start([START]) --&gt; guard[guard]
+
+    guard --&gt;|ask region/currency| ask_user
+    guard --&gt;|aborted or max_iters| finish
+    guard --&gt;|continue| prepare
+
+    prepare --&gt;|calculator cap or success| finish
+    prepare --&gt;|blocked calculator / auto-complete| adjust
+    prepare --&gt;|continue| plan
+
+    plan --&gt;|decomposition needed| plan
+    plan --&gt;|continue| adjust
+
+    adjust --&gt;|search| search
+    adjust --&gt;|ask_user| ask_user
+    adjust --&gt;|calculate| calculate
+    adjust --&gt;|reflect| reflect
+    adjust --&gt;|finish| finish
+
+    search --&gt;|last_observation| observe
+    search --&gt;|no hits| guard
+    observe --&gt; guard
+    calculate --&gt; guard
+    ask_user --&gt; observe_user
+    observe_user --&gt; guard
+    reflect --&gt; guard
+    finish --&gt; planner_end([END])</code></pre>
+<p>DeepSeek-4-pro выбирает более компактное разбиение. <code>guard</code> здесь совмещает вход в цикл, проверки остановки и первичные вопросы про регион и валюту. Если всё в порядке, управление переходит в <code>prepare</code>. Там собирается состояние перед решением, проверяются лимиты и успешность калькулятора, разбирается заблокированный расчёт и выполняется автозавершение, если все данные уже собраны.</p>
+<p>Если <code>prepare</code> не нашла детерминированного ответа, граф идёт в <code>plan</code>, где происходит вызов модели для поиска.</p>
+<p>При этом поиск с новой декомпозицией не вынесен из <code>plan</code>. Если модель выбрала составное поле без готового рецепта, та же нода добавляет недостающую декомпозицию и заново вызывает модель уже с обновлённым контекстом. В Mermaid это зачем-то обозначено петлёй <code>plan -&gt; plan</code>. Хотя было бы логичнее никак не обозначать.</p>
+<p>После этого всё попадает в <code>adjust</code>. Эта нода собирает переписывания решений, лимиты повторов, корректировку расчёта и финальную маршрутизацию в <code>search</code>, <code>ask_user</code>, <code>calculate</code>, <code>reflect</code> или <code>finish</code>. Схема получается более короткая, но больше логики остаётся внутри <code>prepare</code>, <code>plan</code> и <code>adjust</code>.</p>
+<p>Граф получился компактным, но всё ещё логичным, хотя <code>prepare</code> и <code>adjust</code> остаются достаточно жирненькими. Имеется ряд неприятных ошибок. <code>recipes</code> совершенно незачем хранить в чекпоинтах, а петля plan -&gt; plan не нужна.</p>
+<h4 id="gemini-31-pro">Gemini-3.1-pro<a class="headerlink" href="#gemini-31-pro" title="Permanent link">&para;</a></h4>
+<pre class="mermaid"><code>flowchart TD
+    planner_start([START]) --&gt; prepare_state
+    prepare_state --&gt; evaluate_rules
+
+    evaluate_rules --&gt; route_after_rules{route_after_rules}
+    route_after_rules --&gt;|ask_user| ask_user
+    route_after_rules --&gt;|calculate| calculate
+    route_after_rules --&gt;|search| search
+    route_after_rules --&gt;|finish| finish
+    route_after_rules --&gt;|needs_llm| llm_plan
+
+    llm_plan --&gt; route_after_llm{route_after_llm}
+    route_after_llm --&gt;|search| search
+    route_after_llm --&gt;|ask_user| ask_user
+    route_after_llm --&gt;|reflect| reflect
+    route_after_llm --&gt;|finish| finish
+
+    search --&gt; route_after_search{route_after_search}
+    route_after_search --&gt;|found| observe
+    route_after_search --&gt;|failed| prepare_state
+    observe --&gt; prepare_state
+    calculate --&gt; prepare_state
+    ask_user --&gt; observe_user
+    observe_user --&gt; prepare_state
+    reflect --&gt; prepare_state
+    finish --&gt; planner_end([END])</code></pre>
+<p>У Gemini-3.1-pro есть некоторый стиль. Он как будто больше заботится об экологии, чем об архитектуре ПО. Выдаёт решение очень примерное, в меру продуманное, зато тратит минимальное количество токенов.</p>
+<p><code>prepare_state</code> берёт на себя подготовку состояния. Узел увеличивает счётчик итераций, запускает проактивную декомпозицию, собирает готовые компонентные поля и обновляет схему.</p>
+<p>После этого <code>evaluate_rules</code> проверяет все детерминированные условия. Это остановка по лимитам, регион и валюта, состояние калькулятора, заблокированный расчёт, следующая задача сбора данных и автозавершение.</p>
+<p>Если правило сработало, граф сразу уходит в нужное действие: <code>ask_user</code>, <code>calculate</code>, <code>search</code> или <code>finish</code>. Если нет, управление попадает в <code>llm_plan</code>, где уже вызывается модель и строится <code>PlannerDecision</code>.</p>
+<p>Gemini-3.1-pro даёт грубый первый эскиз. Выделены подготовка состояния, детерминированные правила и LLM-вызов, но evaluate_rules всё ещё собирает в себе слишком много разнородной логики. Post-LLM policy почти не описана. Редиректы, лимиты повторов и расчётная корректировка то ли прячутся внутри нод, то ли вообще не учтены.</p>
+<h4 id="glm-51">GLM-5.1<a class="headerlink" href="#glm-51" title="Permanent link">&para;</a></h4>
+<pre class="mermaid"><code>flowchart TD
+    START --&gt; pre_check
+
+    pre_check --&gt;|abort or finish| finish
+    pre_check --&gt;|ask region| ask_region
+    pre_check --&gt;|ask currency| ask_currency
+    pre_check --&gt;|continue| acquire_or_plan
+
+    ask_region --&gt; observe_user_region[observe_user]
+    ask_currency --&gt; observe_user_currency[observe_user]
+    observe_user_region --&gt; pre_check
+    observe_user_currency --&gt; pre_check
+
+    acquire_or_plan --&gt;|search| search
+    acquire_or_plan --&gt;|ask_user| ask_user
+    acquire_or_plan --&gt;|calculate| calculate
+    acquire_or_plan --&gt;|reflect| reflect
+    acquire_or_plan --&gt;|finish| finish
+
+    search --&gt;|observe| observe
+    search --&gt;|retry| pre_check
+    observe --&gt; pre_check
+    calculate --&gt; pre_check
+    ask_user --&gt; observe_user
+    observe_user --&gt; pre_check
+    reflect --&gt; pre_check
+    finish --&gt; END</code></pre>
+<p>GLM-5.1 как будто вместо рефакторинга ноды делает только первый шаг к этому. Вся ранняя логика складывается в <code>pre_check</code>. Это вход в итерацию, остановка по статусу и лимитам, вопросы про регион и валюту, проактивная декомпозиция, сборка схемы, а также ранние выходы по калькулятору.</p>
+<p>После <code>pre_check</code> остаётся одна большая рабочая нода <code>acquire_or_plan</code>. Она либо находит следующую задачу сбора данных без вызова модели, либо проверяет автозавершение, либо вызывает модель и сразу же применяет исправления решения после неё.</p>
+<p>По сути, разбиения почти не происходит — большая часть логики всё ещё остаётся внутри <code>acquire_or_plan</code>, просто уже под новым именем.</p>
+<p>Кроме того, GLM-5.1 даже не сделала схему в Mermaid, а описала текстом. Здесь она перерисована ради единообразия статьи, не меняя саму структуру предложения.</p>
+<h4 id="kimi-26">Kimi-2.6<a class="headerlink" href="#kimi-26" title="Permanent link">&para;</a></h4>
+<pre class="mermaid"><code>flowchart TD
+    START([START]) --&gt; tick
+
+    tick --&gt;|aborted or max_iters| finish
+    tick --&gt;|needs region| ask_region
+    tick --&gt;|needs currency| ask_currency
+    tick --&gt;|ready| prepare
+
+    prepare --&gt; calc_gate
+    calc_gate --&gt;|calc success| finish
+    calc_gate --&gt;|calc cap reached| finish
+    calc_gate --&gt;|continue| acquire
+
+    acquire --&gt;|auto_finish| calc_adjust
+    acquire --&gt;|blocked_task| route_direct
+    acquire --&gt;|needs LLM| decide
+
+    decide --&gt; enforce
+    route_direct --&gt; enforce
+
+    enforce --&gt;|search| search
+    enforce --&gt;|ask_user| ask_user
+    enforce --&gt;|reflect| reflect
+    enforce --&gt;|calculate| calculate
+    enforce --&gt;|finish| finish
+
+    search --&gt;|has observation| observe
+    search --&gt;|no hits| tick
+    observe --&gt; tick
+    calculate --&gt; tick
+    ask_user --&gt; observe_user
+    observe_user --&gt; tick
+    reflect --&gt; tick
+    ask_region --&gt; observe_user
+    ask_currency --&gt; observe_user
+    finish --&gt; END([END])</code></pre>
+<p>Kimi-2.6 почти смогла. <code>tick</code> отвечает за вход в итерацию и проверки остановки, а первичные вопросы вынесены в отдельные ветки <code>ask_region</code> и <code>ask_currency</code>. Затем <code>prepare</code> занимается подготовкой состояния. Это проактивная декомпозиция, рецепты и сборка готовых полей. После него <code>calc_gate</code> отдельно проверяет жизненный цикл калькулятора, выбирая между успешным расчётом, исчерпанными попытками и продолжением работы.</p>
+<p>Следующая нода, <code>acquire</code>, ищет детерминированный путь. Это автозавершение, заблокированная расчётная задача или необходимость вызвать модель. Если уже есть задача сбора данных, она проходит через <code>route_direct</code>; если нет — управление уходит в <code>decide</code>, где вызывается модель.</p>
+<p>Ветки <code>route_direct</code> и <code>decide</code> затем сходятся в <code>enforce</code>, где применяются ограничения, перенаправления, лимиты и расчётные корректировки перед финальным переходом в действие.</p>
+<p>Отдельно отмечу, что в предложении от Kimi-2.6 есть ветка <code>auto_finish -&gt; calc_adjust</code>, но при этом <code>calc_adjust</code> не описана и дальше никуда не ведёт. А ведь в остальном граф выглядит вполне разумным. Досадно.</p>
+<p>Kimi-2.6 выдала достаточно взвешенное решение, близкое по форме к GPT-5.4, например. Но картину портит сгаллюцинированная ветка <code>calc_adjust</code>, жирноватый <code>enforce_policy</code> и ничего толком не делающая <code>route_direct</code>.</p>
+<h4 id="mimo-25-pro">MiMo-2.5-pro<a class="headerlink" href="#mimo-25-pro" title="Permanent link">&para;</a></h4>
+<pre class="mermaid"><code>flowchart TD
+    START --&gt; guards
+
+    guards --&gt;|bootstrap gate| ask_user
+    guards --&gt;|early_finish| finish
+    guards --&gt;|proceed| acquire
+
+    acquire --&gt;|has_task| decide
+    acquire --&gt;|no_task| finish
+
+    decide --&gt; plan_router[post_process / route_after_plan]
+    plan_router --&gt;|search| search
+    plan_router --&gt;|ask_user| ask_user
+    plan_router --&gt;|reflect| reflect
+    plan_router --&gt;|calculate| calculate
+    plan_router --&gt;|finish| finish
+
+    search --&gt;|observe| observe
+    search --&gt;|retry| guards
+    observe --&gt; guards
+    calculate --&gt; guards
+    ask_user --&gt; observe_user
+    observe_user --&gt; guards
+    reflect --&gt; guards
+    finish --&gt; END</code></pre>
+<p>Первая нода, <code>guards</code>, берёт на себя вход в итерацию, проверки остановки, вопросы про регион и валюту, а также ранние выходы по калькулятору. Если ничего не остановило цикл, управление идёт в <code>acquire</code>.</p>
+<p>В <code>acquire</code> происходит подготовка состояния. Это проактивная декомпозиция, сборка схемы и поиск следующей задачи сбора данных. Если задача есть, граф идёт в <code>decide</code>; если задач больше нет, может завершиться.</p>
+<p><code>decide</code> не только вызывает модель при необходимости, но и превращает найденную задачу сбора данных в решение, а также применяет перенаправления, лимиты и расчётные корректировки.</p>
+<p>В общем, разбиение чуть более существенное, чем у GLM-5.1, но всё ещё слишком осторожное.</p>
+<p>Исходно и здесь схема была не в Mermaid, а в текстовом виде. Перерисовал.</p>
+<h4 id="opus-47">Opus-4.7<a class="headerlink" href="#opus-47" title="Permanent link">&para;</a></h4>
+<pre class="mermaid"><code>flowchart TD
+    START([START]) --&gt; g_iter
+    g_iter --&gt;|aborted/cap| dispatch
+    g_iter --&gt;|ok| g_region
+
+    g_region --&gt;|missing| emit_region --&gt; dispatch
+    g_region --&gt;|present| g_currency
+    g_currency --&gt;|missing| emit_currency --&gt; dispatch
+    g_currency --&gt;|present| enrich
+
+    enrich --&gt; g_calc_caps
+    g_calc_caps --&gt;|cap reached| emit_calc_abort --&gt; dispatch
+    g_calc_caps --&gt;|success| emit_calc_done --&gt; dispatch
+    g_calc_caps --&gt;|continue| acquire
+
+    acquire --&gt;|task found| emit_acq --&gt; c_calc_adjust
+    acquire --&gt;|auto-finish| emit_auto_finish --&gt; c_calc_adjust
+    acquire --&gt;|work remains| plan_llm
+
+    plan_llm --&gt; c_target_decompose
+    c_target_decompose --&gt; c_redirect_derived
+    c_redirect_derived --&gt; c_redirect_web
+    c_redirect_web --&gt; c_search_cap
+    c_search_cap --&gt; c_ask_cap
+    c_ask_cap --&gt; c_calc_adjust
+    c_calc_adjust --&gt; dispatch
+
+    dispatch --&gt;|search| search
+    dispatch --&gt;|ask_user| ask_user
+    dispatch --&gt;|calculate| calculate
+    dispatch --&gt;|reflect| reflect
+    dispatch --&gt;|finish| finish
+
+    search --&gt;|hits| observe --&gt; START
+    search --&gt;|no hits| START
+    ask_user --&gt; observe_user --&gt; START
+    calculate --&gt; START
+    reflect --&gt; START
+    finish --&gt; END([END])</code></pre>
+<p>Opus-4.7 разворачивает почти всю скрытую логику наружу. Входной участок состоит из цепочки проверок. <code>g_iter</code> отвечает за итерацию и остановку, <code>g_region</code> и <code>g_currency</code> отдельно проверяют первичные поля, <code>enrich</code> готовит схему и декомпозиции, а <code>g_calc_caps</code> разбирает ранние выходы по калькулятору.</p>
+<p>Если дальше есть детерминированная задача сбора данных или автозавершение, <code>acquire</code> превращает это в решение через <code>emit_acq</code> или <code>emit_auto_finish</code>; если нет, управление идёт в <code>plan_llm</code>.</p>
+<p>После вызова модели Opus-4.7 не оставляет единый <code>guard</code>, а раскладывает исправление решения в цепочку корректоров. <code>c_target_decompose</code> догенерирует декомпозицию для составного поля, <code>c_redirect_derived</code> перенаправляет производные поля, <code>c_redirect_web</code> переводит слишком ранний вопрос пользователю в поиск, <code>c_search_cap</code> и <code>c_ask_cap</code> следят за лимитами, а <code>c_calc_adjust</code> исправляет слишком ранний <code>finish</code> перед расчётом.</p>
+<p>Все ветки потом сходятся в <code>dispatch</code>, который уже отправляет граф в конкретное действие.</p>
+<p>Как карта скрытых политик это очень наглядно, но как рабочая схема она выглядит тяжёлой. Почти каждое правило становится отдельной нодой.</p>
+<p>На мой взгляд, на таком решении лучше всего остановиться, пока идёт исследовательская фаза создания агента и пока ещё не совсем понятно, как он будет устроен. Такая детализация помогает трассировать работу агента при общении с тестировщиками или пользователями по чекпоинтам графа. А когда станет понятно, что схема устоялась и граф меняется редко, его можно будет укрупнить. С llm-assisted разработкой это недорого.</p>
+<h4 id="qwen-36-plus">Qwen-3.6-plus<a class="headerlink" href="#qwen-36-plus" title="Permanent link">&para;</a></h4>
+<pre class="mermaid"><code>flowchart TD
+    planner_start([START]) --&gt; preflight
+
+    preflight --&gt;|needs region| ask_region
+    preflight --&gt;|needs currency| ask_currency
+    preflight --&gt;|calc cap exceeded| finish
+    preflight --&gt;|calc success| finish
+    preflight --&gt;|ok| decompose
+
+    ask_region --&gt; observe_region
+    ask_currency --&gt; observe_currency
+    observe_region --&gt; preflight
+    observe_currency --&gt; preflight
+
+    decompose --&gt; plan
+    plan --&gt;|search| search
+    plan --&gt;|ask_user| ask_user
+    plan --&gt;|reflect| reflect
+    plan --&gt;|calculate| calculate
+    plan --&gt;|finish| route_finish_check
+
+    search --&gt;|last_observation| observe
+    search --&gt;|no hits| plan
+    observe --&gt; plan
+    calculate --&gt; plan
+    ask_user --&gt; observe_user
+    observe_user --&gt; plan
+    reflect --&gt; plan
+
+    route_finish_check --&gt;|caps ok, all done| planner_end([END])
+    route_finish_check --&gt;|cap exceeded| finish
+    finish --&gt; planner_end</code></pre>
+<p>Qwen-3.6-plus начинает с крупной <code>preflight</code>. Туда попадают проверки остановки, вопросы про регион и валюту, лимит калькулятора и успешный расчёт.</p>
+<p>Регион и валюта вынесены в отдельные ветки <code>ask_region</code> и <code>ask_currency</code>, после которых ответы возвращают управление обратно в <code>preflight</code>. Если все первичные проверки пройдены, граф идёт в <code>decompose</code>, где подготавливаются динамические декомпозиции и схема.</p>
+<p>Дальше управление попадает в <code>plan</code>. Эта нода остаётся довольно жирной, она строит решение модели. А куда это наш затейник Qwen спрятал логику перенаправлений, лимитов и расчётных исправлений? В условную функцию-ребро <code>route_after_plan</code>!</p>
+<p>Это главный изъян схемы. Ребро в LangGraph должно лишь читать state и возвращать имя следующей ноды, а не переписывать <code>decision</code>/<code>status</code>. Это не просто какой-то там антипаттерн. Такое не будет работать. Ребро возвращает строку маршрута и не может сохранить переписанное решение, поэтому при срабатывании лимита <code>ask_user</code> прервётся со старым поисковым решением без текста вопроса, а статус <code>aborted</code> потеряется.</p>
+<p>Заодно по диаграмме видна вторая проблема. Рабочие циклы (<code>search</code>, <code>observe</code>, <code>calculate</code>, <code>observe_user</code>, <code>reflect</code>) возвращаются в <code>plan</code>, а не в <code>preflight</code>, поэтому проверки остановки и <code>max_iters</code> на главной петле не перепроверяются.</p>
+<p>Отдельно вынесена только проверка завершения. Если модель решила <code>finish</code>, граф сначала идёт в <code>route_finish_check</code>, где проверяется, действительно ли можно заканчивать, или нужно вернуться в работу.</p>
+<p>С <code>finish</code> в этой схеме есть неопределённость. По тексту предложения это существующая терминальная нода, которая просто завершает planner graph. Но Mermaid рисует часть завершений сразу в <code>planner_end</code>, а часть через <code>finish</code>, поэтому роль самой <code>finish</code> неясна.</p>
+<p>В итоге разбиение получилось неряшливым. Часть важных стадий вынесена вполне резонно, но область в районе <code>plan</code>, <code>routing</code> и <code>finish</code> — какая-то зона свободной фантазии. Это нечто, издалека имеющее очертания предложения по рефакторингу, но ближе к нему лучше не подходить.</p>
+<h4 id="qwen-37-max">Qwen-3.7-max<a class="headerlink" href="#qwen-37-max" title="Permanent link">&para;</a></h4>
+<pre class="mermaid"><code>flowchart TD
+    planner_start([START]) --&gt; check_termination
+
+    check_termination --&gt;|aborted or max_iters| finish
+    check_termination --&gt;|continue| check_region_currency
+
+    check_region_currency --&gt;|needs region| ask_region
+    check_region_currency --&gt;|needs currency| ask_currency
+    check_region_currency --&gt;|ready| compose_schema
+
+    ask_region --&gt; observe_user
+    ask_currency --&gt; observe_user
+    observe_user --&gt; check_region_currency
+
+    compose_schema --&gt; check_calculator
+    check_calculator --&gt;|calc cap reached| finish
+    check_calculator --&gt;|calc succeeded| finish
+    check_calculator --&gt;|calc blocked| acquisition_routing
+    check_calculator --&gt;|pending| acquisition_routing
+
+    acquisition_routing --&gt;|has task| decide_action
+    acquisition_routing --&gt;|no task| check_completion
+    check_completion --&gt;|all collected| finish
+    check_completion --&gt;|missing fields| decide_action
+
+    decide_action --&gt; llm_decide
+    llm_decide --&gt;|LLM failure| finish
+    llm_decide --&gt;|valid decision| post_process
+    post_process --&gt; enforce_caps
+
+    enforce_caps --&gt;|search cap| ask_user
+    enforce_caps --&gt;|ask cap| finish
+    enforce_caps --&gt;|ok| route_decision
+
+    route_decision --&gt;|search| search
+    route_decision --&gt;|ask_user| ask_user
+    route_decision --&gt;|reflect| reflect
+    route_decision --&gt;|calculate| calculate
+    route_decision --&gt;|finish| finish
+
+    search --&gt;|has observation| observe
+    search --&gt;|no hits| check_termination
+    observe --&gt; check_termination
+    calculate --&gt; check_termination
+    ask_user --&gt; observe_user
+    reflect --&gt; check_termination
+    finish --&gt; planner_end([END])</code></pre>
+<p>Qwen-3.7-max предлагает сделать нод даже больше, чем Opus-4.7.</p>
+<p>Сначала <code>check_termination</code> проверяет остановку и лимит итераций, потом <code>check_region_currency</code> отдельно решает вопросы про регион и валюту.</p>
+<p>После этого <code>compose_schema</code> собирает схему и декомпозиции, а <code>check_calculator</code> отдельно проверяет лимит калькулятора, успешный расчёт, заблокированное состояние и обычное продолжение работы.</p>
+<p>Затем <code>acquisition_routing</code> разбирает случай, когда расчёт заблокировался на недостающем поле. По рецептам <code>static_field_acquisition</code> она ищет следующий <code>acquisition_task</code>, а если готового рецепта нет, пытается сгенерировать <code>dynamic_decompositions</code> для заблокированного поля.</p>
+<p>Если <code>acquisition_routing</code> не нашла <code>acquisition_task</code>, <code>check_completion</code> отдельно проверяет, можно ли завершать работу или в схеме ещё остались недостающие поля. Только после этих нод граф доходит до <code>llm_decide</code>, где происходит вызов модели.</p>
+<p>После модели решение ещё проходит через <code>post_process</code>, где догенерируются декомпозиции и выполняются перенаправления, затем через <code>enforce_caps</code>, где применяются лимиты поиска и вопросов, и только потом через <code>route_decision</code> уходит в конкретное действие.</p>
+<p>Предложение по степени разбиения похоже на Opus-4.7. Но есть сильные отличия в реализации этой идеи.</p>
+<p>У Opus-4.7 лучше объяснительная часть. Это 17-строчная карта обязанностей старой <code>plan</code>, ясная таксономия <code>g_*</code> / <code>c_*</code>, общий инвариант «любая ветка сначала приводит результат к <code>PlannerDecision</code>, а потом <code>dispatch</code> отправляет его в нужное действие», таблица владения state-полями и внятная трёхшаговая миграция. Opus-4.7 предоставляет лучшую карту управляющей логики, хотя и держит немного маршрутизации в <code>state</code>.</p>
+<p>Qwen-3.7-max при этом сделан гораздо более неряшливо и противоречиво. Вся маршрутизация завязана на служебное поле <code>_route</code>. Каждая нода записью в это поле сообщает ребру, куда идти дальше, а ребро исполняет. Это самодельный <code>goto</code> поверх условных рёбер LangGraph. В результате решение о маршруте снова прячется внутри нод, и граф перестаёт отражать реальный поток управления, то есть частично обнуляется сам смысл рефакторинга. Вдобавок поле приходится проставлять в каждой ноде, и стоит где-то забыть или оставить устаревшее значение — получаешь тихий мисроутинг.</p>
+<p><code>route_decision</code> в тексте названа нодой, но в сборке графа не зарегистрирована как нода и используется как routing-функция с побочным эффектом. <code>acquisition_task</code> ищется повторно в разных местах.</p>
+<p>И окончательно огорчает петля <code>observe_user -&gt; check_region_currency</code>, которая обходит <code>check_termination</code>, а это единственная нода, инкрементящая <code>iterations</code>. Значит, на самой ходовой петле «спросил → ответил» счётчик не срабатывает: <code>max_iters</code> и ряд механизмов поиска перестают работать.</p>
+<h2 id="второй-этап-модели-оценивают-предложения">Второй этап. Модели оценивают предложения<a class="headerlink" href="#второй-этап-модели-оценивают-предложения" title="Permanent link">&para;</a></h2>
+<p>На втором этапе каждая модель читала все одиннадцать предложений и ранжировала их. Запрос, которым генерировался каждый анализ (менялось только имя выходного файла):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>You are skilled software architect specializing in llm agentic development. In docs/planner-graph-ref/proposals there are some proposals to refactor current planner component graph. Evaluate those proposals and create ranged list of them in docs/planner-graph-ref/analyse/&lt;model&gt;-range.md with explanation of what good and bad sides you can see in each. Make a conclusion of what proposal or combination of them you can advice as best solution.
+</code></pre></div>
+<h3 id="таблица-разборов">Таблица разборов<a class="headerlink" href="#таблица-разборов" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Модель</th>
+<th>Характер разбора</th>
+<th>Главное</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fable-5</td>
+<td>Дотошный, с проверкой кода</td>
+<td>Единственный отчёт с проверяемыми фактами, нашёл оба бага, полное покрытие и план сборки</td>
+</tr>
+<tr>
+<td>GPT-5.4</td>
+<td>Практичный, архитектурный</td>
+<td>Единственный проверил содержимое <code>tests/planner/</code> (и поймал на этом Opus-4.7), трезвая установка «лучший вариант зависит от цели». Своё предложение поставил первым</td>
+</tr>
+<tr>
+<td>GPT-5.5</td>
+<td>Аккуратный, дисциплинированный</td>
+<td>Ни одного ложного факта, лучший разбор ограничений (чекпоинты, рёбра, namespace)</td>
+</tr>
+<tr>
+<td>DeepSeek-4-pro</td>
+<td>Максимально насыщенный</td>
+<td>Самый плотный по информации артефакт и явно полезен для прочтения, но ставит на первое место забагованного фаворита</td>
+</tr>
+<tr>
+<td>Gemini-3.1-pro</td>
+<td>Минималистичный, крупными мазками</td>
+<td>Нет оценки предложений по отдельности, даже явные указания из промта не выполнены. Аутсайдер по всем метрикам</td>
+</tr>
+<tr>
+<td>GLM-5.1</td>
+<td>Систематичный, но оценивал «в попугаях»</td>
+<td>Поймал двойной расчёт у Kimi-2.6 и дал карту имён нод, но спутал предложения GPT-5.5 и Qwen-3.6-plus</td>
+</tr>
+<tr>
+<td>Kimi-2.6</td>
+<td>Широкий, самокритичный</td>
+<td>Сам нашёл баг с итерациями у Qwen-3.7-max, но тащит Gemini-3.1-pro на 4-е место и советует сомнительное решение с  <code>recipes</code> в <code>state</code></td>
+</tr>
+<tr>
+<td>MiMo-2.5-pro</td>
+<td>Систематичный, со шкалами</td>
+<td>Придумал интересную идею сходимости предложений и попытался вывести лучшее предложение по ней, но оценки с ложной точностью и слишком благодушен к рискам</td>
+</tr>
+<tr>
+<td>Opus-4.7</td>
+<td>Глубокий, таксономический</td>
+<td>Самый богатый «пакет для решения», предложил правила удерживающие от дальнейшего разрастания ноды (единственный из набора). Портят две фактические ошибки — несуществующий тест-файл, баг Kimi-2.6 назван «приятным»</td>
+</tr>
+<tr>
+<td>Qwen-3.6-plus</td>
+<td>Вдумчивый к самой проблеме</td>
+<td>Лучшая построчная карта <code>plan_node</code> во всём наборе и беспощадная самооценка, но середина рейтинга не заслуживает доверия.</td>
+</tr>
+<tr>
+<td>Qwen-3.7-max</td>
+<td>Дидактичный, объясняющий</td>
+<td>Систематичный подход к решению вопроса о том, сколько же нод лучше всего оставить в графе. Хвалит сомнительную петлю DeepSeek-4-pro</td>
+</tr>
+</tbody>
+</table>
+<h3 id="подробнее-о-каждом-разборе">Подробнее о каждом разборе<a class="headerlink" href="#подробнее-о-каждом-разборе" title="Permanent link">&para;</a></h3>
+<h4 id="fable-5_1">Fable-5<a class="headerlink" href="#fable-5_1" title="Permanent link">&para;</a></h4>
+<p>Разбор Fable-5 — самый основательный в наборе. Это единственный отчёт с проверяемым набором фактов. В нём шесть утверждений о текущем коде с точными ссылками <code>файл:строка</code>, и все шесть проходят независимую перепроверку.</p>
+<p>Он единственный нашёл оба бага, которые реально влияют на выбор: двойной <code>_adjust_calculation_decision</code> у Kimi-2.6 и пропуск инкремента итераций у Qwen-3.7-max — большинство не нашло ни одного, а оба этих бага позже сами, по отдельности, подтвердили другие модели.</p>
+<p>Полное покрытие всех 11 предложений по единым критериям, сравнительная матрица, открытый список отвергнутых идей с указанием авторов. В конце дана конкретная рекомендация со схемой сборки итогового решения из нескольких предложений в три шага.</p>
+<p>Слабые места, тем не менее, есть. Текст плотный, держится на номерах строк (которые протухнут с первым же изменением <code>agent.py</code>), нет числовых оценок. Отранжировал предложение собственной модельной семьи первым. Правда, прямо проговорил этот конфликт интереса в самом отчёте.</p>
+<h4 id="gpt-54_1">GPT-5.4<a class="headerlink" href="#gpt-54_1" title="Permanent link">&para;</a></h4>
+<p>GPT-5.4 — крепкий практик. Он единственный проверил, что реально лежит в <code>tests/planner/</code>. Это позволяет ему привязать план миграции тестов к реальности и заодно поймать Opus-4.7 на ссылке на несуществующий тест-файл. Плюс острые наблюдения, которых нет у других. Например, какие схемы позволяют <code>observe_user</code> самому разбирать bootstrap-ответы и какие держат state безопасным для сериализации.</p>
+<p>Он исходит из резонной установки, что лучший вариант зависит от того, что тебе нужно, минимум правок или максимум структурированности.</p>
+<p>Минусы зеркальны к Fable-5. Каждое предложение разобрано достаточно поверхностно, без построчных доказательств, оба бага не заметил. Ранжирует своё предложение первым, но, в отличие от Fable-5, никак этот момент не оговаривает.</p>
+<h4 id="gpt-55_1">GPT-5.5<a class="headerlink" href="#gpt-55_1" title="Permanent link">&para;</a></h4>
+<p>Разбор от GPT-5.5 — самый аккуратный текст во всём наборе. Перепроверка не нашла в нём ни одного ложного утверждения. И он лучше всех объясняет ограничения, вокруг которых вообще крутится вся задача. Граница ноды — это граница чекпоинта (планнер сидит на внешнем Postgres-сейвере, так что каждая лишняя нода — это запись на каждый ход), функции-рёбра — не «бесплатный» транзитный код, а смена namespace чекпоинтов — решение, затрагивающее пользовательский опыт, так как при обновлении в проде слетят некоторые уже начатые диалоги.</p>
+<p>Это единственный разбор, прочитав который, можно самому взвешенно рассудить, сколько же делать нод. Также модель критикует собственное же предложение за криво поставленную ноду. Концовка чёткая и по делу: гибридная рекомендация, готовая mermaid-схема и миграция в семь шагов.</p>
+<p>Из минусов, по предложениям коротковато, без сравнительной матрицы, и ни одного из двух багов он не выловил.</p>
+<h4 id="deepseek-4-pro_1">DeepSeek-4-pro<a class="headerlink" href="#deepseek-4-pro_1" title="Permanent link">&para;</a></h4>
+<p>С DeepSeek-4-pro всё не так однозначно. Разбор есть за что похвалить, но доверять его выводам нельзя, и второе перевешивает.</p>
+<p>За что хвалим. Это самый плотный по информации артефакт из всех одиннадцати. Таблицы «согласен / не согласен» по каждому предложению, уникальная таблица разрешения противоречий между отчётами, полная синтезированная схема с mermaid, подсчётом строк и планом миграции.</p>
+<p>А подводит именно вывод. Он награждает предложение Kimi-2.6 первым местом (хотя по консенсусу оно в середине) и хвалит связывание <code>route_direct → enforce_policy</code> как «чистый паттерн», а это ровно тот баг, где <code>_adjust_calculation_decision</code> срабатывает дважды. Opus-4.7 при этом закопан на последнее место, а в собственную рекомендацию зашит <code>recipes</code> в state — то, чего сериализатор просто не пропустит.</p>
+<h4 id="gemini-31-pro_1">Gemini-3.1-pro<a class="headerlink" href="#gemini-31-pro_1" title="Permanent link">&para;</a></h4>
+<p>С Gemini-3.1-pro всё стабильно. Минималистичное предложение, минималистичный разбор. Безоговорочный аутсайдер.</p>
+<p>Полезное всё же есть. Таксономия из четырёх парадигм (фазовый конвейер / минимализм / микро-ноды / маршрутизация в рёбрах) даёт неплохую краткую диспозицию. И собственная схема из четырёх нод вполне связная.</p>
+<p>А хоронит его как разбор то, что в нём вообще нет оценки предложений по отдельности. Одиннадцать вариантов схлопнуты в четыре группы, так что взвесить по нему ни один конкретный вариант нельзя. А единственное сильное частное утверждение оказывается проверяемо ложным. Ни один из багов не был замечен.</p>
+<p>Хорошая шпаргалка на одну страницу, но после того, как прочитал нормальный отчёт, а не вместо него.</p>
+<h4 id="glm-51_1">GLM-5.1<a class="headerlink" href="#glm-51_1" title="Permanent link">&para;</a></h4>
+<p>Разбор GLM-5.1 — добротный и систематичный по форме. Таблицы по аспектам с единой структурой на каждое предложение, реально полезная таблица соответствия имён (кто какую ноду как называет), миграция по фазам 0–5.</p>
+<p>И, что важнее формы, он один из всего двух отчётов, кто заметил двойной <code>_adjust_calculation_decision</code> у Kimi-2.6, хотя и подал это слишком вскользь.</p>
+<p>Портит картину пара вещей. Он путает предложение GPT-5.5 с микро-нодами <code>observe_region</code>/<code>observe_currency</code>, которые на самом деле из схемы Qwen-3.6-plus. Розданные баллы не соответствуют текстовой мотивации под этими баллами. Часть рисков (тот же <code>recipes</code>, петля <code>plan → plan</code>) аккуратно сглажена. Своего слоя проверки фактов у него нет.</p>
+<h4 id="kimi-26_1">Kimi-2.6<a class="headerlink" href="#kimi-26_1" title="Permanent link">&para;</a></h4>
+<p>У Kimi-2.6 есть сильные находки, но доверять его выводам нельзя. Он выловил баг с пропуском инкремента итераций у Qwen-3.7-max, один из всего двух отчётов, кто его нашёл. Своё предложение поставил на восьмое место, а его же список «чего избегать» местами прямо противоречит его собственной схеме.</p>
+<p>Но промахи перевешивают. Предложение Gemini-3.1-pro он тащит на четвёртое место из-за путаного прочтения его возвратных рёбер. Возврат мимо сторожевой ноды, который у Qwen-3.7-max Kimi-2.6 зовёт багом, у Gemini-3.1-pro сочтён мелочью.</p>
+<p>Вторым номером в рекомендации стоит кеширование <code>recipes</code> от DeepSeek-4-pro, которое не пройдёт сериализатор.</p>
+<h4 id="mimo-25-pro_1">MiMo-2.5-pro<a class="headerlink" href="#mimo-25-pro_1" title="Permanent link">&para;</a></h4>
+<p>Самая ценная часть разбора MiMo-2.5-pro — приложение со сходимостью. Подсчёт того, в чём все одиннадцать предложений независимо сошлись (за вынос поиска 10 из 11, за единственный interrupt все 11, и так далее).</p>
+<p>Покрытие полное, вывод сдержанный, рекомендация вменяемая (база Fable-5 + антипаттерны GPT-5.4 + опционально дробление от GPT-5.5).</p>
+<p>А вот середина таблицы подводит. Оценки с десятыми долями обещают точность, которой в текстовых обоснованиях не видать. Рисковые идеи (recipes, отдельные bootstrap-ноды) он принимает слишком благодушно, багов не нашёл, слой проверки фактов отсутствует.</p>
+<h4 id="opus-47_1">Opus-4.7<a class="headerlink" href="#opus-47_1" title="Permanent link">&para;</a></h4>
+<p>Предложение Opus-4.7 было спорным, а разбор вышел одним из лучших в наборе.</p>
+<p>Он предоставил самый глубокий «пакет для принятия решения» из всех. Семь явных критериев, буквенные оценки, обстоятельные вердикты по каждому предложению, лучшая таксономия (тот самый инвариант «сначала приводим к <code>PlannerDecision</code>, потом <code>dispatch</code>») и две конкретные поправки. А ещё только он задумался о том, как удержать граф чистым после рефакторинга, и предложил нулевым шагом записать guardrails в <code>planner/AGENTS.md</code>, а уже потом трогать код.</p>
+<p>Но в текст вкрались две обескураживающие неточности. Дважды процитирован тест-файл <code>tests/planner/test_planner_agent.py</code>, которого не существует. А связывание <code>route_direct → enforce_policy</code> у Kimi-2.6 он называет «приятным решением», хотя это баг с двойным расчётом. Плюс многословие и непортируемые ссылки.</p>
+<h4 id="qwen-36-plus_1">Qwen-3.6-plus<a class="headerlink" href="#qwen-36-plus_1" title="Permanent link">&para;</a></h4>
+<p>Ещё один приятный разворот. Предложение Qwen-3.6-plus я с присущей мне вежливостью назвал зоной свободной фантазии. Разбор же вышел куда вменяемее.</p>
+<p>Более того, здесь обнаружен один из самых полезных артефактов. Таблица с построчной разметкой <code>plan_node</code> (строки 848–1192, с колонкой «нужен ли тут LLM»). Если вообще хочется понять, зачем и по каким швам резать god node, начинать стоит отсюда.</p>
+<p>Подкупает адекватная самооценка. Своё предложение Qwen-3.6-plus ставит на восьмое место и сам же объясняет его регрессию с возвратом в <code>plan</code>.</p>
+<p>Теперь о плохом. Верх и низ чарта как будто сделаны аккуратно, а середина набросана как попало. DeepSeek-4-pro почему-то под заголовком «переусложнено», хотя там всего четыре ноды. Kimi-2.6 на пятом месте без единого слова про двойной расчёт. Путаная придирка к ветке <code>_route</code> у Qwen-3.7-max. Своей проверки фактов нет.</p>
+<h4 id="qwen-37-max_1">Qwen-3.7-max<a class="headerlink" href="#qwen-37-max_1" title="Permanent link">&para;</a></h4>
+<p>Разбор Qwen-3.7-max дидактически силён. По каждому предложению есть разделы «почему не больше нод» и «почему не меньше», так что читатель получает не голый вердикт, а понимание самого пространства решений. Восемь взвешенных осей, полное покрытие, трезвая самооценка (своё предложение на восьмом месте).</p>
+<p>Есть и слабые места. Он хвалит петлю <code>plan → plan</code> у DeepSeek-4-pro как «элегантную», хотя остальные разборы справедливо видят в ней скорее лишние записи чекпоинта в БД. И на этой похвале частично держится завышенное второе место DeepSeek-4-pro. К проблемам собственной схемы он тоже снисходителен, своего слоя проверки кода нет.</p>
+<h2 id="третий-этап-конкурс-мокрых-купальников">Третий этап. Конкурс мокрых купальников<a class="headerlink" href="#третий-этап-конкурс-мокрых-купальников" title="Permanent link">&para;</a></h2>
+<p>Здесь я попытаюсь найти какие-то ответы на самые насущные вопросы современности:</p>
+<ol>
+<li>Какую модель лучше выбрать для генерации архитектурных решений?</li>
+<li>Какую модель лучше выбрать для оценки набора архитектурных решений?</li>
+<li>Как вообще всю ответственность за архитектурные решения свалить на модель?</li>
+</ol>
+<h3 id="подход-первый-сходятся-ли-оценки">Подход первый. Сходятся ли оценки<a class="headerlink" href="#подход-первый-сходятся-ли-оценки" title="Permanent link">&para;</a></h3>
+<p>Первое, что хочется сделать, просто сверить средние оценки моделей. Оказалось, что мнения по самим архитектурным предложениям можно свести в достаточно чёткий консенсус.</p>
+<p>На картинке ниже каждая линия показывает, как одно предложение оценивалось разными моделями, а цветной пунктир — его среднее значение по всем оценкам.</p>
+<p><img alt="Сводный график оценок предложений разными моделями" src="../article-diagrams/ru/rankings-chart.svg" /></p>
+<p>«Сгущения» линий для Gemini-3.1-pro обусловлены тем, что он разделил решения на 4 группы вместо того, чтобы делать полный чарт.</p>
+<p>Также можно отметить подозрительное перемешивание линий у Kimi-2.6. Как будто он раздал оценки несколько с потолка.</p>
+<h4 id="сводный-результат-по-лучшим-предложениям">Сводный результат по лучшим предложениям<a class="headerlink" href="#сводный-результат-по-лучшим-предложениям" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Место</th>
+<th>Предложение</th>
+<th style="text-align: right;">Средний балл</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Fable-5</td>
+<td style="text-align: right;">10.7</td>
+</tr>
+<tr>
+<td>2</td>
+<td>GPT-5.4</td>
+<td style="text-align: right;">9.2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>GPT-5.5</td>
+<td style="text-align: right;">8.0</td>
+</tr>
+<tr>
+<td>4</td>
+<td>DeepSeek-4-pro</td>
+<td style="text-align: right;">7.9</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Kimi-2.6</td>
+<td style="text-align: right;">6.0</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Opus-4.7</td>
+<td style="text-align: right;">5.9</td>
+</tr>
+<tr>
+<td>7</td>
+<td>GLM-5.1</td>
+<td style="text-align: right;">5.5</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Gemini-3.1-pro</td>
+<td style="text-align: right;">3.8</td>
+</tr>
+<tr>
+<td>9</td>
+<td>MiMo-2.5-pro</td>
+<td style="text-align: right;">3.6</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Qwen-3.7-max</td>
+<td style="text-align: right;">2.7</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Qwen-3.6-plus</td>
+<td style="text-align: right;">2.6</td>
+</tr>
+</tbody>
+</table>
+<p>Для выбора лучшего <strong>предложения по архитектуре</strong> этот способ достаточно хорош. Он прост, прозрачен и воспроизводим.</p>
+<h3 id="подход-второй-сравнение-анализов-по-тезисам">Подход второй. Сравнение анализов по тезисам<a class="headerlink" href="#подход-второй-сравнение-анализов-по-тезисам" title="Permanent link">&para;</a></h3>
+<p>Средние рейтинги показывают, какое предложение нравится большинству. Но проводить серию анализов от разных моделей по каждому принимаемому решению — слишком дорогой путь. По крайней мере пока. Поэтому хотелось бы понять, какую модель предпочтительнее использовать как оценщика решений. Нужно определить лучшего <strong>аналитика</strong>.</p>
+<p>Как же это сделать? В качестве первого метода я попробовал сделать тезисный анализ:</p>
+<ol>
+<li>собрать список тезисов, которые встречаются в отчётах оценщиков;</li>
+<li>отметить, какие модели поддерживают какой тезис;</li>
+<li>построить матрицу согласия и рейтинг оценщиков по тому, насколько их анализ совпадает с общим ядром;</li>
+<li>отдельно учесть ширину покрытия, структуру текста и глубину рассуждения.</li>
+</ol>
+<p>Поясню последний пункт. Ширина покрытия — сколько тезисов из общего списка разбор вообще затронул (у самого охватистого их набралось 36, у самого скупого — 19). Структура текста — сколько в разборе собрано содержательных составляющих анализа. Это критерии оценки, сильные и слабые стороны, синтез с рекомендацией, план миграции, разбор рисков, сравнительная таблица. Глубина рассуждения — по сути просто длина разбора.</p>
+<p>Из всех разборов нормализовалось около сорока тезисов.</p>
+<p>Примеры консенсусных тезисов (в скобках — количество высказавших):</p>
+<ul>
+<li><code>plan_node</code> — god-нода, её надо дробить (10);</li>
+<li>граф обманчив: слишком много маршрутной логики спрятано внутри <code>plan_node</code> (10);</li>
+<li>детерминированную логику до вызова LLM надо вынести в видимые на графе фазы (10);</li>
+<li>сам вызов LLM должен ужаться до тонкой фазы планирования (10);</li>
+<li>возвраты из нод-действий должны входить в верхнюю фазу цикла, а не в середину планирования (10);</li>
+<li><code>ask_user</code> остаётся единственной нодой-прерыванием (10);</li>
+<li>цель — конвейер из устойчивых фаз средней гранулярности. Не нода на каждый <code>if</code>, но и без чрезмерного дробления с лишними записями в чекпоинт (10);</li>
+<li>post-LLM политика и перенаправления должны стать явной архитектурой, а не оставаться зарытыми в одной функции-планировщике или в рёбрах (10).</li>
+</ul>
+<p>Примеры спорных тезисов, которые высказывал мало кто:</p>
+<ul>
+<li>нужны ли отдельные bootstrap-ноды под <code>region</code> и <code>currency</code> (2);</li>
+<li>хороша ли петля <code>plan → plan</code> у DeepSeek-4-pro для поздней декомпозиции (3);</li>
+<li>нужен ли адаптер <code>route_direct</code>, сводящий детерминированные и LLM-решения в одну пост-фазу (3);</li>
+<li>заводить ли отдельное поле <code>decision_origin</code> вместо простого <code>llm_failed</code> (2);</li>
+<li>держать ли <code>recipes</code> в state (1);</li>
+<li>разбивать ли post-LLM политику на цепочку <code>normalize_decision → retry_gate → maybe_calculate</code> (3).</li>
+</ul>
+<p>Я трижды сделал оценку по этому алгоритму.</p>
+<p><strong>В первый раз</strong> я ранжировал оценщиков по степени популярности тезисов, которые высказывает каждый разбор. С некоторой поправкой на охват, структуру и глубину. Лучшим вышел DeepSeek-4-pro.</p>
+<p>Что такое степень популярности высказанных тезисов? У каждого тезиса есть популярность — сколько разборов его высказали. Балл разбора — это сумма популярностей всех тезисов в нём. Поэтому разделяемый многими тезис приносил больше очков, чем нишевый, и выше всех оказывался тот, кто собрал максимум общих, разделяемых другими мыслей. DeepSeek-4-pro вышел вперёд именно так — подписался под наибольшим числом тезисов, пусть в среднем и не самых популярных.</p>
+<p><strong>Во второй раз</strong> я формализовал сравнение. Разложил каждый разбор на оценки по аспектам, усреднил их и посмотрел, чей разбор ближе всего к этому среднему. DeepSeek-4-pro снова вышел первым. А вся остальная таблица изрядно изменилась.</p>
+<p>Аспект — это повторяющееся архитектурное утверждение, в которое сведено несколько близких тезисов из разных разборов. Например, «целимся в граф на 4–6 фаз», «после LLM хватает одной policy-ноды», «нужны отдельные bootstrap-ноды под region и currency». Таких набралось девятнадцать. По каждому аспекту разбор получал число от −1 до +1 в зависимости от того, поддерживает разбор аспект, молчит или отвергает. Так текст превращался в вектор из 19 чисел, из которого выводится средний вектор и по близости к нему сортируются отчёты.</p>
+<p><strong>В третий раз</strong> метод я не трогал — только переименовал файл DeepSeek-4-pro, чтобы тот встал в конце списка. Потому что мне показалось, что его нахождение в начале списка отчётов может влиять на то, как определяется список тезисов для анализа. В результате DeepSeek-4-pro съехал на четвёртое место, а сам набор тезисов вышел короче.</p>
+<p>Если выписать все три ранжирования рядом, видно, как мотает оценщиков от прогона к прогону (Fable-5 в этих экспериментах ещё не участвовала):</p>
+<table>
+<thead>
+<tr>
+<th>Оценщик</th>
+<th style="text-align: center;">Прогон 1</th>
+<th style="text-align: center;">Прогон 2</th>
+<th style="text-align: center;">Прогон 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DeepSeek-4-pro</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr>
+<td>Qwen-3.7-max</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td>Opus-4.7</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">9</td>
+</tr>
+<tr>
+<td>Kimi-2.6</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr>
+<td>GLM-5.1</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr>
+<td>GPT-5.5</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr>
+<td>Qwen-3.6-plus</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">7</td>
+</tr>
+<tr>
+<td>MiMo-2.5-pro</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td>GPT-5.4</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr>
+<td>Gemini-3.1-pro</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">8</td>
+</tr>
+</tbody>
+</table>
+<p>В этот момент я понял, что выделить лучшего аналитика семантически у меня не получается. Сделал ещё пару попыток, используя эмбеддинги для сравнения вместо нормализации тезисов. Но не буду утомлять тебя, усталый читатель, той ерундой, что из этого получилась.</p>
+<h3 id="подход-третий-центр-мнений-и-медоид">Подход третий. Центр мнений и медоид<a class="headerlink" href="#подход-третий-центр-мнений-и-медоид" title="Permanent link">&para;</a></h3>
+<p>Не получилось вычислить самого умелого аналитика по текстам анализов. Значит, вычислим по метрикам. А из метрик у нас, в общем-то, только места, розданные предложениям.</p>
+<p>Сначала строится искусственный центр. Это среднее арифметическое мест каждого предложения по всем анализам. Потом каждый отчёт сравнивается с этим средним ранжированием. Отдельно, в качестве контрольного метода, считается медоид: для каждого реального отчёта измеряется суммарное расстояние до всех остальных реальных отчётов.</p>
+<p>Этот способ показывает, насколько точно аналитик предсказал распределение мест предложений по рефакторингу в сводном рейтинге.</p>
+<p><img alt="Сравнение мест оценщиков по близости к среднему ранжированию и по медоиду" src="../article-diagrams/ru/evaluator-center-medoid-bump-v3.svg" /></p>
+<p>Оба метода показали, что лучшим предсказателем общего рейтинга оказался GPT-5.5. Дальше по списку есть небольшие расхождения в двух методах вычисления. Но они именно что небольшие. Одна позиция в ту или иную сторону. И по расстоянию до медоида видно, что у поменявшихся местами моделей разница в сотые и тысячные.</p>
+<p>Достаточно ожидаемо, что GPT-5.4 и GPT-5.5 хорошо предсказали итоговый рейтинг. И достаточно внезапно, что MiMo-2.5-pro и Qwen-3.7-max подбираются к верху таблицы. Хотя, если взглянуть на диаграмму с графиком оценок, то так и есть, эти китайские аналитики попадают достаточно близко к среднему.</p>
+<h3 id="deus-ex-machina">Deus ex machina<a class="headerlink" href="#deus-ex-machina" title="Permanent link">&para;</a></h3>
+<p>Но как всё-таки выбрать ту модель, отчёт от которой можно считать достаточным для выбора лучшего решения по рефакторингу?</p>
+<p>То, что модель отранжировала предложения близко к консенсусу, совершенно не значит, что она дала и достаточно информации для нас, чтобы принять взвешенное решение. Возможно, у человека появятся соображения, по которым он примет решение в пользу предложения, занявшего в рейтинге даже далеко не первую позицию. И в принятии этого решения ему лучше опираться на наиболее полный и качественный разбор от модели-аналитика.</p>
+<p>До тех пор, пока не получается строго определить лучшего аналитика семантическими методами, я решил воспользоваться помощью «экспертов». У нас есть однозначный победитель по архитектурным предложениям и однозначный победитель по предсказанию рейтинга предложений от аналитиков. Это Fable-5 и GPT-5.5, соответственно.</p>
+<p>Вот и попрошу у них отранжировать аналитические отчёты по качеству анализа. Естественно, с соблюдением условия, чтобы каждый из конкурсантов не видел работы соседа. Промт был таков:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>You are skilled software architect specializing in llm agentic development. In docs/planner-graph-ref/analyse there are some analitic reports about proposals to refactor current planner component graph. Evaluate those reports and create ranged list of them in docs/planner-graph-ref/best-analyst/&lt;model&gt;-ba-range.md with explanation of what good and bad sides you can see in each. Range them by principle of what report is the best only report to read for having enough information to make a deliberated decision of what proposal to choose for implementation.
+</code></pre></div>
+<p>Результаты двух метаанализов разошлись в деталях, но не в главном:</p>
+<p><img alt="Сравнение мест аналитических отчётов в метаанализе Fable-5 и GPT-5.5" src="../article-diagrams/ru/best-analyst-bump-fable-gpt.svg" /></p>
+<p>На картине мы видим единодушное одобрение анализа от Fable-5. Затем каждый из судей чуть выше оценивает свой корпоративный подход к проблеме. Ну а из китайских аналитиков, говорят, стоит присмотреться прежде всего к Qwen-3.7-max и GLM-5.1. Ну, может быть, ещё DeepSeek-4-pro.</p>
+<p>И все эти оценки достаточно сильно расходятся с результатами лучшего предсказателя рейтингов. Что и не удивительно. Всё-таки это несколько разные вопросы. Поэтому они и разведены в разные части анализа.</p>
+<p>Давайте уж заодно посмотрим, как именно они расходятся:</p>
+<p><img alt="Лучший аналитик: метаанализ Fable-5 и GPT-5.5 по краям и близость ранжирования к среднему в центре" src="../article-diagrams/ru/best-analyst-bump-fable-center-gpt.svg" /></p>
+<p>Из тенденций всё же выделю, что семейство GPT по обеим характеристикам в топе рейтингов, GLM-5.1 и Qwen-3.7-max — в середине, а Gemini-3.1-pro — в конце.</p>
+<h5 id="методики-оценки-аналитиков">Методики оценки аналитиков<a class="headerlink" href="#методики-оценки-аналитиков" title="Permanent link">&para;</a></h5>
+<p><strong>Fable-5</strong> рассматривал каждый отчёт по пяти параметрам:</p>
+<ul>
+<li><strong>Фактическая точность.</strong> Все ли утверждения о текущем коде и предложениях сверены с исходниками.</li>
+<li><strong>Полнота охвата.</strong> Разобраны ли все 11 предложений по отдельности.</li>
+<li><strong>Сила решения.</strong> Заканчивается ли отчёт конкретной рекомендацией «принять/совместить/отвергнуть» с порядком миграции.</li>
+<li><strong>Покрытие рисков.</strong> Затронуты ли узкие места. Запись чекпоинта на каждой границе ноды, единственная точка остановки на вопрос пользователю, проверка ограничений сериализации состояния, реальный состав тестов.</li>
+<li><strong>Калибровка.</strong> Не выбивается ли вывод из общего консенсуса.</li>
+</ul>
+<p>При этом он не просто складывал, сколько ошибок насчитал в отчёте. Он смотрел, где ошибка стоит, какую роль играет в рассуждении.</p>
+<p><strong>GPT-5.5</strong> шёл почти тем же маршрутом, но по шести критериям:</p>
+<ul>
+<li><strong>Привязка к коду.</strong> Сверены ли утверждения с текущим кодом, состоянием планировщика и реальной точкой interrupt/resume.</li>
+<li><strong>Покрытие критичных рисков.</strong> Совместимость чекпоинтов, сериализация состояния, чистота edge-функций, единственная точка остановки на вопрос пользователю, семантика итераций, поведение при отказе LLM, область переписывания детерминированных и LLM-решений.</li>
+<li><strong>Охват предложений.</strong> Разобраны ли все 11 по отдельности.</li>
+<li><strong>Практическая польза.</strong> Есть ли рекомендация, путь миграции и понятно ли, что брать, а что отвергать.</li>
+<li><strong>Надёжность.</strong> Нет фактических ошибок и завышения оценок для собственного предложения.</li>
+<li><strong>Читаемость.</strong> Написан ли отчёт достаточно ясно, чтобы его хватило для понимания ситуации.</li>
+</ul>
+<h5 id="непосредственно-оценки">Непосредственно оценки<a class="headerlink" href="#непосредственно-оценки" title="Permanent link">&para;</a></h5>
+<p>Каждый из экспертов дал для каждого из разбираемых отчётов набор положительных и отрицательных характеристик, сопроводив его коротким выводом. В таблице далее приведу только эти выводы.</p>
+<table>
+<thead>
+<tr>
+<th>Отчёт</th>
+<th>Вывод Fable-5</th>
+<th>Вывод GPT-5.5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fable-5-range</code></td>
+<td><strong>Достаточно.</strong> Факты верны, охвачены все предложения, найдены обе важные ошибки, расписан порядок миграции. Если читать только один разбор, то этот.</td>
+<td><strong>A+.</strong> Единственный разбор, который и полон, и внимателен к скрытым эксплуатационным рискам. По нему одному уже можно выбирать план.</td>
+</tr>
+<tr>
+<td><code>opus-4.7-range</code></td>
+<td><strong>Достаточно, но с оговорками.</strong> Самый подробный план действий. Просто не обращай внимания на несуществующий тест-файл и читай «приятный штрих» у Kimi-2.6 как «баг».</td>
+<td><strong>A−.</strong> Архитектурно силён и почти лучший. Проигрывает лишь тем, что GPT-5.5 удобнее читать как единственный отчёт.</td>
+</tr>
+<tr>
+<td><code>gpt-5.5-range</code></td>
+<td><strong>Достаточно, и самый безопасный.</strong> Здесь ничто не сбивает с толку, но о каждом варианте узнаёшь меньше, чем у Fable-5 или Opus-4.7.</td>
+<td><strong>A−.</strong> Сильная и компактная опора для решения. Уступает первой паре лишь потому, что для взвешенного выбора хочется больше доказательств.</td>
+</tr>
+<tr>
+<td><code>gpt-5.4-range</code></td>
+<td><strong>Почти достаточно.</strong> Точен и заточен под решение, но более поверхностен по каждому варианту и без оговорок ставит себя первым.</td>
+<td><strong>A.</strong> Лучший взгляд на поддерживаемую архитектуру и развёртывание. Чуть менее самодостаточен, потому что часть механики берёт у других.</td>
+</tr>
+<tr>
+<td><code>glm-5.1-range</code></td>
+<td><strong>Приемлемо.</strong> Главный вывод верен, охват системный, есть одна настоящая находка. До «достаточно» не дотягивает из-за перепутанного авторства и шумных оценок.</td>
+<td><strong>B−.</strong> Читается легко и часто прав, но упускает слишком много ключевых рисков, чтобы полагаться на него одного.</td>
+</tr>
+<tr>
+<td><code>qwen-3.7-max-range</code></td>
+<td><strong>Приемлемо.</strong> Лучшие объяснения из всех. Минус один — слишком высокая, вторая, позиция для DeepSeek-4-pro, и держится она на похвале зацикленной ноды plan → plan.</td>
+<td><strong>B+.</strong> Крепкий вспомогательный разбор. Подтвердить направление годится, а как единственная опора слабоват.</td>
+</tr>
+<tr>
+<td><code>deepseek-4-pro-range</code></td>
+<td><strong>В одиночку мало, но отличен вторым.</strong> Глубокий, но в победители выводит вариант с багом и рискованной схемой состояния.</td>
+<td><strong>C−.</strong> Содержания много, но как единственный источник способен увести команду к неудачному базовому предложению и небезопасному состоянию.</td>
+</tr>
+<tr>
+<td><code>qwen-3.6-plus-range</code></td>
+<td><strong>Почти приемлемо.</strong> Отлично помогает понять задачу, но оценки в середине слишком разнобойные, чтобы доверять им.</td>
+<td><strong>B.</strong> Полезен и в целом задаёт верное направление, но без более сильного разбора читатель рискует переусложнить граф.</td>
+</tr>
+<tr>
+<td><code>mimo-2.5-pro-range</code></td>
+<td><strong>Почти приемлемо.</strong> Приложение о сходимости и главный вывод верны, а вот середина таблицы звучит уверенно, но слабо подкреплена доказательствами.</td>
+<td><strong>C.</strong> Хорош для перепроверки, но не как единственный источник истины, да и к рискованным решениям слишком снисходителен.</td>
+</tr>
+<tr>
+<td><code>kimi-2.6-range</code></td>
+<td><strong>В одиночку недостаточно.</strong> Есть настоящие находки и трезвая оценка самого себя, но может привести к занесению в шорт-лист дизайна Gemini-3.1-pro и состояния, опасного для сериализатора.</td>
+<td><strong>C+.</strong> Наблюдения полезные, но доверять ему одному выбор предложения рискованно.</td>
+</tr>
+<tr>
+<td><code>gemini-3.1-pro-range</code></td>
+<td><strong>Недостаточно.</strong> Удобная одностраничная классификация, но только в дополнение к настоящему разбору. Сам по себе подтолкнёт забраковать хорошее предложение за изъян, которого у него нет.</td>
+<td><strong>D.</strong> Годится для первого наброска картины, но не для решения. Сам по себе упускает важнейшие риски реализации.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="выводы">Выводы<a class="headerlink" href="#выводы" title="Permanent link">&para;</a></h2>
+<p><strong>Какую модель брать для генерации архитектуры.</strong></p>
+<p>Чем менее сложное решение вам надо сделать, тем вероятнее, что можно просто взять предложение от Fable или GPT-5.5. Причём сейчас, когда Fable недоступна за пределами США, выбор между Opus или GPT совсем не очевиден. Как быстрое решение по умолчанию я бы рекомендовал скорее GPT.</p>
+<p>Если же подумать стоит действительно хорошо, то лучше генерировать несколько предложений от тех моделей, что у вас есть в доступе или предпочтительны. Причём несколько предложений от одной и той же модели могут отличаться достаточно сильно. И, использовав несколько дешёвых генераций от GLM, Kimi или Qwen, можно попытаться добиться результата, сравнимого с использованием дорогих американских флагманов.</p>
+<p>В реальности я выбрал для проекта решение GPT-5.4 с небольшими улучшениями, позаимствованными из Opus и GPT-5.5. Но не потому, что Fable тогда ещё не вышел. А потому, что выделение <code>bootstrap_gate</code> в отдельную ноду показалось мне хорошим шагом с точки зрения дальнейшего предполагаемого развития проекта. И с наличием предложения от Fable я, скорее всего, выбрал бы тот же самый вариант от GPT-5.4, позаимствовав только удачную идею с <code>decision_origin</code>.</p>
+<p><strong>Какую модель брать в оценщики.</strong></p>
+<p>Опять есть два стула.</p>
+<p>Если у вас есть набор вариантов и нужно, особо не вдумываясь, быстро определить лучший или собрать комбинацию лучших решений — берите GPT-5.5 или 5.4. В условиях тотального Китая можете воспользоваться MiMo или Qwen-3.7.</p>
+<p>Если же вы хотите вдаться в подробности и сделать самостоятельный выбор, то Fable. А лучше Fable + GPT-5.5. Ну или Opus + GPT-5.5. С китайцами в этом случае не могу порекомендовать чего-то уверенно, слишком много они допускают ошибок в аналитике. Придётся либо делать дополнительный слой аналитики для отлова этих ошибок, либо читать отчёты с сильно критическим лицом.</p>
+<p><strong>Как свалить всю ответственность на модель.</strong></p>
+<p>Пока что никак. Всё ещё приходится думать головой. Прекрасное занятие, чтобы скоротать ожидание ИИ-сингулярности. А современные LLM очень в этом занятии помогают, предоставляя достаточно качественные материалы для анализа.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+  <h2 id="__comments">Comments</h2>
+
+  <!--
+    giscus comments (GitHub Discussions on the public weekly-tracker-feed repo).
+    Fill REPO_ID and CATEGORY_ID from https://giscus.app after the public repo
+    exists, Discussions are enabled, the giscus app is installed, and a
+    "Comments" (Announcements-type) category is created.
+  -->
+  <script src="https://giscus.app/client.js"
+          data-repo="Korridzy/weekly-tracker-feed"
+          data-repo-id="GISCUS_REPO_ID_PLACEHOLDER"
+          data-category="Comments"
+          data-category-id="GISCUS_CATEGORY_ID_PLACEHOLDER"
+          data-mapping="pathname"
+          data-strict="1"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="bottom"
+          data-theme="preferred_color_scheme"
+          data-lang="ru"
+          data-loading="lazy"
+          crossorigin="anonymous"
+          async>
+  </script>
+
+  <!-- Sync giscus theme with the Material palette toggle -->
+  <script>
+    var giscus = document.querySelector("script[src*='giscus']")
+
+    /* Set palette on initial load */
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate" ? "dark" : "light"
+      giscus.setAttribute("data-theme", theme)
+    }
+
+    /* Register event handlers after document is loaded */
+    document.addEventListener("DOMContentLoaded", function () {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function () {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+          /* Instruct giscus to change theme */
+          var frame = document.querySelector(".giscus-frame")
+          if (frame)
+            frame.contentWindow.postMessage(
+              { giscus: { setConfig: { theme } } },
+              "https://giscus.app"
+            )
+        }
+      })
+    })
+  </script>
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Korridzy &mdash; content licensed <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC&nbsp;BY&nbsp;4.0</a>
+
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/Korridzy" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.top", "navigation.instant", "navigation.instant.progress", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

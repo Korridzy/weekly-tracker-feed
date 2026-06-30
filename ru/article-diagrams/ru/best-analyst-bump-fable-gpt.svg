@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 550" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" role="img" aria-labelledby="title desc">
+  <title id="title">Сравнение мест аналитических отчётов в метаанализе Fable-5 и GPT-5.5</title>
+  <desc id="desc">Диаграмма изменений позиций сравнивает рейтинги лучших аналитических отчётов по версии Fable-5 и GPT-5.5. Fable-5-range занимает первое место в обоих рейтингах. Opus-4.7 и GPT-5.4 меняются вторым и четвёртым местами, Qwen-3.7-max и Qwen-3.6-plus сдвигаются, DeepSeek-4-pro падает с седьмого на десятое.</desc>
+
+  <rect width="1080" height="550" fill="#ffffff"/>
+
+  <text x="540" y="32" text-anchor="middle" font-size="20" font-weight="700" fill="#202124">Метаанализ: какой отчёт читать единственным</text>
+  <text x="540" y="58" text-anchor="middle" font-size="13" fill="#5f6368">Сравнение ранжирования аналитических отчётов по версии Fable-5 и GPT-5.5</text>
+
+  <defs>
+    <style>
+      .axis-title { font-size: 15px; font-weight: 700; fill: #3c4043; }
+      .small-head { font-size: 12px; font-weight: 700; fill: #5f6368; }
+      .label { font-size: 13px; dominant-baseline: middle; }
+      .rank-num { font-size: 12px; font-weight: 700; fill: #80868b; dominant-baseline: middle; }
+      .grid { stroke: #eef0f2; stroke-width: 1; }
+      .axis { stroke: #9aa0a6; stroke-width: 1.2; }
+      .line { fill: none; stroke-linecap: round; stroke-width: 3.2; }
+      .dot { fill: #fff; stroke-width: 2.2; }
+      .stable { stroke: #b9b9b9; }
+      .muted { fill: #5f6368; }
+    </style>
+  </defs>
+
+  <g class="grid">
+    <line x1="365" y1="92" x2="715" y2="92"/>
+    <line x1="365" y1="134" x2="715" y2="134"/>
+    <line x1="365" y1="176" x2="715" y2="176"/>
+    <line x1="365" y1="218" x2="715" y2="218"/>
+    <line x1="365" y1="260" x2="715" y2="260"/>
+    <line x1="365" y1="302" x2="715" y2="302"/>
+    <line x1="365" y1="344" x2="715" y2="344"/>
+    <line x1="365" y1="386" x2="715" y2="386"/>
+    <line x1="365" y1="428" x2="715" y2="428"/>
+    <line x1="365" y1="470" x2="715" y2="470"/>
+    <line x1="365" y1="512" x2="715" y2="512"/>
+  </g>
+
+  <line x1="365" y1="84" x2="365" y2="522" class="axis"/>
+  <line x1="715" y1="84" x2="715" y2="522" class="axis"/>
+
+  <text x="365" y="78" text-anchor="middle" class="axis-title">Fable-5</text>
+  <text x="715" y="78" text-anchor="middle" class="axis-title">GPT-5.5</text>
+
+  <text x="195" y="78" text-anchor="middle" class="small-head">место</text>
+  <text x="975" y="78" text-anchor="middle" class="small-head">место</text>
+
+  <g>
+    <path d="M365 92 L715 92" class="line" stroke="#202124"/>
+    <path d="M365 134 L715 218" class="line" stroke="#9467bd"/>
+    <path d="M365 176 L715 176" class="line" stroke="#1f77b4"/>
+    <path d="M365 218 L715 134" class="line" stroke="#ff7f0e"/>
+    <path d="M365 260 L715 344" class="line" stroke="#2ca02c"/>
+    <path d="M365 302 L715 260" class="line" stroke="#17becf"/>
+    <path d="M365 344 L715 470" class="line" stroke="#d62728"/>
+    <path d="M365 386 L715 302" class="line" stroke="#8c564b"/>
+    <path d="M365 428 L715 428" class="line stable"/>
+    <path d="M365 470 L715 386" class="line" stroke="#e377c2"/>
+    <path d="M365 512 L715 512" class="line stable"/>
+  </g>
+
+  <g>
+    <circle cx="365" cy="92" r="5.5" class="dot" stroke="#202124"/><circle cx="715" cy="92" r="5.5" class="dot" stroke="#202124"/>
+    <circle cx="365" cy="134" r="5.5" class="dot" stroke="#9467bd"/><circle cx="715" cy="218" r="5.5" class="dot" stroke="#9467bd"/>
+    <circle cx="365" cy="176" r="5.5" class="dot" stroke="#1f77b4"/><circle cx="715" cy="176" r="5.5" class="dot" stroke="#1f77b4"/>
+    <circle cx="365" cy="218" r="5.5" class="dot" stroke="#ff7f0e"/><circle cx="715" cy="134" r="5.5" class="dot" stroke="#ff7f0e"/>
+    <circle cx="365" cy="260" r="5.5" class="dot" stroke="#2ca02c"/><circle cx="715" cy="344" r="5.5" class="dot" stroke="#2ca02c"/>
+    <circle cx="365" cy="302" r="5.5" class="dot" stroke="#17becf"/><circle cx="715" cy="260" r="5.5" class="dot" stroke="#17becf"/>
+    <circle cx="365" cy="344" r="5.5" class="dot" stroke="#d62728"/><circle cx="715" cy="470" r="5.5" class="dot" stroke="#d62728"/>
+    <circle cx="365" cy="386" r="5.5" class="dot" stroke="#8c564b"/><circle cx="715" cy="302" r="5.5" class="dot" stroke="#8c564b"/>
+    <circle cx="365" cy="428" r="5.5" class="dot" stroke="#b9b9b9"/><circle cx="715" cy="428" r="5.5" class="dot" stroke="#b9b9b9"/>
+    <circle cx="365" cy="470" r="5.5" class="dot" stroke="#e377c2"/><circle cx="715" cy="386" r="5.5" class="dot" stroke="#e377c2"/>
+    <circle cx="365" cy="512" r="5.5" class="dot" stroke="#b9b9b9"/><circle cx="715" cy="512" r="5.5" class="dot" stroke="#b9b9b9"/>
+  </g>
+
+  <g class="rank-num" text-anchor="middle">
+    <text x="195" y="92">1</text><text x="975" y="92">1</text>
+    <text x="195" y="134">2</text><text x="975" y="134">2</text>
+    <text x="195" y="176">3</text><text x="975" y="176">3</text>
+    <text x="195" y="218">4</text><text x="975" y="218">4</text>
+    <text x="195" y="260">5</text><text x="975" y="260">5</text>
+    <text x="195" y="302">6</text><text x="975" y="302">6</text>
+    <text x="195" y="344">7</text><text x="975" y="344">7</text>
+    <text x="195" y="386">8</text><text x="975" y="386">8</text>
+    <text x="195" y="428">9</text><text x="975" y="428">9</text>
+    <text x="195" y="470">10</text><text x="975" y="470">10</text>
+    <text x="195" y="512">11</text><text x="975" y="512">11</text>
+  </g>
+
+  <g class="label">
+    <text x="340" y="92" text-anchor="end" fill="#202124">fable-5</text>
+    <text x="340" y="134" text-anchor="end" fill="#9467bd">opus-4.7</text>
+    <text x="340" y="176" text-anchor="end" fill="#1f77b4">gpt-5.5</text>
+    <text x="340" y="218" text-anchor="end" fill="#ff7f0e">gpt-5.4</text>
+    <text x="340" y="260" text-anchor="end" fill="#2ca02c">glm-5.1</text>
+    <text x="340" y="302" text-anchor="end" fill="#17becf">qwen-3.7-max</text>
+    <text x="340" y="344" text-anchor="end" fill="#d62728">deepseek-4-pro</text>
+    <text x="340" y="386" text-anchor="end" fill="#8c564b">qwen-3.6-plus</text>
+    <text x="340" y="428" text-anchor="end" class="muted">mimo-2.5-pro</text>
+    <text x="340" y="470" text-anchor="end" fill="#e377c2">kimi-2.6</text>
+    <text x="340" y="512" text-anchor="end" class="muted">gemini-3.1-pro</text>
+
+    <text x="740" y="92" text-anchor="start" fill="#202124">fable-5</text>
+    <text x="740" y="134" text-anchor="start" fill="#ff7f0e">gpt-5.4</text>
+    <text x="740" y="176" text-anchor="start" fill="#1f77b4">gpt-5.5</text>
+    <text x="740" y="218" text-anchor="start" fill="#9467bd">opus-4.7</text>
+    <text x="740" y="260" text-anchor="start" fill="#17becf">qwen-3.7-max</text>
+    <text x="740" y="302" text-anchor="start" fill="#8c564b">qwen-3.6-plus</text>
+    <text x="740" y="344" text-anchor="start" fill="#2ca02c">glm-5.1</text>
+    <text x="740" y="386" text-anchor="start" fill="#e377c2">kimi-2.6</text>
+    <text x="740" y="428" text-anchor="start" class="muted">mimo-2.5-pro</text>
+    <text x="740" y="470" text-anchor="start" fill="#d62728">deepseek-4-pro</text>
+    <text x="740" y="512" text-anchor="start" class="muted">gemini-3.1-pro</text>
+  </g>
+
+</svg>
