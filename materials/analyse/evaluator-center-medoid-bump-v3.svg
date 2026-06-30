@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" role="img" aria-labelledby="title desc">
+  <title id="title">Сравнение мест оценщиков по среднему ранжированию и медоиду</title>
+  <desc id="desc">Bump chart with model names placed next to the rank lines and numeric distance values placed farther outside.</desc>
+
+  <rect width="1200" height="620" fill="#ffffff"/>
+
+  <text x="600" y="32" text-anchor="middle" font-size="20" font-weight="700" fill="#202124">Место оценщика: близость к среднему vs медоид</text>
+  <text x="600" y="58" text-anchor="middle" font-size="13" fill="#5f6368">1 = самый центральный, 11 = самый далёкий</text>
+
+  <defs>
+    <style>
+      .axis-title { font-size: 14px; font-weight: 700; fill: #3c4043; }
+      .small-head { font-size: 12px; font-weight: 700; fill: #5f6368; }
+      .label { font-size: 13px; dominant-baseline: middle; }
+      .value { font-size: 13px; font-weight: 700; dominant-baseline: middle; }
+      .rank-num { font-size: 11px; fill: #9aa0a6; dominant-baseline: middle; }
+      .grid { stroke: #eef0f2; stroke-width: 1; }
+      .axis { stroke: #9aa0a6; stroke-width: 1.2; }
+      .line { fill: none; stroke-linecap: round; stroke-width: 3.2; }
+      .dot { fill: #fff; stroke-width: 2.2; }
+      .stable { stroke: #b9b9b9; }
+      .muted { fill: #5f6368; }
+    </style>
+  </defs>
+
+  <g class="grid">
+    <line x1="430" y1="95" x2="770" y2="95"/>
+    <line x1="430" y1="137" x2="770" y2="137"/>
+    <line x1="430" y1="179" x2="770" y2="179"/>
+    <line x1="430" y1="221" x2="770" y2="221"/>
+    <line x1="430" y1="263" x2="770" y2="263"/>
+    <line x1="430" y1="305" x2="770" y2="305"/>
+    <line x1="430" y1="347" x2="770" y2="347"/>
+    <line x1="430" y1="389" x2="770" y2="389"/>
+    <line x1="430" y1="431" x2="770" y2="431"/>
+    <line x1="430" y1="473" x2="770" y2="473"/>
+    <line x1="430" y1="515" x2="770" y2="515"/>
+  </g>
+
+  <line x1="430" y1="86" x2="430" y2="525" class="axis"/>
+  <line x1="770" y1="86" x2="770" y2="525" class="axis"/>
+
+  <text x="430" y="80" text-anchor="middle" class="axis-title">Близость к среднему</text>
+  <text x="770" y="80" text-anchor="middle" class="axis-title">Медоид</text>
+
+  <text x="180" y="80" text-anchor="middle" class="small-head">dᵢ</text>
+  <text x="1040" y="80" text-anchor="middle" class="small-head">Sᵢ</text>
+
+  <g>
+    <path d="M430 95 L770 95" class="line" stroke="#202124"/>
+    <path d="M430 137 L770 179" class="line" stroke="#1f77b4"/>
+    <path d="M430 179 L770 137" class="line" stroke="#ff7f0e"/>
+    <path d="M430 221 L770 263" class="line" stroke="#2ca02c"/>
+    <path d="M430 263 L770 221" class="line" stroke="#9467bd"/>
+    <path d="M430 305 L770 305" class="line stable"/>
+    <path d="M430 347 L770 347" class="line stable"/>
+    <path d="M430 389 L770 389" class="line stable"/>
+    <path d="M430 431 L770 473" class="line" stroke="#d62728"/>
+    <path d="M430 473 L770 431" class="line" stroke="#8c564b"/>
+    <path d="M430 515 L770 515" class="line stable"/>
+  </g>
+
+  <g>
+    <circle cx="430" cy="95" r="5.5" class="dot" stroke="#202124"/><circle cx="770" cy="95" r="5.5" class="dot" stroke="#202124"/>
+    <circle cx="430" cy="137" r="5.5" class="dot" stroke="#1f77b4"/><circle cx="770" cy="179" r="5.5" class="dot" stroke="#1f77b4"/>
+    <circle cx="430" cy="179" r="5.5" class="dot" stroke="#ff7f0e"/><circle cx="770" cy="137" r="5.5" class="dot" stroke="#ff7f0e"/>
+    <circle cx="430" cy="221" r="5.5" class="dot" stroke="#2ca02c"/><circle cx="770" cy="263" r="5.5" class="dot" stroke="#2ca02c"/>
+    <circle cx="430" cy="263" r="5.5" class="dot" stroke="#9467bd"/><circle cx="770" cy="221" r="5.5" class="dot" stroke="#9467bd"/>
+    <circle cx="430" cy="305" r="5.5" class="dot" stroke="#b9b9b9"/><circle cx="770" cy="305" r="5.5" class="dot" stroke="#b9b9b9"/>
+    <circle cx="430" cy="347" r="5.5" class="dot" stroke="#b9b9b9"/><circle cx="770" cy="347" r="5.5" class="dot" stroke="#b9b9b9"/>
+    <circle cx="430" cy="389" r="5.5" class="dot" stroke="#b9b9b9"/><circle cx="770" cy="389" r="5.5" class="dot" stroke="#b9b9b9"/>
+    <circle cx="430" cy="431" r="5.5" class="dot" stroke="#d62728"/><circle cx="770" cy="473" r="5.5" class="dot" stroke="#d62728"/>
+    <circle cx="430" cy="473" r="5.5" class="dot" stroke="#8c564b"/><circle cx="770" cy="431" r="5.5" class="dot" stroke="#8c564b"/>
+    <circle cx="430" cy="515" r="5.5" class="dot" stroke="#b9b9b9"/><circle cx="770" cy="515" r="5.5" class="dot" stroke="#b9b9b9"/>
+  </g>
+
+  <g class="rank-num" text-anchor="middle">
+    <text x="402" y="95">1</text><text x="798" y="95">1</text>
+    <text x="402" y="137">2</text><text x="798" y="137">2</text>
+    <text x="402" y="179">3</text><text x="798" y="179">3</text>
+    <text x="402" y="221">4</text><text x="798" y="221">4</text>
+    <text x="402" y="263">5</text><text x="798" y="263">5</text>
+    <text x="402" y="305">6</text><text x="798" y="305">6</text>
+    <text x="402" y="347">7</text><text x="798" y="347">7</text>
+    <text x="402" y="389">8</text><text x="798" y="389">8</text>
+    <text x="402" y="431">9</text><text x="798" y="431">9</text>
+    <text x="402" y="473">10</text><text x="798" y="473">10</text>
+    <text x="402" y="515">11</text><text x="798" y="515">11</text>
+  </g>
+
+  <g class="label">
+    <text x="180" y="95" text-anchor="middle" class="value" fill="#202124">0.9858</text><text x="380" y="95" text-anchor="end" fill="#202124">gpt-5.5</text>
+    <text x="180" y="137" text-anchor="middle" class="value" fill="#1f77b4">1.1375</text><text x="380" y="137" text-anchor="end" fill="#1f77b4">gpt-5.4</text>
+    <text x="180" y="179" text-anchor="middle" class="value" fill="#ff7f0e">1.2284</text><text x="380" y="179" text-anchor="end" fill="#ff7f0e">mimo-2.5-pro</text>
+    <text x="180" y="221" text-anchor="middle" class="value" fill="#2ca02c">1.3978</text><text x="380" y="221" text-anchor="end" fill="#2ca02c">qwen-3.7-max</text>
+    <text x="180" y="263" text-anchor="middle" class="value" fill="#9467bd">1.4053</text><text x="380" y="263" text-anchor="end" fill="#9467bd">fable-5</text>
+    <text x="180" y="305" text-anchor="middle" class="value muted">1.6087</text><text x="380" y="305" text-anchor="end" class="muted">glm-5.1</text>
+    <text x="180" y="347" text-anchor="middle" class="value muted">1.6744</text><text x="380" y="347" text-anchor="end" class="muted">qwen-3.6-plus</text>
+    <text x="180" y="389" text-anchor="middle" class="value muted">1.8722</text><text x="380" y="389" text-anchor="end" class="muted">opus-4.7</text>
+    <text x="180" y="431" text-anchor="middle" class="value" fill="#d62728">2.4684</text><text x="380" y="431" text-anchor="end" fill="#d62728">deepseek-4-pro</text>
+    <text x="180" y="473" text-anchor="middle" class="value" fill="#8c564b">2.5373</text><text x="380" y="473" text-anchor="end" fill="#8c564b">kimi-2.6</text>
+    <text x="180" y="515" text-anchor="middle" class="value muted">2.6700</text><text x="380" y="515" text-anchor="end" class="muted">gemini-3.1-pro</text>
+
+    <text x="820" y="95" text-anchor="start" fill="#202124">gpt-5.5</text><text x="1040" y="95" text-anchor="middle" class="value" fill="#202124">1.7803</text>
+    <text x="820" y="137" text-anchor="start" fill="#ff7f0e">mimo-2.5-pro</text><text x="1040" y="137" text-anchor="middle" class="value" fill="#ff7f0e">1.9347</text>
+    <text x="820" y="179" text-anchor="start" fill="#1f77b4">gpt-5.4</text><text x="1040" y="179" text-anchor="middle" class="value" fill="#1f77b4">1.9547</text>
+    <text x="820" y="221" text-anchor="start" fill="#9467bd">fable-5</text><text x="1040" y="221" text-anchor="middle" class="value" fill="#9467bd">2.0434</text>
+    <text x="820" y="263" text-anchor="start" fill="#2ca02c">qwen-3.7-max</text><text x="1040" y="263" text-anchor="middle" class="value" fill="#2ca02c">2.0486</text>
+    <text x="820" y="305" text-anchor="start" class="muted">glm-5.1</text><text x="1040" y="305" text-anchor="middle" class="value muted">2.1908</text>
+    <text x="820" y="347" text-anchor="start" class="muted">qwen-3.6-plus</text><text x="1040" y="347" text-anchor="middle" class="value muted">2.2066</text>
+    <text x="820" y="389" text-anchor="start" class="muted">opus-4.7</text><text x="1040" y="389" text-anchor="middle" class="value muted">2.3249</text>
+    <text x="820" y="431" text-anchor="start" fill="#8c564b">kimi-2.6</text><text x="1040" y="431" text-anchor="middle" class="value" fill="#8c564b">2.8659</text>
+    <text x="820" y="473" text-anchor="start" fill="#d62728">deepseek-4-pro</text><text x="1040" y="473" text-anchor="middle" class="value" fill="#d62728">2.8895</text>
+    <text x="820" y="515" text-anchor="start" class="muted">gemini-3.1-pro</text><text x="1040" y="515" text-anchor="middle" class="value muted">2.9814</text>
+  </g>
+
+  <text x="600" y="570" text-anchor="middle" font-size="12" fill="#5f6368">dᵢ — расстояние до искусственного центра; Sᵢ — сумма расстояний до остальных отчётов.</text>
+  <text x="600" y="590" text-anchor="middle" font-size="12" fill="#5f6368">Имена моделей стоят ближе к линиям; числовые значения вынесены наружу.</text>
+</svg>
