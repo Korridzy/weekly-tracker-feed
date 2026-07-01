@@ -1,0 +1,1495 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Notes and experiments by Korridzy.">
+      
+      
+        <meta name="author" content="Korridzy">
+      
+      
+        <link rel="canonical" href="https://wtf.korridzy.com/materials/twilight-of-the-gods/proposals/glm-5.1-proposal/">
+      
+      
+      
+      
+        
+          <link rel="alternate" href="/" hreflang="en">
+        
+          <link rel="alternate" href="/ru/" hreflang="ru">
+        
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Proposal: Decompose plan Node into Graph-Level Routing - wtf</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+  <script defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="098e6142-2d46-44cb-9b0e-e5073990c842"></script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#proposal-decompose-plan-node-into-graph-level-routing" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="wtf" class="md-header__button md-logo" aria-label="wtf" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            wtf
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Proposal: Decompose plan Node into Graph-Level Routing
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/ru/" hreflang="ru" class="md-select__link">
+              Русский
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../ru/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../archive/2026/" class="md-tabs__link">
+          
+  
+  
+  Archive
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../category/ai-agents/" class="md-tabs__link">
+          
+  
+  
+  Categories
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="wtf" class="md-nav__button md-logo" aria-label="wtf" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    wtf
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ru/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archive
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Archive
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Categories
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Categories
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/ai-agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI agents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/llm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/langgraph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LangGraph
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/refactoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Refactoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-problem-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Problem Statement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-proposed-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Proposed Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Proposed Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-core-idea-separate-decisions-from-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Core Idea: Separate decisions from routing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-new-node-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 New Node Definitions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 New Node Definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre_check-new" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pre_check (new)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acquire_or_plan-replaces-most-of-current-plan_node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        acquire_or_plan (replaces most of current plan_node)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plan-node-simplified" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        plan node (simplified)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-reworked-graph-topology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Reworked Graph Topology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-post-llm-rewriting-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Post-LLM Rewriting: Options
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4 Post-LLM Rewriting: Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-a-keep-post-llm-rewriting-in-acquire_or_plan-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option A: Keep post-LLM rewriting in acquire_or_plan (Recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b-extract-a-validate_decision-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option B: Extract a validate_decision node
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-implementation-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Implementation Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Implementation Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-extract-pre_check_node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Extract pre_check_node
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-rename-plan--acquire_or_plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Rename plan → acquire_or_plan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-extract-state-updates-into-composable-helpers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Extract state updates into composable helpers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-optional-extract-validate_decision-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4 (optional): Extract validate_decision node
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-what-stays-in-acquire_or_plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. What Stays in acquire_or_plan
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-state-schema-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. State Schema Changes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-risks-and-mitigations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Risks and Mitigations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-comparison-before-vs-after" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Comparison: Before vs After
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Comparison: Before vs After">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#before-current" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before (current)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#after-proposed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        After (proposed)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="proposal-decompose-plan-node-into-graph-level-routing">Proposal: Decompose <code>plan</code> Node into Graph-Level Routing<a class="headerlink" href="#proposal-decompose-plan-node-into-graph-level-routing" title="Permanent link">&para;</a></h1>
+<p><strong>Author:</strong> GLM-5.1 analysis
+<strong>Date:</strong> 2026-06-07
+<strong>Scope:</strong> <code>src/venturescope/planner/agent.py</code> — <code>plan_node()</code> (lines 846–1192, ~350 LOC)</p>
+<hr />
+<h2 id="1-problem-statement">1. Problem Statement<a class="headerlink" href="#1-problem-statement" title="Permanent link">&para;</a></h2>
+<p>The <code>plan</code> node is the central router of the planner subgraph, but it conflates two fundamentally different concerns:</p>
+<table>
+<thead>
+<tr>
+<th>Concern</th>
+<th>What it does</th>
+<th>Lines</th>
+<th>LLM needed?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Guard checks</strong></td>
+<td>Early-stop on aborted, max_iters, calculator caps, all-fields-collected</td>
+<td>848–1035</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Prerequisite questions</strong></td>
+<td>Ask region/currency before any real work</td>
+<td>864–887</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Schema preprocessing</strong></td>
+<td>Proactive decomposition, composition of component fields</td>
+<td>889–917</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Deterministic acquisition routing</strong></td>
+<td><code>next_acquisition_task()</code> picks next field/action without LLM</td>
+<td>945–1025</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>LLM planning</strong></td>
+<td>Call the planner LLM with full prompt, parse <code>PlannerDecision</code></td>
+<td>1037–1060</td>
+<td><strong>Yes</strong></td>
+</tr>
+<tr>
+<td><strong>Post-LLM decision rewriting</strong></td>
+<td>Redirect derived fields, web-preferred forcing, search/ask caps, calculation adjustments</td>
+<td>1070–1192</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>All six produce <code>PlannerDecision</code> objects and return state updates, but they are <strong>sequentially interleaved with early returns</strong> — making the logic hard to follow, test in isolation, or extend without breaking distant branches.</p>
+<p>The current <code>route_after_plan</code> function (line 2070) is trivial: <code>return state["decision"].action</code>. This means the graph has <strong>zero routing intelligence</strong> — all routing decisions are computed <em>inside</em> the <code>plan</code> node before it returns, and the graph merely dispatches on the pre-computed string.</p>
+<h2 id="2-proposed-architecture">2. Proposed Architecture<a class="headerlink" href="#2-proposed-architecture" title="Permanent link">&para;</a></h2>
+<h3 id="21-core-idea-separate-decisions-from-routing">2.1 Core Idea: Separate <em>decisions</em> from <em>routing</em><a class="headerlink" href="#21-core-idea-separate-decisions-from-routing" title="Permanent link">&para;</a></h3>
+<p>Move guard logic and deterministic routing into <strong>new graph nodes</strong> connected by <strong>conditional edges</strong>, and reserve the <code>plan</code> node exclusively for LLM-based decision-making. The graph itself becomes the orchestrator.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>START
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  │
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  ▼
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>┌──────────────────┐
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│   pre_check      │  ← guards + prerequisites + preprocessing
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>└───────┬──────────┘
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        │
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  (conditional edge)
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  ├── abort/finish → finish
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  ├── ask_region → ask_user (region)
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>  ├── ask_currency → ask_user (currency)
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>  └── continue ──────────────┐
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>                              ▼
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>                    ┌──────────────────┐
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>                    │ acquire_or_plan ──┤  ← deterministic acquisition OR LLM call
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>                    └───────┬───────────┘
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>                            │
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>                      (conditional edge)
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>                      ├── search → search
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>                      ├── ask_user → ask_user
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>                      ├── calculate → calculate
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>                      ├── reflect → reflect
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>                      └── finish → finish
+</code></pre></div>
+<h3 id="22-new-node-definitions">2.2 New Node Definitions<a class="headerlink" href="#22-new-node-definitions" title="Permanent link">&para;</a></h3>
+<h4 id="pre_check-new"><code>pre_check</code> (new)<a class="headerlink" href="#pre_check-new" title="Permanent link">&para;</a></h4>
+<p><strong>Purpose:</strong> Pure state inspection — no LLM calls.</p>
+<p>Responsibilities extracted from current <code>plan_node</code>:
+- Increment <code>iterations</code>
+- Check <code>status == "aborted"</code> → route to <code>finish</code>
+- Check <code>max_iters</code> exceeded → route to <code>finish</code>
+- Check <code>_needs_region_question()</code> → produce region <code>PlannerDecision</code>, route to <code>ask_user</code>
+- Check <code>_needs_currency_question()</code> → produce currency <code>PlannerDecision</code>, route to <code>ask_user</code>
+- Run <code>_proactive_decompositions()</code> — update <code>dynamic_decompositions</code> and <code>schema</code>
+- Check calculation-cap exhaustion → route to <code>finish</code>
+- Check successful calculation already done → route to <code>finish</code></p>
+<p><strong>Returns:</strong> Updated state (iterations, schema, dynamic_decompositions) + a routing tag.</p>
+<p><strong>Routing tag</strong> is a <code>Literal["continue", "finish_aborted", "finish_iter_cap", "finish_calc_cap", "finish_calc_done", "ask_region", "ask_currency"]</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nd">@dataclass</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">PreCheckResult</span><span class="p">:</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="n">state_updates</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>   <span class="c1"># iterations, schema, dynamic_decompositions</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="n">route</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        <span class="s2">&quot;continue&quot;</span><span class="p">,</span> <span class="s2">&quot;finish_aborted&quot;</span><span class="p">,</span> <span class="s2">&quot;finish_iter_cap&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        <span class="s2">&quot;finish_calc_cap&quot;</span><span class="p">,</span> <span class="s2">&quot;finish_calc_done&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        <span class="s2">&quot;ask_region&quot;</span><span class="p">,</span> <span class="s2">&quot;ask_currency&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="p">]</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="n">decision</span><span class="p">:</span> <span class="n">PlannerDecision</span> <span class="o">|</span> <span class="kc">None</span>  <span class="c1"># set for ask_region / ask_currency</span>
+</code></pre></div>
+<p><strong>Why separate:</strong> These are all guard/prerequisite checks that must happen before any real planning. Isolating them means:
+- They can be unit-tested without any LLM mocking
+- They can short-circuit without the LLM cost
+- The "continue" path is the only one that needs further processing</p>
+<h4 id="acquire_or_plan-replaces-most-of-current-plan_node"><code>acquire_or_plan</code> (replaces most of current <code>plan_node</code>)<a class="headerlink" href="#acquire_or_plan-replaces-most-of-current-plan_node" title="Permanent link">&para;</a></h4>
+<p><strong>Purpose:</strong> Either produce a deterministic acquisition decision or call the LLM.</p>
+<p>Responsibilities:
+1. Check if calculator is blocked → compute next acquisition task from blocking errors
+2. If <code>acquisition_task</code> found → produce <code>PlannerDecision</code> from it, skip LLM
+3. If no acquisition task → check <code>auto_finish_ok</code> (all fields collected, no open tasks)
+4. If not auto-finish → call LLM via <code>planner_prompt()</code> → parse <code>PlannerDecision</code></p>
+<p><strong>Post-LLM rewriting stays here</strong> (for now — see section 2.4):
+- <code>_redirect_derived_direct_decision()</code>
+- <code>_redirect_premature_ask_for_web_field()</code>
+- Search/ask per-field cap enforcement
+- <code>_adjust_calculation_decision()</code></p>
+<p><strong>Returns:</strong> Updated state + <code>PlannerDecision</code>.</p>
+<h4 id="plan-node-simplified"><code>plan</code> node (simplified)<a class="headerlink" href="#plan-node-simplified" title="Permanent link">&para;</a></h4>
+<p>After extraction, <code>plan</code> becomes a thin wrapper or is removed entirely. The node can be renamed <code>acquire_or_plan</code> to reflect its actual role.</p>
+<h3 id="23-reworked-graph-topology">2.3 Reworked Graph Topology<a class="headerlink" href="#23-reworked-graph-topology" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">_build_state_graph</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">builder</span> <span class="o">=</span> <span class="n">StateGraph</span><span class="p">(</span><span class="n">State</span><span class="p">)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="c1"># ── Nodes ──</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="n">builder</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">&quot;pre_check&quot;</span><span class="p">,</span> <span class="n">pre_check_node</span><span class="p">)</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="n">builder</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">&quot;acquire_or_plan&quot;</span><span class="p">,</span> <span class="n">acquire_or_plan_node</span><span class="p">)</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="n">builder</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">&quot;search&quot;</span><span class="p">,</span> <span class="n">search_node</span><span class="p">)</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="n">builder</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">&quot;observe&quot;</span><span class="p">,</span> <span class="n">observe_node</span><span class="p">)</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="n">builder</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">&quot;calculate&quot;</span><span class="p">,</span> <span class="n">calculate_node</span><span class="p">)</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="n">builder</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">&quot;ask_user&quot;</span><span class="p">,</span> <span class="n">ask_user_node</span><span class="p">)</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="n">builder</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">&quot;observe_user&quot;</span><span class="p">,</span> <span class="n">observe_user_node</span><span class="p">)</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="n">builder</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">&quot;reflect&quot;</span><span class="p">,</span> <span class="n">reflect_node</span><span class="p">)</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    <span class="n">builder</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="s2">&quot;finish&quot;</span><span class="p">,</span> <span class="n">finish_node</span><span class="p">)</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>    <span class="c1"># ── Edges ──</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>    <span class="n">builder</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">START</span><span class="p">,</span> <span class="s2">&quot;pre_check&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>    <span class="n">builder</span><span class="o">.</span><span class="n">add_conditional_edges</span><span class="p">(</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>        <span class="s2">&quot;pre_check&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>        <span class="n">route_after_pre_check</span><span class="p">,</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>        <span class="p">{</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>            <span class="s2">&quot;continue&quot;</span><span class="p">:</span> <span class="s2">&quot;acquire_or_plan&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>            <span class="s2">&quot;finish_aborted&quot;</span><span class="p">:</span> <span class="s2">&quot;finish&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>            <span class="s2">&quot;finish_iter_cap&quot;</span><span class="p">:</span> <span class="s2">&quot;finish&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>            <span class="s2">&quot;finish_calc_cap&quot;</span><span class="p">:</span> <span class="s2">&quot;finish&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>            <span class="s2">&quot;finish_calc_done&quot;</span><span class="p">:</span> <span class="s2">&quot;finish&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>            <span class="s2">&quot;ask_region&quot;</span><span class="p">:</span> <span class="s2">&quot;ask_user&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>            <span class="s2">&quot;ask_currency&quot;</span><span class="p">:</span> <span class="s2">&quot;ask_user&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>        <span class="p">},</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>    <span class="p">)</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>    <span class="n">builder</span><span class="o">.</span><span class="n">add_conditional_edges</span><span class="p">(</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>        <span class="s2">&quot;acquire_or_plan&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>        <span class="n">route_after_plan</span><span class="p">,</span>  <span class="c1"># same as current — reads decision.action</span>
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>        <span class="p">{</span>
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>            <span class="s2">&quot;search&quot;</span><span class="p">:</span> <span class="s2">&quot;search&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>            <span class="s2">&quot;ask_user&quot;</span><span class="p">:</span> <span class="s2">&quot;ask_user&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>            <span class="s2">&quot;calculate&quot;</span><span class="p">:</span> <span class="s2">&quot;calculate&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>            <span class="s2">&quot;reflect&quot;</span><span class="p">:</span> <span class="s2">&quot;reflect&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>            <span class="s2">&quot;finish&quot;</span><span class="p">:</span> <span class="s2">&quot;finish&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>        <span class="p">},</span>
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>    <span class="p">)</span>
+<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>
+<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a>    <span class="n">builder</span><span class="o">.</span><span class="n">add_conditional_edges</span><span class="p">(</span>
+<a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a>        <span class="s2">&quot;search&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a>        <span class="n">route_after_search</span><span class="p">,</span>
+<a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a>        <span class="p">{</span><span class="s2">&quot;observe&quot;</span><span class="p">:</span> <span class="s2">&quot;observe&quot;</span><span class="p">,</span> <span class="s2">&quot;plan&quot;</span><span class="p">:</span> <span class="s2">&quot;pre_check&quot;</span><span class="p">},</span>
+<a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a>    <span class="p">)</span>
+<a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a>    <span class="n">builder</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">&quot;observe&quot;</span><span class="p">,</span> <span class="s2">&quot;pre_check&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a>    <span class="n">builder</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">&quot;calculate&quot;</span><span class="p">,</span> <span class="s2">&quot;pre_check&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a>    <span class="n">builder</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">&quot;ask_user&quot;</span><span class="p">,</span> <span class="s2">&quot;observe_user&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a>    <span class="n">builder</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">&quot;observe_user&quot;</span><span class="p">,</span> <span class="s2">&quot;pre_check&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a>    <span class="n">builder</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">&quot;reflect&quot;</span><span class="p">,</span> <span class="s2">&quot;pre_check&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a>    <span class="n">builder</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s2">&quot;finish&quot;</span><span class="p">,</span> <span class="n">END</span><span class="p">)</span>
+<a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a>
+<a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a>    <span class="k">return</span> <span class="n">builder</span>
+</code></pre></div>
+<p><strong>Key change:</strong> All "loop back" edges now point to <code>pre_check</code> instead of <code>plan</code>, ensuring guards run on every iteration.</p>
+<h3 id="24-post-llm-rewriting-options">2.4 Post-LLM Rewriting: Options<a class="headerlink" href="#24-post-llm-rewriting-options" title="Permanent link">&para;</a></h3>
+<p>The post-LLM rewriting logic in <code>plan_node</code> (lines 1070–1192) currently performs:</p>
+<table>
+<thead>
+<tr>
+<th>Rewrite</th>
+<th>Lines</th>
+<th>Could be graph-level?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_redirect_derived_direct_decision()</code></td>
+<td>1090</td>
+<td>Partially — could be a separate validation node</td>
+</tr>
+<tr>
+<td><code>_redirect_premature_ask_for_web_field()</code></td>
+<td>1091</td>
+<td>Could be a validation node</td>
+</tr>
+<tr>
+<td>Search cap → force ask_user or reflect</td>
+<td>1093–1137</td>
+<td>Could be a validation node</td>
+</tr>
+<tr>
+<td>Ask-user cap → force finish</td>
+<td>1139–1173</td>
+<td>Could be a validation node</td>
+</tr>
+<tr>
+<td><code>_adjust_calculation_decision()</code></td>
+<td>1178</td>
+<td>Currently OK inline</td>
+</tr>
+<tr>
+<td>Completion logging + state assembly</td>
+<td>1179–1192</td>
+<td>Stays inline</td>
+</tr>
+</tbody>
+</table>
+<h4 id="option-a-keep-post-llm-rewriting-in-acquire_or_plan-recommended">Option A: Keep post-LLM rewriting in <code>acquire_or_plan</code> (Recommended)<a class="headerlink" href="#option-a-keep-post-llm-rewriting-in-acquire_or_plan-recommended" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Simplest migration — the rewriting is closely coupled to the LLM decision</li>
+<li>Avoids 2–3 extra state round-trips per iteration</li>
+<li>The rewriting functions are pure transformations on <code>PlannerDecision</code>; they don't need separate graph nodes</li>
+<li><strong>Recommend this for the first pass.</strong></li>
+</ul>
+<h4 id="option-b-extract-a-validate_decision-node">Option B: Extract a <code>validate_decision</code> node<a class="headerlink" href="#option-b-extract-a-validate_decision-node" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Insert between <code>acquire_or_plan</code> and action nodes</li>
+<li>Handles all decision rewriting as a separate graph step</li>
+<li>Adds a graph hop per iteration but makes each node trivially testable</li>
+<li>Better long-term separation of concerns, but higher migration risk</li>
+</ul>
+<p><strong>Recommendation:</strong> Start with Option A. If tests reveal the node is still too complex, extract <code>validate_decision</code> later.</p>
+<h2 id="3-implementation-plan">3. Implementation Plan<a class="headerlink" href="#3-implementation-plan" title="Permanent link">&para;</a></h2>
+<h3 id="phase-1-extract-pre_check_node">Phase 1: Extract <code>pre_check_node</code><a class="headerlink" href="#phase-1-extract-pre_check_node" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Create <code>pre_check_node(state: State) -&gt; dict[str, Any]</code></strong> that performs:</li>
+<li>Iteration bump</li>
+<li>Aborted / max_iters / calculation-cap / calculation-success guards</li>
+<li>Region / currency prerequisite checks</li>
+<li>Proactive decomposition + composition</li>
+<li>
+<p>Stored as new state field <code>_pre_check_route</code> (or a dedicated <code>route_tag</code> field)</p>
+</li>
+<li>
+<p><strong>Create <code>route_after_pre_check(state: State) -&gt; str</code></strong> that reads the route tag.</p>
+</li>
+<li>
+<p><strong>Update <code>_build_state_graph()</code></strong> to insert <code>pre_check</code> before <code>acquire_or_plan</code> and rewire loop-back edges.</p>
+</li>
+<li>
+<p><strong>Remove the same logic from <code>plan_node</code></strong> — keep only the acquisition + LLM + rewriting logic.</p>
+</li>
+<li>
+<p><strong>Update tests</strong> — <code>pre_check</code> logic is now independently testable without LLM.</p>
+</li>
+</ol>
+<h3 id="phase-2-rename-plan--acquire_or_plan">Phase 2: Rename <code>plan</code> → <code>acquire_or_plan</code><a class="headerlink" href="#phase-2-rename-plan--acquire_or_plan" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Rename <code>plan_node</code> → <code>acquire_or_plan_node</code>.</li>
+<li>Rename graph node <code>"plan"</code> → <code>"acquire_or_plan"</code>.</li>
+<li>Update all references in <code>runner.py</code>, tests, and AGENTS.md.</li>
+</ol>
+<h3 id="phase-3-extract-state-updates-into-composable-helpers">Phase 3: Extract state updates into composable helpers<a class="headerlink" href="#phase-3-extract-state-updates-into-composable-helpers" title="Permanent link">&para;</a></h3>
+<p>The current code assembles <code>out = {"decision": ..., "iterations": ..., "status": ...}</code> with conditional <code>schema</code> and <code>dynamic_decompositions</code> merges in 9 different return paths. Extract a helper:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">_build_plan_output</span><span class="p">(</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="n">decision</span><span class="p">:</span> <span class="n">PlannerDecision</span><span class="p">,</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="n">iterations</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">status</span><span class="p">:</span> <span class="n">Status</span><span class="p">,</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="o">*</span><span class="p">,</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="n">schema_changed</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="n">schema_dict</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="n">decomps_changed</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="n">dynamic_decomps</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    <span class="n">original_decomps</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>    <span class="o">...</span>
+</code></pre></div>
+<p>This eliminates the 9-way conditional-return pattern without changing graph topology.</p>
+<h3 id="phase-4-optional-extract-validate_decision-node">Phase 4 (optional): Extract <code>validate_decision</code> node<a class="headerlink" href="#phase-4-optional-extract-validate_decision-node" title="Permanent link">&para;</a></h3>
+<p>If <code>acquire_or_plan</code> is still too complex after Phase 1–3, extract post-LLM rewriting into a <code>validate_decision</code> node between <code>acquire_or_plan</code> and action nodes.</p>
+<h2 id="4-what-stays-in-acquire_or_plan">4. What Stays in <code>acquire_or_plan</code><a class="headerlink" href="#4-what-stays-in-acquire_or_plan" title="Permanent link">&para;</a></h2>
+<p>After Phase 1 extraction, the remaining <code>acquire_or_plan_node</code> contains:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>1. Check calculator blocked → compute acquisition task from blocking errors
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>2. If acquisition_task → produce decision, adjust for calculator, return
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>3. Check auto_finish conditions → produce finish decision
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>4. Build planner prompt → call LLM → parse PlannerDecision
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>5. If LLM fails → produce finish decision
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>6. Post-LLM rewriting:
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>   a. Generate dynamic decomposition if LLM targets a composite field
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>   b. _redirect_derived_direct_decision()
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>   c. _redirect_premature_ask_for_web_field()
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>   d. Per-field search cap check
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>   e. Per-field ask cap check
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>   f. _adjust_calculation_decision()
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>7. Log + emit event + return state updates
+</code></pre></div>
+<p>This is still substantial (~200 LOC) but each step is sequential and serial — no more guard interleaving. The function reads top-to-bottom without early returns for guard conditions.</p>
+<h2 id="5-state-schema-changes">5. State Schema Changes<a class="headerlink" href="#5-state-schema-changes" title="Permanent link">&para;</a></h2>
+<p>The <code>State</code> TypedDict needs one new field for <code>pre_check</code> routing:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">State</span><span class="p">(</span><span class="n">TypedDict</span><span class="p">):</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="c1"># ... existing fields ...</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="n">_pre_check_route</span><span class="p">:</span> <span class="nb">str</span>  <span class="c1"># set by pre_check_node, consumed by route_after_pre_check</span>
+</code></pre></div>
+<p>Alternatively, encode the route in the <code>PlannerDecision.action</code> enum by extending <code>Action</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">Action</span> <span class="o">=</span> <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;search&quot;</span><span class="p">,</span> <span class="s2">&quot;reflect&quot;</span><span class="p">,</span> <span class="s2">&quot;ask_user&quot;</span><span class="p">,</span> <span class="s2">&quot;calculate&quot;</span><span class="p">,</span> <span class="s2">&quot;finish&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>                 <span class="s2">&quot;ask_region&quot;</span><span class="p">,</span> <span class="s2">&quot;ask_currency&quot;</span><span class="p">,</span>  <span class="c1"># new</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>                 <span class="s2">&quot;finish_aborted&quot;</span><span class="p">,</span> <span class="s2">&quot;finish_iter_cap&quot;</span><span class="p">,</span> <span class="s2">&quot;finish_calc_cap&quot;</span><span class="p">,</span> <span class="s2">&quot;finish_calc_done&quot;</span><span class="p">]</span>  <span class="c1"># new</span>
+</code></pre></div>
+<p><strong>Recommendation:</strong> Use a separate <code>_pre_check_route</code> field. It keeps <code>Action</code> clean (action nodes only see action-relevant decisions) and avoids polluting <code>PlannerDecision</code> with guard-only variants.</p>
+<h2 id="6-risks-and-mitigations">6. Risks and Mitigations<a class="headerlink" href="#6-risks-and-mitigations" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Loop-back edge change (<code>plan</code> → <code>pre_check</code>) changes checkpointer state</td>
+<td>LangGraph checkpointer is keyed by state, not node name. Test that resume-after-interrupt still works.</td>
+</tr>
+<tr>
+<td>Region/currency questions produce decisions before <code>pre_check</code> existed</td>
+<td><code>pre_check_node</code> produces the same <code>PlannerDecision</code> objects that <code>plan_node</code> currently does for these cases — no behavioral change.</td>
+</tr>
+<tr>
+<td><code>_build_plan_output</code> helper hides conditional logic</td>
+<td>Unit-test it separately; it's pure data assembly.</td>
+</tr>
+<tr>
+<td>Dynamic decomposition logic in <code>pre_check</code> depends on schema changes from the same function</td>
+<td>Split <code>pre_check</code> into two steps if needed: <code>pre_check_guards</code> (pure guards) → <code>pre_check_preprocess</code> (schema mutation).</td>
+</tr>
+<tr>
+<td>Redirect functions (<code>_redirect_derived_direct_decision</code>, etc.) read state that may have changed between <code>pre_check</code> and <code>acquire_or_plan</code></td>
+<td>They don't — they read <code>state</code> which is the same snapshot. State only mutates between node executions via LangGraph's reducer pattern.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-comparison-before-vs-after">7. Comparison: Before vs After<a class="headerlink" href="#7-comparison-before-vs-after" title="Permanent link">&para;</a></h2>
+<h3 id="before-current">Before (current)<a class="headerlink" href="#before-current" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>START → plan(guards + prerequisites + preprocessing + acquisition + LLM + rewriting) → route → action nodes → loop back to plan
+</code></pre></div>
+<p><strong>1 node, ~350 LOC, 9 return paths, 7 interleaved concerns, 0 graph-level routing intelligence.</strong></p>
+<h3 id="after-proposed">After (proposed)<a class="headerlink" href="#after-proposed" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>START → pre_check(guards + prerequisites + preprocessing) → route → acquire_or_plan(acquisition + LLM + rewriting) → route → action nodes → loop back to pre_check
+</code></pre></div>
+<p><strong>2 nodes, ~150 + ~200 LOC, 7 return paths in <code>pre_check</code> (all early-return guards), 1 sequential path in <code>acquire_or_plan</code>. Graph encodes which checks happen before the LLM call.</strong></p>
+<h2 id="8-summary">8. Summary<a class="headerlink" href="#8-summary" title="Permanent link">&para;</a></h2>
+<p>The <code>plan</code> node mixes guard checks, prerequisite questions, schema preprocessing, deterministic routing, LLM calls, and post-LLM rewriting into a single 350-line function with 9 return paths. The proposal:</p>
+<ol>
+<li><strong>Extract <code>pre_check</code> node</strong> — all no-LLM guard checks and prerequisites run first, short-circuit to <code>finish</code> or <code>ask_user</code> as needed.</li>
+<li><strong>Rename <code>plan</code> → <code>acquire_or_plan</code></strong> — retains the LLM call, acquisition logic, and post-LLM rewriting.</li>
+<li><strong>Rewire loop-back edges</strong> to <code>pre_check</code> instead of <code>plan</code>, ensuring guards run every iteration.</li>
+<li><strong>Add <code>route_after_pre_check</code> conditional edge</strong> — gives the graph actual routing intelligence instead of a trivial string dispatch.</li>
+<li><strong>Keep post-LLM rewriting in <code>acquire_or_plan</code></strong> for Phase 1; extract to <code>validate_decision</code> node later if needed.</li>
+<li><strong>Extract <code>_build_plan_output</code> helper</strong> to collapse the 9 conditional-return pattern into a single return with composable state assembly.</li>
+</ol>
+<p>This makes the graph topology reflect the actual control flow, makes <code>pre_check</code> independently testable without LLM, and reduces cognitive load per node from ~350 LOC to ~150 LOC + ~200 LOC with clear separation of concerns.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Korridzy &mdash; content licensed <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC&nbsp;BY&nbsp;4.0</a>
+
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/Korridzy" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.top", "navigation.instant", "navigation.instant.progress", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
