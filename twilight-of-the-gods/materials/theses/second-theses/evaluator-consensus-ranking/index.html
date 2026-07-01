@@ -1,0 +1,3463 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Notes and experiments by Korridzy.">
+      
+      
+        <meta name="author" content="Korridzy">
+      
+      
+        <link rel="canonical" href="https://wtf.korridzy.com/twilight-of-the-gods/materials/theses/second-theses/evaluator-consensus-ranking/">
+      
+      
+      
+      
+        
+          <link rel="alternate" href="/" hreflang="en">
+        
+          <link rel="alternate" href="/ru/" hreflang="ru">
+        
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../../../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Evaluator Consensus Ranking Report - wtf</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+  <script defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="098e6142-2d46-44cb-9b0e-e5073990c842"></script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#evaluator-consensus-ranking-report" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="wtf" class="md-header__button md-logo" aria-label="wtf" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            wtf
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Evaluator Consensus Ranking Report
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/ru/" hreflang="ru" class="md-select__link">
+              Русский
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../ru/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../archive/2026/" class="md-tabs__link">
+          
+  
+  
+  Archive
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../category/ai-agents/" class="md-tabs__link">
+          
+  
+  
+  Categories
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="wtf" class="md-nav__button md-logo" aria-label="wtf" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    wtf
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../ru/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archive
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Archive
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../archive/2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Categories
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Categories
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../category/ai-agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI agents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../category/llm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../category/langgraph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LangGraph
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../category/python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../category/refactoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Refactoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scope
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source Set
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#result-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Result Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scoring-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scoring Method
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aspect-taxonomy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aspect Taxonomy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#claim-ledger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Claim Ledger
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-scoring-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full Scoring Matrix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aggregate-vector-and-agreement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aggregate Vector And Agreement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overall-opinion-generated-from-the-aggregate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overall Opinion Generated From The Aggregate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distance-to-overall-opinion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Distance To Overall Opinion
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pairwise-distance-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pairwise Distance Matrix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#medoid-ranking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Medoid Ranking
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-scoring-evidence-ledger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full Scoring Evidence Ledger
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Full Scoring Evidence Ledger">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ds-deepseek-4-pro-rangemd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DS: deepseek-4-pro-range.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ge-gemini-31-pro-rangemd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GE: gemini-3.1-pro-range.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gl-glm-51-pro-rangemd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GL: glm-5.1-pro-range.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g54-gpt-54-rangemd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        G54: gpt-5.4-range.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g55-gpt-55-rangemd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        G55: gpt-5.5-range.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ki-kimi-26-rangemd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KI: kimi-2.6-range.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mi-mimo-25-pro-rangemd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MI: mimo-2.5-pro-range.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#op-opus-47-rangemd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OP: opus-4.7-range.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q36-qwen-36-rangemd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q36: qwen-3.6-range.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q37-qwen-37-max-rangemd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q37: qwen-3.7-max-range.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#normalization-and-ambiguity-audit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Normalization And Ambiguity Audit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reproducibility-snippet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reproducibility Snippet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-answer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final Answer
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="evaluator-consensus-ranking-report">Evaluator Consensus Ranking Report<a class="headerlink" href="#evaluator-consensus-ranking-report" title="Permanent link">&para;</a></h1>
+<h2 id="scope">Scope<a class="headerlink" href="#scope" title="Permanent link">&para;</a></h2>
+<p>This report applies <code>analyse-evaluation-method.md</code> to the 10 evaluator reports in this directory. It ranks evaluator reports by:</p>
+<ol>
+<li>distance to the equal-weight overall opinion;</li>
+<li>medoid centrality under pairwise evaluator distances.</li>
+</ol>
+<p>This is an evaluator-opinion synthesis only. It does not add an independent architecture judgment about the planner refactor.</p>
+<h2 id="source-set">Source Set<a class="headerlink" href="#source-set" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Evaluator report</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DS</td>
+<td><code>deepseek-4-pro-range.md</code></td>
+</tr>
+<tr>
+<td>GE</td>
+<td><code>gemini-3.1-pro-range.md</code></td>
+</tr>
+<tr>
+<td>GL</td>
+<td><code>glm-5.1-pro-range.md</code></td>
+</tr>
+<tr>
+<td>G54</td>
+<td><code>gpt-5.4-range.md</code></td>
+</tr>
+<tr>
+<td>G55</td>
+<td><code>gpt-5.5-range.md</code></td>
+</tr>
+<tr>
+<td>KI</td>
+<td><code>kimi-2.6-range.md</code></td>
+</tr>
+<tr>
+<td>MI</td>
+<td><code>mimo-2.5-pro-range.md</code></td>
+</tr>
+<tr>
+<td>OP</td>
+<td><code>opus-4.7-range.md</code></td>
+</tr>
+<tr>
+<td>Q36</td>
+<td><code>qwen-3.6-range.md</code></td>
+</tr>
+<tr>
+<td>Q37</td>
+<td><code>qwen-3.7-max-range.md</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>analyse-evaluation-method.md</code> is the method source, not an evaluator.</p>
+<h2 id="result-summary">Result Summary<a class="headerlink" href="#result-summary" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Ranking type</th>
+<th>Winner</th>
+<th style="text-align: right;">Score</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Closest to equal-weight overall opinion</td>
+<td>DS</td>
+<td style="text-align: right;">0.131789</td>
+<td>Lowest weighted Euclidean distance from the aggregate vector.</td>
+</tr>
+<tr>
+<td>Medoid</td>
+<td>DS</td>
+<td style="text-align: right;">0.276161</td>
+<td>Lowest equal-weight total pairwise distance to all evaluator reports.</td>
+</tr>
+</tbody>
+</table>
+<p>Both methods select <code>deepseek-4-pro-range.md</code> as the most central evaluator opinion.</p>
+<h2 id="scoring-method">Scoring Method<a class="headerlink" href="#scoring-method" title="Permanent link">&para;</a></h2>
+<p>The method file requires a formal feature-space representation before aggregation. This report uses 19 fine-grained semantic aspects induced from recurring evaluator claims.</p>
+<p>Rules:</p>
+<ul>
+<li>Evaluator weights are equal: <code>w_i = 0.1</code>.</li>
+<li>Aspect-distance weights are equal: <code>alpha_j = 1 / 19</code>.</li>
+<li>Scores use <code>[-1, 1]</code>.</li>
+<li><code>+1</code> means strong support for the aspect statement.</li>
+<li><code>0</code> means neutral, balanced, or not mentioned.</li>
+<li><code>-1</code> means strong rejection of the aspect statement.</li>
+<li>Only clearly equivalent judgments are normalized into the same aspect.</li>
+<li>If equivalence is unclear, it remains a separate aspect.</li>
+<li>Unmentioned aspects are scored <code>0</code> by the user-selected override.</li>
+<li>After neutral filling, every matrix cell is present and <code>c_ij = 1</code>.</li>
+<li>Mention status is tracked separately in the evidence ledger.</li>
+<li>Unresolved ambiguous cells: <code>0 / 190 = 0.0%</code>, below the <code>&lt;= 3%</code> requirement.</li>
+</ul>
+<p>Rounding policy:</p>
+<ul>
+<li>Source scores are shown to one decimal because scoring was assigned on a tenth-point rubric.</li>
+<li>Aggregate and variance values are shown to four decimals.</li>
+<li>Ranking metrics are shown to six decimals.</li>
+<li>Pairwise matrix entries are shown to four decimals.</li>
+<li>Clean ordering uses full-precision values before rounding; if a full-precision tie occurred, the tie-break would be source filename lexicographic order. No full-precision ties occurred.</li>
+</ul>
+<h2 id="aspect-taxonomy">Aspect Taxonomy<a class="headerlink" href="#aspect-taxonomy" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Directional statement scored positively</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A01</td>
+<td>A moderate 4-6 phase graph is the target sweet spot.</td>
+</tr>
+<tr>
+<td>A02</td>
+<td>DeepSeek's <code>guard -&gt; prepare -&gt; plan -&gt; adjust</code> topology is a strong base.</td>
+</tr>
+<tr>
+<td>A03</td>
+<td>GPT-5.4's <code>tick -&gt; bootstrap_gate -&gt; prepare_context -&gt; acquisition_gate -&gt; llm_plan -&gt; decision_policy</code> topology is a strong base.</td>
+</tr>
+<tr>
+<td>A04</td>
+<td>GPT-5.5's detailed state/test/non-goal hygiene should be valued or borrowed.</td>
+</tr>
+<tr>
+<td>A05</td>
+<td>Two- or three-node minimal splits are insufficient as the final architecture.</td>
+</tr>
+<tr>
+<td>A06</td>
+<td>Eight-plus-node or atomized graphs are over-decomposed and costly.</td>
+</tr>
+<tr>
+<td>A07</td>
+<td>A single post-LLM <code>decision_policy</code>/<code>adjust</code> node is preferred.</td>
+</tr>
+<tr>
+<td>A08</td>
+<td>Post-LLM correction should be split into several graph nodes.</td>
+</tr>
+<tr>
+<td>A09</td>
+<td>Edge functions must remain pure and must not mutate state or decisions.</td>
+</tr>
+<tr>
+<td>A10</td>
+<td>Action loopbacks should return to a canonical top-of-loop entry node.</td>
+</tr>
+<tr>
+<td>A11</td>
+<td>A dedicated iteration <code>tick</code>/<code>enter_iteration</code> phase is important.</td>
+</tr>
+<tr>
+<td>A12</td>
+<td>Dedicated region/currency bootstrap nodes are beneficial.</td>
+</tr>
+<tr>
+<td>A13</td>
+<td>Existing public contracts should stay stable, including single <code>ask_user</code> interrupt and outer graph boundaries.</td>
+</tr>
+<tr>
+<td>A14</td>
+<td>State/checkpoint discipline should avoid <code>_route</code>-style hints and rich cached objects unless proven safe.</td>
+</tr>
+<tr>
+<td>A15</td>
+<td>LLM-failure or decision-origin state is valuable for calculator/reflect safety.</td>
+</tr>
+<tr>
+<td>A16</td>
+<td>Helper-first staged migration with green tests is required.</td>
+</tr>
+<tr>
+<td>A17</td>
+<td><code>_build_plan_output</code> or equivalent output-state consolidation is valuable.</td>
+</tr>
+<tr>
+<td>A18</td>
+<td>Opus-style state ownership, dispatch, or naming documentation is valuable as a reference.</td>
+</tr>
+<tr>
+<td>A19</td>
+<td>Finish validation such as <code>route_finish_check</code>/<code>finish_check</code> is valuable.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="claim-ledger">Claim Ledger<a class="headerlink" href="#claim-ledger" title="Permanent link">&para;</a></h2>
+<p>The taxonomy was induced from these recurring evaluator claims:</p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Recurring claim sources</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A01</td>
+<td>DS, GE, G54, G55, KI, MI, OP, Q36, and Q37 converge on a moderate graph rather than status quo or graph explosion.</td>
+</tr>
+<tr>
+<td>A02</td>
+<td>DS, KI, MI, and Q37 rank DeepSeek very high; OP and GL treat it as a strong middle-ground source.</td>
+</tr>
+<tr>
+<td>A03</td>
+<td>GE, G54, G55, OP, Q36, and Q37 rank GPT-5.4 first or use it as the structural spine.</td>
+</tr>
+<tr>
+<td>A04</td>
+<td>GL ranks GPT-5.5 first; G54, G55, OP, and Q37 value its state/test/non-goal detail even when not adopting all nodes.</td>
+</tr>
+<tr>
+<td>A05</td>
+<td>Most reports mark GLM/Gemini/Mimo-style 2-3 node splits as useful first steps but incomplete final targets.</td>
+</tr>
+<tr>
+<td>A06</td>
+<td>Most reports reject Opus/Qwen/GPT-5.5/Kimi-level atomization when it creates too many checkpointed hops.</td>
+</tr>
+<tr>
+<td>A07</td>
+<td>DS, GE, G54, G55, KI, MI, OP, Q36, and Q37 favor one policy node or equivalent merged correction stage.</td>
+</tr>
+<tr>
+<td>A08</td>
+<td>GL partly values splitting correction concerns; most other reports reject multi-node correction chains for first implementation.</td>
+</tr>
+<tr>
+<td>A09</td>
+<td>DS, G54, G55, KI, MI, OP, Q36, and Q37 explicitly reject mutating edge functions.</td>
+</tr>
+<tr>
+<td>A10</td>
+<td>DS, G54, G55, KI, MI, OP, Q36, and Q37 converge on <code>tick</code>, <code>guard</code>, <code>pre_check</code>, or equivalent loop entry.</td>
+</tr>
+<tr>
+<td>A11</td>
+<td>G54, G55, OP, Q36, and Q37 strongly emphasize a dedicated iteration phase; DS and MI borrow or rename toward it.</td>
+</tr>
+<tr>
+<td>A12</td>
+<td>KI supports explicit bootstrap nodes; many other reports prefer a merged bootstrap gate or existing <code>ask_user</code> flow.</td>
+</tr>
+<tr>
+<td>A13</td>
+<td>G54, G55, OP, Q36, and Q37 strongly protect public planner/outer graph/interrupt contracts.</td>
+</tr>
+<tr>
+<td>A14</td>
+<td>G54, G55, OP, Q36, and several others reject <code>_route</code> fields and unproven checkpoint caches; DS/KI/Q37 are more positive on recipes in state.</td>
+</tr>
+<tr>
+<td>A15</td>
+<td>GL, G54, G55, OP, Q36, and Q37 value <code>llm_failed</code> or <code>decision_origin</code>.</td>
+</tr>
+<tr>
+<td>A16</td>
+<td>All detailed reports reward helper extraction and staged migration.</td>
+</tr>
+<tr>
+<td>A17</td>
+<td>GL, G54, MI, Q36, and Q37 value GLM's <code>_build_plan_output</code> helper; several others do not mention it.</td>
+</tr>
+<tr>
+<td>A18</td>
+<td>DS, GL, OP, Q36, and Q37 value Opus's state ownership, dispatch, or naming reference material.</td>
+</tr>
+<tr>
+<td>A19</td>
+<td>Q36 and Q37 strongly value finish validation; OP and DS note the idea; many reports leave it neutral.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="full-scoring-matrix">Full Scoring Matrix<a class="headerlink" href="#full-scoring-matrix" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Evaluator</th>
+<th style="text-align: right;">A01</th>
+<th style="text-align: right;">A02</th>
+<th style="text-align: right;">A03</th>
+<th style="text-align: right;">A04</th>
+<th style="text-align: right;">A05</th>
+<th style="text-align: right;">A06</th>
+<th style="text-align: right;">A07</th>
+<th style="text-align: right;">A08</th>
+<th style="text-align: right;">A09</th>
+<th style="text-align: right;">A10</th>
+<th style="text-align: right;">A11</th>
+<th style="text-align: right;">A12</th>
+<th style="text-align: right;">A13</th>
+<th style="text-align: right;">A14</th>
+<th style="text-align: right;">A15</th>
+<th style="text-align: right;">A16</th>
+<th style="text-align: right;">A17</th>
+<th style="text-align: right;">A18</th>
+<th style="text-align: right;">A19</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DS</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">+0.5</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">+0.9</td>
+<td style="text-align: right;">+0.9</td>
+<td style="text-align: right;">-0.8</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">-0.3</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">+0.3</td>
+<td style="text-align: right;">+0.6</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+0.2</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">+0.4</td>
+</tr>
+<tr>
+<td>GE</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">-0.8</td>
+<td style="text-align: right;">+0.7</td>
+<td style="text-align: right;">+0.4</td>
+<td style="text-align: right;">+0.4</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">+0.3</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">+0.4</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.0</td>
+</tr>
+<tr>
+<td>GL</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">+0.7</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">+0.3</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">+0.2</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">+0.6</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+0.9</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">+0.9</td>
+<td style="text-align: right;">0.0</td>
+</tr>
+<tr>
+<td>G54</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+0.4</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">+0.9</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">-0.6</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">-0.7</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">+0.4</td>
+<td style="text-align: right;">0.0</td>
+</tr>
+<tr>
+<td>G55</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+0.4</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">+0.9</td>
+<td style="text-align: right;">+0.9</td>
+<td style="text-align: right;">-0.5</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">-0.5</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+0.9</td>
+<td style="text-align: right;">+0.9</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">+0.4</td>
+<td style="text-align: right;">0.0</td>
+</tr>
+<tr>
+<td>KI</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">+0.3</td>
+<td style="text-align: right;">+0.7</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">-0.7</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+0.5</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">+0.2</td>
+<td style="text-align: right;">+0.2</td>
+<td style="text-align: right;">+0.4</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">+0.6</td>
+<td style="text-align: right;">0.0</td>
+</tr>
+<tr>
+<td>MI</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">+0.3</td>
+<td style="text-align: right;">+0.5</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">-0.7</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+0.6</td>
+<td style="text-align: right;">-0.5</td>
+<td style="text-align: right;">+0.7</td>
+<td style="text-align: right;">+0.4</td>
+<td style="text-align: right;">+0.5</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">+0.5</td>
+<td style="text-align: right;">0.0</td>
+</tr>
+<tr>
+<td>OP</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+0.9</td>
+<td style="text-align: right;">+0.9</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">-0.6</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">-0.5</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">+0.7</td>
+</tr>
+<tr>
+<td>Q36</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+0.5</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+0.4</td>
+<td style="text-align: right;">+0.5</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">-0.7</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">-0.6</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">+1.0</td>
+</tr>
+<tr>
+<td>Q37</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+0.9</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">+0.9</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">-0.7</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">-0.7</td>
+<td style="text-align: right;">+0.9</td>
+<td style="text-align: right;">+0.2</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+1.0</td>
+<td style="text-align: right;">+0.8</td>
+<td style="text-align: right;">+1.0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="aggregate-vector-and-agreement">Aggregate Vector And Agreement<a class="headerlink" href="#aggregate-vector-and-agreement" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th style="text-align: right;">Mean score</th>
+<th style="text-align: right;">Variance</th>
+<th>Agreement note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A01</td>
+<td style="text-align: right;">0.9800</td>
+<td style="text-align: right;">0.0036</td>
+<td>Very strong consensus for moderate graph sizing.</td>
+</tr>
+<tr>
+<td>A02</td>
+<td style="text-align: right;">0.7600</td>
+<td style="text-align: right;">0.0524</td>
+<td>Strong support for DeepSeek as one central topology source.</td>
+</tr>
+<tr>
+<td>A03</td>
+<td style="text-align: right;">0.9100</td>
+<td style="text-align: right;">0.0129</td>
+<td>Very strong support for GPT-5.4 as topology source.</td>
+</tr>
+<tr>
+<td>A04</td>
+<td style="text-align: right;">0.5900</td>
+<td style="text-align: right;">0.1029</td>
+<td>Moderate support; disagreement comes from GPT-5.5 being valued but often seen as node-heavy.</td>
+</tr>
+<tr>
+<td>A05</td>
+<td style="text-align: right;">0.7600</td>
+<td style="text-align: right;">0.0224</td>
+<td>Strong consensus that minimal splits are not enough as final shape.</td>
+</tr>
+<tr>
+<td>A06</td>
+<td style="text-align: right;">0.9100</td>
+<td style="text-align: right;">0.0049</td>
+<td>Very strong consensus against atomized graph shapes.</td>
+</tr>
+<tr>
+<td>A07</td>
+<td style="text-align: right;">0.9400</td>
+<td style="text-align: right;">0.0064</td>
+<td>Very strong consensus for one policy/adjust node.</td>
+</tr>
+<tr>
+<td>A08</td>
+<td style="text-align: right;">-0.5800</td>
+<td style="text-align: right;">0.0936</td>
+<td>Moderate rejection of multi-node correction chains.</td>
+</tr>
+<tr>
+<td>A09</td>
+<td style="text-align: right;">0.9500</td>
+<td style="text-align: right;">0.0105</td>
+<td>Very strong consensus for pure routing edges.</td>
+</tr>
+<tr>
+<td>A10</td>
+<td style="text-align: right;">0.9400</td>
+<td style="text-align: right;">0.0324</td>
+<td>Very strong consensus for canonical loop entry.</td>
+</tr>
+<tr>
+<td>A11</td>
+<td style="text-align: right;">0.8100</td>
+<td style="text-align: right;">0.0489</td>
+<td>Strong support for dedicated iteration lifecycle.</td>
+</tr>
+<tr>
+<td>A12</td>
+<td style="text-align: right;">-0.2800</td>
+<td style="text-align: right;">0.2076</td>
+<td>Highest disagreement; Kimi supports dedicated bootstrap nodes, many others reject them.</td>
+</tr>
+<tr>
+<td>A13</td>
+<td style="text-align: right;">0.7400</td>
+<td style="text-align: right;">0.1144</td>
+<td>Strong support for preserving contracts, with some shorter reports neutral.</td>
+</tr>
+<tr>
+<td>A14</td>
+<td style="text-align: right;">0.5700</td>
+<td style="text-align: right;">0.0981</td>
+<td>Moderate support for checkpoint caution; recipe caching creates disagreement.</td>
+</tr>
+<tr>
+<td>A15</td>
+<td style="text-align: right;">0.6800</td>
+<td style="text-align: right;">0.0876</td>
+<td>Strong support for LLM failure/provenance tracking.</td>
+</tr>
+<tr>
+<td>A16</td>
+<td style="text-align: right;">0.9300</td>
+<td style="text-align: right;">0.0321</td>
+<td>Very strong consensus for staged migration.</td>
+</tr>
+<tr>
+<td>A17</td>
+<td style="text-align: right;">0.4400</td>
+<td style="text-align: right;">0.1664</td>
+<td>Moderate support but many reports do not mention the helper.</td>
+</tr>
+<tr>
+<td>A18</td>
+<td style="text-align: right;">0.6000</td>
+<td style="text-align: right;">0.0700</td>
+<td>Moderate support for Opus reference material.</td>
+</tr>
+<tr>
+<td>A19</td>
+<td style="text-align: right;">0.3100</td>
+<td style="text-align: right;">0.1689</td>
+<td>Weak-to-moderate support; only some reports emphasize finish validation.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="overall-opinion-generated-from-the-aggregate">Overall Opinion Generated From The Aggregate<a class="headerlink" href="#overall-opinion-generated-from-the-aggregate" title="Permanent link">&para;</a></h2>
+<p>The equal-weight overall evaluator opinion is strongly in favor of a moderate phased planner-graph refactor. The center of opinion most strongly supports a 4-6 phase topology, pure routing edges, a canonical loop-entry node, a small LLM-only planning node, a single post-LLM policy/adjustment node, and a staged helper-first migration. GPT-5.4 and DeepSeek are the two strongest topology anchors in the aggregate, with GPT-5.5 contributing state, test, non-goal, and LLM-failure hygiene. The clearest aggregate rejections are over-atomized graphs, mutation inside edge functions, and treating every post-LLM correction as a separate checkpointed node. The most disputed areas are dedicated region/currency bootstrap nodes, recipe caching in checkpoint state, <code>_build_plan_output</code> emphasis, and finish-validation placement.</p>
+<h2 id="distance-to-overall-opinion">Distance To Overall Opinion<a class="headerlink" href="#distance-to-overall-opinion" title="Permanent link">&para;</a></h2>
+<p>Formula:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>d_i = sqrt(sum_j alpha_j * (s_ij - mean_j)^2)
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>alpha_j = 1 / 19
+</code></pre></div>
+<p>Clean forced ordering:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Rank</th>
+<th>Evaluator</th>
+<th style="text-align: right;">Distance to center</th>
+<th style="text-align: right;">Gap from previous</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td>DS</td>
+<td style="text-align: right;">0.131789</td>
+<td style="text-align: right;">0.000000</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>MI</td>
+<td style="text-align: right;">0.184961</td>
+<td style="text-align: right;">0.053172</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>G55</td>
+<td style="text-align: right;">0.210513</td>
+<td style="text-align: right;">0.025552</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td>G54</td>
+<td style="text-align: right;">0.222900</td>
+<td style="text-align: right;">0.012387</td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td>OP</td>
+<td style="text-align: right;">0.233734</td>
+<td style="text-align: right;">0.010834</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td>Q36</td>
+<td style="text-align: right;">0.244949</td>
+<td style="text-align: right;">0.011215</td>
+</tr>
+<tr>
+<td style="text-align: right;">7</td>
+<td>Q37</td>
+<td style="text-align: right;">0.263778</td>
+<td style="text-align: right;">0.018829</td>
+</tr>
+<tr>
+<td style="text-align: right;">8</td>
+<td>GL</td>
+<td style="text-align: right;">0.306937</td>
+<td style="text-align: right;">0.043159</td>
+</tr>
+<tr>
+<td style="text-align: right;">9</td>
+<td>KI</td>
+<td style="text-align: right;">0.344429</td>
+<td style="text-align: right;">0.037492</td>
+</tr>
+<tr>
+<td style="text-align: right;">10</td>
+<td>GE</td>
+<td style="text-align: right;">0.400657</td>
+<td style="text-align: right;">0.056228</td>
+</tr>
+</tbody>
+</table>
+<p>Closest opinion to the overall opinion: <code>deepseek-4-pro-range.md</code>.</p>
+<h2 id="pairwise-distance-matrix">Pairwise Distance Matrix<a class="headerlink" href="#pairwise-distance-matrix" title="Permanent link">&para;</a></h2>
+<p>Formula:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>d(i, k) = sqrt(sum_j alpha_j * (s_ij - s_kj)^2)
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>alpha_j = 1 / 19
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>From \ To</th>
+<th style="text-align: right;">DS</th>
+<th style="text-align: right;">GE</th>
+<th style="text-align: right;">GL</th>
+<th style="text-align: right;">G54</th>
+<th style="text-align: right;">G55</th>
+<th style="text-align: right;">KI</th>
+<th style="text-align: right;">MI</th>
+<th style="text-align: right;">OP</th>
+<th style="text-align: right;">Q36</th>
+<th style="text-align: right;">Q37</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DS</td>
+<td style="text-align: right;">0.0000</td>
+<td style="text-align: right;">0.4136</td>
+<td style="text-align: right;">0.3763</td>
+<td style="text-align: right;">0.3236</td>
+<td style="text-align: right;">0.2819</td>
+<td style="text-align: right;">0.3269</td>
+<td style="text-align: right;">0.2152</td>
+<td style="text-align: right;">0.2606</td>
+<td style="text-align: right;">0.2902</td>
+<td style="text-align: right;">0.2734</td>
+</tr>
+<tr>
+<td>GE</td>
+<td style="text-align: right;">0.4136</td>
+<td style="text-align: right;">0.0000</td>
+<td style="text-align: right;">0.5813</td>
+<td style="text-align: right;">0.5370</td>
+<td style="text-align: right;">0.4952</td>
+<td style="text-align: right;">0.3449</td>
+<td style="text-align: right;">0.4007</td>
+<td style="text-align: right;">0.5685</td>
+<td style="text-align: right;">0.5680</td>
+<td style="text-align: right;">0.5835</td>
+</tr>
+<tr>
+<td>GL</td>
+<td style="text-align: right;">0.3763</td>
+<td style="text-align: right;">0.5813</td>
+<td style="text-align: right;">0.0000</td>
+<td style="text-align: right;">0.3713</td>
+<td style="text-align: right;">0.3728</td>
+<td style="text-align: right;">0.4507</td>
+<td style="text-align: right;">0.3940</td>
+<td style="text-align: right;">0.3920</td>
+<td style="text-align: right;">0.4431</td>
+<td style="text-align: right;">0.4249</td>
+</tr>
+<tr>
+<td>G54</td>
+<td style="text-align: right;">0.3236</td>
+<td style="text-align: right;">0.5370</td>
+<td style="text-align: right;">0.3713</td>
+<td style="text-align: right;">0.0000</td>
+<td style="text-align: right;">0.1947</td>
+<td style="text-align: right;">0.5282</td>
+<td style="text-align: right;">0.2819</td>
+<td style="text-align: right;">0.2884</td>
+<td style="text-align: right;">0.2800</td>
+<td style="text-align: right;">0.3332</td>
+</tr>
+<tr>
+<td>G55</td>
+<td style="text-align: right;">0.2819</td>
+<td style="text-align: right;">0.4952</td>
+<td style="text-align: right;">0.3728</td>
+<td style="text-align: right;">0.1947</td>
+<td style="text-align: right;">0.0000</td>
+<td style="text-align: right;">0.4634</td>
+<td style="text-align: right;">0.3332</td>
+<td style="text-align: right;">0.2176</td>
+<td style="text-align: right;">0.3364</td>
+<td style="text-align: right;">0.3980</td>
+</tr>
+<tr>
+<td>KI</td>
+<td style="text-align: right;">0.3269</td>
+<td style="text-align: right;">0.3449</td>
+<td style="text-align: right;">0.4507</td>
+<td style="text-align: right;">0.5282</td>
+<td style="text-align: right;">0.4634</td>
+<td style="text-align: right;">0.0000</td>
+<td style="text-align: right;">0.3763</td>
+<td style="text-align: right;">0.4995</td>
+<td style="text-align: right;">0.5346</td>
+<td style="text-align: right;">0.5385</td>
+</tr>
+<tr>
+<td>MI</td>
+<td style="text-align: right;">0.2152</td>
+<td style="text-align: right;">0.4007</td>
+<td style="text-align: right;">0.3940</td>
+<td style="text-align: right;">0.2819</td>
+<td style="text-align: right;">0.3332</td>
+<td style="text-align: right;">0.3763</td>
+<td style="text-align: right;">0.0000</td>
+<td style="text-align: right;">0.3859</td>
+<td style="text-align: right;">0.3195</td>
+<td style="text-align: right;">0.3162</td>
+</tr>
+<tr>
+<td>OP</td>
+<td style="text-align: right;">0.2606</td>
+<td style="text-align: right;">0.5685</td>
+<td style="text-align: right;">0.3920</td>
+<td style="text-align: right;">0.2884</td>
+<td style="text-align: right;">0.2176</td>
+<td style="text-align: right;">0.4995</td>
+<td style="text-align: right;">0.3859</td>
+<td style="text-align: right;">0.0000</td>
+<td style="text-align: right;">0.2763</td>
+<td style="text-align: right;">0.3154</td>
+</tr>
+<tr>
+<td>Q36</td>
+<td style="text-align: right;">0.2902</td>
+<td style="text-align: right;">0.5680</td>
+<td style="text-align: right;">0.4431</td>
+<td style="text-align: right;">0.2800</td>
+<td style="text-align: right;">0.3364</td>
+<td style="text-align: right;">0.5346</td>
+<td style="text-align: right;">0.3195</td>
+<td style="text-align: right;">0.2763</td>
+<td style="text-align: right;">0.0000</td>
+<td style="text-align: right;">0.2103</td>
+</tr>
+<tr>
+<td>Q37</td>
+<td style="text-align: right;">0.2734</td>
+<td style="text-align: right;">0.5835</td>
+<td style="text-align: right;">0.4249</td>
+<td style="text-align: right;">0.3332</td>
+<td style="text-align: right;">0.3980</td>
+<td style="text-align: right;">0.5385</td>
+<td style="text-align: right;">0.3162</td>
+<td style="text-align: right;">0.3154</td>
+<td style="text-align: right;">0.2103</td>
+<td style="text-align: right;">0.0000</td>
+</tr>
+</tbody>
+</table>
+<h2 id="medoid-ranking">Medoid Ranking<a class="headerlink" href="#medoid-ranking" title="Permanent link">&para;</a></h2>
+<p>Formula:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>medoid_score_i = sum_k 0.1 * d(i, k)
+</code></pre></div>
+<p>Clean forced ordering:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Rank</th>
+<th>Evaluator</th>
+<th style="text-align: right;">Equal-weight pairwise total</th>
+<th style="text-align: right;">Gap from previous</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td>DS</td>
+<td style="text-align: right;">0.276161</td>
+<td style="text-align: right;">0.000000</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>MI</td>
+<td style="text-align: right;">0.302303</td>
+<td style="text-align: right;">0.026142</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>G55</td>
+<td style="text-align: right;">0.309327</td>
+<td style="text-align: right;">0.007024</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td>G54</td>
+<td style="text-align: right;">0.313841</td>
+<td style="text-align: right;">0.004514</td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td>OP</td>
+<td style="text-align: right;">0.320413</td>
+<td style="text-align: right;">0.006572</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td>Q36</td>
+<td style="text-align: right;">0.325835</td>
+<td style="text-align: right;">0.005422</td>
+</tr>
+<tr>
+<td style="text-align: right;">7</td>
+<td>Q37</td>
+<td style="text-align: right;">0.339348</td>
+<td style="text-align: right;">0.013513</td>
+</tr>
+<tr>
+<td style="text-align: right;">8</td>
+<td>GL</td>
+<td style="text-align: right;">0.380641</td>
+<td style="text-align: right;">0.041293</td>
+</tr>
+<tr>
+<td style="text-align: right;">9</td>
+<td>KI</td>
+<td style="text-align: right;">0.406289</td>
+<td style="text-align: right;">0.025648</td>
+</tr>
+<tr>
+<td style="text-align: right;">10</td>
+<td>GE</td>
+<td style="text-align: right;">0.449273</td>
+<td style="text-align: right;">0.042984</td>
+</tr>
+</tbody>
+</table>
+<p>Medoid: <code>deepseek-4-pro-range.md</code>.</p>
+<h2 id="full-scoring-evidence-ledger">Full Scoring Evidence Ledger<a class="headerlink" href="#full-scoring-evidence-ledger" title="Permanent link">&para;</a></h2>
+<p>Each item follows <code>Aspect score status: evidence note</code>. <code>Unmentioned</code> means the evaluator report did not make a clear equivalent judgment for that aspect; the score is therefore neutral <code>0</code> by the user-selected override.</p>
+<h3 id="ds-deepseek-4-pro-rangemd">DS: <code>deepseek-4-pro-range.md</code><a class="headerlink" href="#ds-deepseek-4-pro-rangemd" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th style="text-align: right;">Score</th>
+<th>Status</th>
+<th>Evidence note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A01</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Calls the 4-node pipeline the "Goldilocks" balance and later recommends a 5-node synthesis.</td>
+</tr>
+<tr>
+<td>A02</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Ranks DeepSeek #1 and adopts its guard/prepare/plan/adjust topology.</td>
+</tr>
+<tr>
+<td>A03</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Ranks GPT-5.4 #2 and adopts its design principles and tick discipline.</td>
+</tr>
+<tr>
+<td>A04</td>
+<td style="text-align: right;">+0.5</td>
+<td>explicit</td>
+<td>Values GPT-5.5 organization, consequences, and <code>decision_origin</code>, but ranks it below top three.</td>
+</tr>
+<tr>
+<td>A05</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Treats GLM, Mimo, and Gemini minimal splits as useful but incomplete.</td>
+</tr>
+<tr>
+<td>A06</td>
+<td style="text-align: right;">+0.9</td>
+<td>explicit</td>
+<td>Criticizes Opus/Qwen-style graph expansion and <code>_route</code> patterns as over-complex.</td>
+</tr>
+<tr>
+<td>A07</td>
+<td style="text-align: right;">+0.9</td>
+<td>explicit</td>
+<td>Says one <code>decision_policy</code> or <code>adjust</code> node is enough and rejects corrector explosion.</td>
+</tr>
+<tr>
+<td>A08</td>
+<td style="text-align: right;">-0.8</td>
+<td>explicit</td>
+<td>Says splitting every corrector adds graph noise without enough benefit.</td>
+</tr>
+<tr>
+<td>A09</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Explicitly rejects redirects in edge functions as mutation outside nodes.</td>
+</tr>
+<tr>
+<td>A10</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Identifies canonical loop-entry as an adopted cross-cutting pattern.</td>
+</tr>
+<tr>
+<td>A11</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Adopts GPT-5.4's separate <code>tick</code> as an improvement over a combined guard.</td>
+</tr>
+<tr>
+<td>A12</td>
+<td style="text-align: right;">-0.3</td>
+<td>implied</td>
+<td>Notes separate bootstrap nodes can improve clarity, but final synthesis keeps them inside guard/bootstrap.</td>
+</tr>
+<tr>
+<td>A13</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Adopts anti-pattern constraints such as keeping <code>ask_user</code> as the sole interrupt.</td>
+</tr>
+<tr>
+<td>A14</td>
+<td style="text-align: right;">+0.3</td>
+<td>explicit</td>
+<td>Rejects <code>_route</code>; mixed because it also recommends <code>recipes</code> in state with serialization verification.</td>
+</tr>
+<tr>
+<td>A15</td>
+<td style="text-align: right;">+0.6</td>
+<td>explicit</td>
+<td>Recommends borrowing GPT-5.5's <code>decision_origin</code>.</td>
+</tr>
+<tr>
+<td>A16</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Treats helper extraction and staged verification as central to the best proposal.</td>
+</tr>
+<tr>
+<td>A17</td>
+<td style="text-align: right;">+0.2</td>
+<td>explicit</td>
+<td>Notes GLM's <code>_build_plan_output</code> helper as useful but not central.</td>
+</tr>
+<tr>
+<td>A18</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Adopts Opus's state ownership table, naming convention, and dispatch idea.</td>
+</tr>
+<tr>
+<td>A19</td>
+<td style="text-align: right;">+0.4</td>
+<td>explicit</td>
+<td>Notes Qwen-3.6's <code>route_finish_check</code> as a good safety idea but does not center it.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ge-gemini-31-pro-rangemd">GE: <code>gemini-3.1-pro-range.md</code><a class="headerlink" href="#ge-gemini-31-pro-rangemd" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th style="text-align: right;">Score</th>
+<th>Status</th>
+<th>Evidence note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A01</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Recommends a 5-6 node phased pipeline as the best combination.</td>
+</tr>
+<tr>
+<td>A02</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Names DeepSeek as runner-up and uses it as an architectural nod.</td>
+</tr>
+<tr>
+<td>A03</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Names GPT-5.4 the winner and primary recommendation.</td>
+</tr>
+<tr>
+<td>A04</td>
+<td style="text-align: right;">0.0</td>
+<td>unmentioned</td>
+<td>Does not make a clear specific judgment about GPT-5.5's hygiene contributions.</td>
+</tr>
+<tr>
+<td>A05</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Says conservative 2-3 node splits leave too much bundled.</td>
+</tr>
+<tr>
+<td>A06</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Rejects Qwen-3.7-style 10-node decomposition as graph noise and chatty state.</td>
+</tr>
+<tr>
+<td>A07</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Says policy should be consolidated in one <code>decision_policy</code> node.</td>
+</tr>
+<tr>
+<td>A08</td>
+<td style="text-align: right;">-0.8</td>
+<td>explicit</td>
+<td>Rejects turning every policy rule into a node.</td>
+</tr>
+<tr>
+<td>A09</td>
+<td style="text-align: right;">+0.7</td>
+<td>explicit</td>
+<td>Says mutations belong in designated nodes and edges should read state and route.</td>
+</tr>
+<tr>
+<td>A10</td>
+<td style="text-align: right;">+0.4</td>
+<td>explicit</td>
+<td>Notes loop-back edge handling as a key concern.</td>
+</tr>
+<tr>
+<td>A11</td>
+<td style="text-align: right;">+0.4</td>
+<td>implied</td>
+<td>Recommends <code>tick_and_guard</code>, implying some iteration-entry support without separating it strongly.</td>
+</tr>
+<tr>
+<td>A12</td>
+<td style="text-align: right;">0.0</td>
+<td>unmentioned</td>
+<td>No clear support or rejection of dedicated bootstrap nodes.</td>
+</tr>
+<tr>
+<td>A13</td>
+<td style="text-align: right;">0.0</td>
+<td>unmentioned</td>
+<td>No clear public-contract or single-interrupt claim.</td>
+</tr>
+<tr>
+<td>A14</td>
+<td style="text-align: right;">+0.3</td>
+<td>implied</td>
+<td>Supports idempotent state mutations but does not discuss route fields or rich caches.</td>
+</tr>
+<tr>
+<td>A15</td>
+<td style="text-align: right;">0.0</td>
+<td>unmentioned</td>
+<td>No clear LLM-failure or decision-origin claim.</td>
+</tr>
+<tr>
+<td>A16</td>
+<td style="text-align: right;">+0.4</td>
+<td>explicit</td>
+<td>Mentions testability and isolation, but not a detailed staged migration.</td>
+</tr>
+<tr>
+<td>A17</td>
+<td style="text-align: right;">0.0</td>
+<td>unmentioned</td>
+<td>No <code>_build_plan_output</code> or equivalent helper claim.</td>
+</tr>
+<tr>
+<td>A18</td>
+<td style="text-align: right;">0.0</td>
+<td>unmentioned</td>
+<td>No clear Opus state-ownership or dispatch-reference claim.</td>
+</tr>
+<tr>
+<td>A19</td>
+<td style="text-align: right;">0.0</td>
+<td>unmentioned</td>
+<td>No finish-validation claim.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gl-glm-51-pro-rangemd">GL: <code>glm-5.1-pro-range.md</code><a class="headerlink" href="#gl-glm-51-pro-rangemd" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th style="text-align: right;">Score</th>
+<th>Status</th>
+<th>Evidence note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A01</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Final recommendation uses a moderate graph shape after selective borrowing.</td>
+</tr>
+<tr>
+<td>A02</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Ranks DeepSeek runner-up and borrows the <code>adjust</code> starting point.</td>
+</tr>
+<tr>
+<td>A03</td>
+<td style="text-align: right;">+0.7</td>
+<td>explicit</td>
+<td>Values GPT-5.4 anti-patterns and <code>tick</code>, though ranks it fourth.</td>
+</tr>
+<tr>
+<td>A04</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Ranks GPT-5.5 best overall and uses it as base.</td>
+</tr>
+<tr>
+<td>A05</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Says Gemini/Mimo/GLM-level minimal shapes are incomplete final targets.</td>
+</tr>
+<tr>
+<td>A06</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Critiques Qwen-3.7 as over-engineered and Opus as slightly over-decomposed.</td>
+</tr>
+<tr>
+<td>A07</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Recommends starting with a single <code>correct_policy</code> node.</td>
+</tr>
+<tr>
+<td>A08</td>
+<td style="text-align: right;">+0.3</td>
+<td>explicit</td>
+<td>Also praises GPT-5.5's separation of normalize/retry/maybe-calculate concerns.</td>
+</tr>
+<tr>
+<td>A09</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Adopts anti-pattern rules forbidding mutation in edges.</td>
+</tr>
+<tr>
+<td>A10</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Final graph routes all loopbacks through <code>enter_iteration</code>.</td>
+</tr>
+<tr>
+<td>A11</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Values <code>tick</code>/<code>enter_iteration</code> as a distinct lifecycle node.</td>
+</tr>
+<tr>
+<td>A12</td>
+<td style="text-align: right;">+0.2</td>
+<td>implied</td>
+<td>Sees dedicated region/currency nodes as visible, but final recommendation folds them into a gate.</td>
+</tr>
+<tr>
+<td>A13</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Preserves non-goals and public planner boundaries from top proposals.</td>
+</tr>
+<tr>
+<td>A14</td>
+<td style="text-align: right;">+0.6</td>
+<td>explicit</td>
+<td>Warns about <code>_route</code> and checkpoint concerns, but not as strongly as G54/G55/OP.</td>
+</tr>
+<tr>
+<td>A15</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Strongly values <code>decision_origin</code> or <code>llm_failed</code>.</td>
+</tr>
+<tr>
+<td>A16</td>
+<td style="text-align: right;">+0.9</td>
+<td>explicit</td>
+<td>Emphasizes staged migration and helper extraction.</td>
+</tr>
+<tr>
+<td>A17</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Treats <code>_build_plan_output</code> as a useful standalone helper.</td>
+</tr>
+<tr>
+<td>A18</td>
+<td style="text-align: right;">+0.9</td>
+<td>explicit</td>
+<td>Borrows Opus naming and values state ownership documentation.</td>
+</tr>
+<tr>
+<td>A19</td>
+<td style="text-align: right;">0.0</td>
+<td>unmentioned</td>
+<td>No clear finish-validation adoption.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="g54-gpt-54-rangemd">G54: <code>gpt-5.4-range.md</code><a class="headerlink" href="#g54-gpt-54-rangemd" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th style="text-align: right;">Score</th>
+<th>Status</th>
+<th>Evidence note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A01</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Recommends GPT-5.4's moderate six-phase target graph.</td>
+</tr>
+<tr>
+<td>A02</td>
+<td style="text-align: right;">+0.4</td>
+<td>explicit</td>
+<td>Treats DeepSeek as a useful mental model but ranks it fourth.</td>
+</tr>
+<tr>
+<td>A03</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Ranks GPT-5.4 first and recommends it as end-state architecture.</td>
+</tr>
+<tr>
+<td>A04</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Ranks GPT-5.5 second and uses its migration/state/test discipline.</td>
+</tr>
+<tr>
+<td>A05</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Says GLM/Gemini/Mimo are safer first slices but weak final targets.</td>
+</tr>
+<tr>
+<td>A06</td>
+<td style="text-align: right;">+0.9</td>
+<td>explicit</td>
+<td>Rejects atomized Opus/Qwen shapes and checkpoint-boundary excess.</td>
+</tr>
+<tr>
+<td>A07</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Recommends a single <code>decision_policy</code> node.</td>
+</tr>
+<tr>
+<td>A08</td>
+<td style="text-align: right;">-0.6</td>
+<td>explicit</td>
+<td>Says GPT-5.5's normalize/retry/maybe-calculate split is one split too far.</td>
+</tr>
+<tr>
+<td>A09</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Explicitly rejects policy in edge functions.</td>
+</tr>
+<tr>
+<td>A10</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Requires all action loopbacks to return to <code>tick</code>.</td>
+</tr>
+<tr>
+<td>A11</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Makes <code>tick</code> the first core target node.</td>
+</tr>
+<tr>
+<td>A12</td>
+<td style="text-align: right;">-0.7</td>
+<td>explicit</td>
+<td>Rejects separate bootstrap interrupt nodes unless existing flow becomes insufficient.</td>
+</tr>
+<tr>
+<td>A13</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Strongly preserves <code>ask_user</code>, outer graph, thread naming, and public surfaces.</td>
+</tr>
+<tr>
+<td>A14</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Rejects <code>_route</code> patterns and unproven rich state caches.</td>
+</tr>
+<tr>
+<td>A15</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Borrows <code>llm_failed</code>/origin handling from GPT-5.5.</td>
+</tr>
+<tr>
+<td>A16</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Gives staged migration sequence and helper-first guidance.</td>
+</tr>
+<tr>
+<td>A17</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Borrows GLM's <code>_build_plan_output</code> helper.</td>
+</tr>
+<tr>
+<td>A18</td>
+<td style="text-align: right;">+0.4</td>
+<td>explicit</td>
+<td>Keeps Opus as a later checklist but not as graph shape.</td>
+</tr>
+<tr>
+<td>A19</td>
+<td style="text-align: right;">0.0</td>
+<td>unmentioned</td>
+<td>No clear finish-validation claim.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="g55-gpt-55-rangemd">G55: <code>gpt-5.5-range.md</code><a class="headerlink" href="#g55-gpt-55-rangemd" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th style="text-align: right;">Score</th>
+<th>Status</th>
+<th>Evidence note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A01</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Recommends a moderate phased graph rather than detailed atomization.</td>
+</tr>
+<tr>
+<td>A02</td>
+<td style="text-align: right;">+0.4</td>
+<td>explicit</td>
+<td>Treats DeepSeek as a close moderate split but below GPT-5.4/GPT-5.5.</td>
+</tr>
+<tr>
+<td>A03</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Ranks GPT-5.4 as best implementation spine.</td>
+</tr>
+<tr>
+<td>A04</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Ranks GPT-5.5 second and mines it for state/test details.</td>
+</tr>
+<tr>
+<td>A05</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Marks Gemini/Mimo as too coarse and under-specified.</td>
+</tr>
+<tr>
+<td>A06</td>
+<td style="text-align: right;">+0.9</td>
+<td>explicit</td>
+<td>Rejects fully atomized Opus/Qwen shapes for first implementation.</td>
+</tr>
+<tr>
+<td>A07</td>
+<td style="text-align: right;">+0.9</td>
+<td>explicit</td>
+<td>Uses one <code>decision_policy</code> in the suggested target graph.</td>
+</tr>
+<tr>
+<td>A08</td>
+<td style="text-align: right;">-0.5</td>
+<td>explicit</td>
+<td>Says GPT-5.5's three post-LLM nodes are good long-term seams but too much first-step risk.</td>
+</tr>
+<tr>
+<td>A09</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>States edge functions should inspect only and mutations belong in nodes.</td>
+</tr>
+<tr>
+<td>A10</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>All loopbacks return to <code>tick</code>.</td>
+</tr>
+<tr>
+<td>A11</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td><code>tick</code> is the start node in the recommended graph.</td>
+</tr>
+<tr>
+<td>A12</td>
+<td style="text-align: right;">-0.5</td>
+<td>explicit</td>
+<td>Says require-region/currency may be conceptual but should still use existing <code>ask_user</code>.</td>
+</tr>
+<tr>
+<td>A13</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Strongly preserves single interrupt and outer graph contracts.</td>
+</tr>
+<tr>
+<td>A14</td>
+<td style="text-align: right;">+0.9</td>
+<td>explicit</td>
+<td>Rejects rich cached recipes and informal transient state unless serializer-safe.</td>
+</tr>
+<tr>
+<td>A15</td>
+<td style="text-align: right;">+0.9</td>
+<td>explicit</td>
+<td>Values <code>llm_failed</code> or <code>decision_origin</code> for calculator-loop safety.</td>
+</tr>
+<tr>
+<td>A16</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Provides helper-first implementation guidance.</td>
+</tr>
+<tr>
+<td>A17</td>
+<td style="text-align: right;">0.0</td>
+<td>unmentioned</td>
+<td>No clear <code>_build_plan_output</code> claim.</td>
+</tr>
+<tr>
+<td>A18</td>
+<td style="text-align: right;">+0.4</td>
+<td>explicit</td>
+<td>Treats Opus as checklist material, not target graph.</td>
+</tr>
+<tr>
+<td>A19</td>
+<td style="text-align: right;">0.0</td>
+<td>unmentioned</td>
+<td>No finish-validation claim.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ki-kimi-26-rangemd">KI: <code>kimi-2.6-range.md</code><a class="headerlink" href="#ki-kimi-26-rangemd" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th style="text-align: right;">Score</th>
+<th>Status</th>
+<th>Evidence note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A01</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Recommends a 5-node hybrid as the VentureScope pipeline.</td>
+</tr>
+<tr>
+<td>A02</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Ranks DeepSeek #1 and adopts its primary architecture.</td>
+</tr>
+<tr>
+<td>A03</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Ranks GPT-5.4 #2 and uses its staged migration.</td>
+</tr>
+<tr>
+<td>A04</td>
+<td style="text-align: right;">+0.3</td>
+<td>explicit</td>
+<td>Notes useful GPT-5.5 ideas but ranks it as over-engineered.</td>
+</tr>
+<tr>
+<td>A05</td>
+<td style="text-align: right;">+0.7</td>
+<td>explicit</td>
+<td>Says GLM/Mimo/Gemini are safe or decent but not sufficient.</td>
+</tr>
+<tr>
+<td>A06</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Strongly rejects Opus/GPT-5.5/Qwen-3.7 over-decomposition.</td>
+</tr>
+<tr>
+<td>A07</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Uses a single <code>adjust</code> node for policy corrections.</td>
+</tr>
+<tr>
+<td>A08</td>
+<td style="text-align: right;">-0.7</td>
+<td>explicit</td>
+<td>Says the separate correction chains should be collapsed into helpers.</td>
+</tr>
+<tr>
+<td>A09</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Rejects Qwen-3.6 redirect-in-edge approach.</td>
+</tr>
+<tr>
+<td>A10</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Final topology loops action nodes back to <code>guard</code>.</td>
+</tr>
+<tr>
+<td>A11</td>
+<td style="text-align: right;">+0.5</td>
+<td>explicit</td>
+<td>Values <code>tick</code> but accepts a combined <code>guard</code> in the final shape.</td>
+</tr>
+<tr>
+<td>A12</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Strongly praises dedicated <code>ask_region</code>/<code>ask_currency</code> visibility.</td>
+</tr>
+<tr>
+<td>A13</td>
+<td style="text-align: right;">+0.2</td>
+<td>implied</td>
+<td>Does not strongly preserve single <code>ask_user</code>; bootstrap explicitness pulls against this aspect.</td>
+</tr>
+<tr>
+<td>A14</td>
+<td style="text-align: right;">+0.2</td>
+<td>explicit</td>
+<td>Rejects <code>_route</code>, but supports <code>recipes</code> in state.</td>
+</tr>
+<tr>
+<td>A15</td>
+<td style="text-align: right;">+0.4</td>
+<td>explicit</td>
+<td>Includes <code>llm_failed</code> in the hybrid sources.</td>
+</tr>
+<tr>
+<td>A16</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Provides seven-stage staged migration and praises zero-risk helper extraction.</td>
+</tr>
+<tr>
+<td>A17</td>
+<td style="text-align: right;">0.0</td>
+<td>unmentioned</td>
+<td>No clear <code>_build_plan_output</code> claim.</td>
+</tr>
+<tr>
+<td>A18</td>
+<td style="text-align: right;">+0.6</td>
+<td>explicit</td>
+<td>Values Opus dispatch/naming ideas as partial borrowings.</td>
+</tr>
+<tr>
+<td>A19</td>
+<td style="text-align: right;">0.0</td>
+<td>unmentioned</td>
+<td>No clear finish-validation claim.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mi-mimo-25-pro-rangemd">MI: <code>mimo-2.5-pro-range.md</code><a class="headerlink" href="#mi-mimo-25-pro-rangemd" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th style="text-align: right;">Score</th>
+<th>Status</th>
+<th>Evidence note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A01</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Identifies DeepSeek/GPT-5.4-sized topology as the best combination.</td>
+</tr>
+<tr>
+<td>A02</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Ranks DeepSeek #1 and recommends its graph structure.</td>
+</tr>
+<tr>
+<td>A03</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Ranks GPT-5.4 #2 and borrows migration/anti-pattern guidance.</td>
+</tr>
+<tr>
+<td>A04</td>
+<td style="text-align: right;">+0.3</td>
+<td>explicit</td>
+<td>Values GPT-5.5 consequences and test guidance but sees it as over-decomposed.</td>
+</tr>
+<tr>
+<td>A05</td>
+<td style="text-align: right;">+0.5</td>
+<td>explicit</td>
+<td>Minimal splits are useful but criticized for incomplete post-LLM treatment.</td>
+</tr>
+<tr>
+<td>A06</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Strongly rejects Opus/Qwen over-decomposition.</td>
+</tr>
+<tr>
+<td>A07</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Calls DeepSeek's <code>adjust</code> the strongest differentiator.</td>
+</tr>
+<tr>
+<td>A08</td>
+<td style="text-align: right;">-0.7</td>
+<td>explicit</td>
+<td>Rejects splitting corrections into many nodes.</td>
+</tr>
+<tr>
+<td>A09</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Rejects route-function mutation as an anti-pattern.</td>
+</tr>
+<tr>
+<td>A10</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Says loopback to <code>guard</code> is correct.</td>
+</tr>
+<tr>
+<td>A11</td>
+<td style="text-align: right;">+0.6</td>
+<td>explicit</td>
+<td>Recommends renaming DeepSeek's <code>guard</code> to <code>tick</code>.</td>
+</tr>
+<tr>
+<td>A12</td>
+<td style="text-align: right;">-0.5</td>
+<td>explicit</td>
+<td>Says separate region/currency nodes add unnecessary complexity.</td>
+</tr>
+<tr>
+<td>A13</td>
+<td style="text-align: right;">+0.7</td>
+<td>explicit</td>
+<td>Adds GPT-5.4 anti-pattern warnings and preserves single bootstrap concern.</td>
+</tr>
+<tr>
+<td>A14</td>
+<td style="text-align: right;">+0.4</td>
+<td>explicit</td>
+<td>Criticizes <code>_route</code>, but accepts DeepSeek's recipe state as sensible.</td>
+</tr>
+<tr>
+<td>A15</td>
+<td style="text-align: right;">+0.5</td>
+<td>explicit</td>
+<td>Notes <code>llm_failed</code> or <code>decision_origin</code> as sensible.</td>
+</tr>
+<tr>
+<td>A16</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Recommends helper extraction and staged migration.</td>
+</tr>
+<tr>
+<td>A17</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Explicitly includes GLM's <code>_build_plan_output</code> helper.</td>
+</tr>
+<tr>
+<td>A18</td>
+<td style="text-align: right;">+0.5</td>
+<td>explicit</td>
+<td>Values Opus naming and ownership ideas but rejects the topology.</td>
+</tr>
+<tr>
+<td>A19</td>
+<td style="text-align: right;">0.0</td>
+<td>unmentioned</td>
+<td>No clear finish-validation claim.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="op-opus-47-rangemd">OP: <code>opus-4.7-range.md</code><a class="headerlink" href="#op-opus-47-rangemd" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th style="text-align: right;">Score</th>
+<th>Status</th>
+<th>Evidence note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A01</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Recommends GPT-5.4-level middle topology as the baseline.</td>
+</tr>
+<tr>
+<td>A02</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Ranks DeepSeek #3 and harvests its self-loop idea.</td>
+</tr>
+<tr>
+<td>A03</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Ranks GPT-5.4 #1 and uses its six-phase pipeline.</td>
+</tr>
+<tr>
+<td>A04</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Ranks GPT-5.5 #2 and strongly borrows its <code>llm_failed</code> and state-cache caution.</td>
+</tr>
+<tr>
+<td>A05</td>
+<td style="text-align: right;">+0.9</td>
+<td>explicit</td>
+<td>Says Mimo/Gemini are under-decomposed and do not solve the problem.</td>
+</tr>
+<tr>
+<td>A06</td>
+<td style="text-align: right;">+0.9</td>
+<td>explicit</td>
+<td>Calls Opus itself operationally heavy and rejects 13-node chains.</td>
+</tr>
+<tr>
+<td>A07</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Recommends one <code>decision_policy</code> node, not a corrector chain.</td>
+</tr>
+<tr>
+<td>A08</td>
+<td style="text-align: right;">-0.6</td>
+<td>explicit</td>
+<td>Rejects splitting the corrector chain despite recognizing its theoretical clarity.</td>
+</tr>
+<tr>
+<td>A09</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Calls redirect-in-edge the biggest anti-pattern.</td>
+</tr>
+<tr>
+<td>A10</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Lists top-node loopback as universal agreement.</td>
+</tr>
+<tr>
+<td>A11</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Uses <code>tick</code> as first recommended phase.</td>
+</tr>
+<tr>
+<td>A12</td>
+<td style="text-align: right;">-0.5</td>
+<td>explicit</td>
+<td>Rejects split bootstrap nodes as graph-decorative.</td>
+</tr>
+<tr>
+<td>A13</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Strongly preserves single <code>ask_user</code> interrupt and outer graph scope.</td>
+</tr>
+<tr>
+<td>A14</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Rejects recipes in state unless serializer-safe and rejects state hint pollution.</td>
+</tr>
+<tr>
+<td>A15</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Requires <code>llm_failed</code> or <code>decision_origin</code>.</td>
+</tr>
+<tr>
+<td>A16</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Provides a six-commit green migration.</td>
+</tr>
+<tr>
+<td>A17</td>
+<td style="text-align: right;">0.0</td>
+<td>unmentioned</td>
+<td>No clear <code>_build_plan_output</code> claim.</td>
+</tr>
+<tr>
+<td>A18</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Values state ownership and write-surface discipline as reference material.</td>
+</tr>
+<tr>
+<td>A19</td>
+<td style="text-align: right;">+0.7</td>
+<td>explicit</td>
+<td>Calls <code>route_finish_check</code> a sharp idea, though not the central recommendation.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="q36-qwen-36-rangemd">Q36: <code>qwen-3.6-range.md</code><a class="headerlink" href="#q36-qwen-36-rangemd" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th style="text-align: right;">Score</th>
+<th>Status</th>
+<th>Evidence note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A01</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Recommends a 5-6 node target count.</td>
+</tr>
+<tr>
+<td>A02</td>
+<td style="text-align: right;">+0.5</td>
+<td>explicit</td>
+<td>Treats DeepSeek as solid middle-ground but ranks it fifth.</td>
+</tr>
+<tr>
+<td>A03</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Ranks GPT-5.4 best overall and uses its target nodes.</td>
+</tr>
+<tr>
+<td>A04</td>
+<td style="text-align: right;">+0.4</td>
+<td>explicit</td>
+<td>Praises GPT-5.5 hygiene but ranks it low for complexity.</td>
+</tr>
+<tr>
+<td>A05</td>
+<td style="text-align: right;">+0.5</td>
+<td>explicit</td>
+<td>GLM is ranked highly as first PR, but long-term still needs more decomposition.</td>
+</tr>
+<tr>
+<td>A06</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Rejects 10+ and 14-node proposals for checkpoint overhead and graph noise.</td>
+</tr>
+<tr>
+<td>A07</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Recommends one <code>decision_policy</code> node.</td>
+</tr>
+<tr>
+<td>A08</td>
+<td style="text-align: right;">-0.7</td>
+<td>explicit</td>
+<td>Explicitly says one policy node, not five corrector nodes.</td>
+</tr>
+<tr>
+<td>A09</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>States no state mutation in edge functions as a design rule.</td>
+</tr>
+<tr>
+<td>A10</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Requires loopbacks to <code>tick</code>.</td>
+</tr>
+<tr>
+<td>A11</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Makes <code>tick</code> the first target node.</td>
+</tr>
+<tr>
+<td>A12</td>
+<td style="text-align: right;">-0.6</td>
+<td>explicit</td>
+<td>Merges separate region/currency nodes into one bootstrap gate.</td>
+</tr>
+<tr>
+<td>A13</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Keeps <code>ask_user</code> single interrupt and avoids outer graph changes.</td>
+</tr>
+<tr>
+<td>A14</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Rejects <code>_route</code> and checkpoint pollution, though does not dwell on recipes as much as OP/G54.</td>
+</tr>
+<tr>
+<td>A15</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Includes <code>llm_failed</code> from GPT-5.5.</td>
+</tr>
+<tr>
+<td>A16</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Gives combined staged migration.</td>
+</tr>
+<tr>
+<td>A17</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Includes <code>_build_plan_output</code> helper.</td>
+</tr>
+<tr>
+<td>A18</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Ranks Opus high for mapping/state ownership reference.</td>
+</tr>
+<tr>
+<td>A19</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Includes <code>finish_check</code> in the recommended graph.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="q37-qwen-37-max-rangemd">Q37: <code>qwen-3.7-max-range.md</code><a class="headerlink" href="#q37-qwen-37-max-rangemd" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th style="text-align: right;">Score</th>
+<th>Status</th>
+<th>Evidence note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A01</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Recommends a 5-node pipeline plus optional finish check.</td>
+</tr>
+<tr>
+<td>A02</td>
+<td style="text-align: right;">+0.9</td>
+<td>explicit</td>
+<td>Ranks DeepSeek #2 and adopts its pragmatism.</td>
+</tr>
+<tr>
+<td>A03</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Ranks GPT-5.4 #1 and uses it as target topology.</td>
+</tr>
+<tr>
+<td>A04</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Ranks GPT-5.5 #3 and borrows <code>llm_failed</code>/non-goal detail.</td>
+</tr>
+<tr>
+<td>A05</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Treats Gemini/Mimo minimal proposals as insufficient.</td>
+</tr>
+<tr>
+<td>A06</td>
+<td style="text-align: right;">+0.9</td>
+<td>explicit</td>
+<td>Rejects Opus/Qwen-3.7-style full decomposition as too many nodes.</td>
+</tr>
+<tr>
+<td>A07</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Uses one <code>decision_policy</code> node.</td>
+</tr>
+<tr>
+<td>A08</td>
+<td style="text-align: right;">-0.7</td>
+<td>explicit</td>
+<td>Says multi-node post-LLM correction adds unnecessary checkpoint writes.</td>
+</tr>
+<tr>
+<td>A09</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Explicitly rejects redirect-in-edge mutation.</td>
+</tr>
+<tr>
+<td>A10</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Target graph loops all action paths back to <code>tick</code>.</td>
+</tr>
+<tr>
+<td>A11</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td><code>tick</code> is the first target node.</td>
+</tr>
+<tr>
+<td>A12</td>
+<td style="text-align: right;">-0.7</td>
+<td>explicit</td>
+<td>Rejects separate <code>ask_region</code>/<code>ask_currency</code> nodes as overkill.</td>
+</tr>
+<tr>
+<td>A13</td>
+<td style="text-align: right;">+0.9</td>
+<td>explicit</td>
+<td>Keeps <code>ask_user</code> and public graph contracts stable.</td>
+</tr>
+<tr>
+<td>A14</td>
+<td style="text-align: right;">+0.2</td>
+<td>explicit</td>
+<td>Rejects <code>_route</code> but supports recipes in state, creating a mixed checkpoint-discipline position.</td>
+</tr>
+<tr>
+<td>A15</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Includes GPT-5.5's <code>llm_failed</code> state field.</td>
+</tr>
+<tr>
+<td>A16</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Gives eight-step green migration.</td>
+</tr>
+<tr>
+<td>A17</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Includes <code>_build_plan_output</code> as first migration step.</td>
+</tr>
+<tr>
+<td>A18</td>
+<td style="text-align: right;">+0.8</td>
+<td>explicit</td>
+<td>Values Opus mapping and state ownership table as reference material.</td>
+</tr>
+<tr>
+<td>A19</td>
+<td style="text-align: right;">+1.0</td>
+<td>explicit</td>
+<td>Includes <code>finish_check</code> in the resulting target graph.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="normalization-and-ambiguity-audit">Normalization And Ambiguity Audit<a class="headerlink" href="#normalization-and-ambiguity-audit" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Evaluator count</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Aspect count</td>
+<td>19</td>
+</tr>
+<tr>
+<td>Total evaluator-aspect cells</td>
+<td>190</td>
+</tr>
+<tr>
+<td>Unresolved ambiguous cells</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Ambiguity rate</td>
+<td><code>0 / 190 = 0.0%</code></td>
+</tr>
+<tr>
+<td>Clear-equivalent normalization</td>
+<td>Applied only to equivalent statements such as <code>decision_policy</code>, <code>adjust</code>, <code>enforce_policy</code>, and <code>correct_policy</code> when they meant a single post-LLM policy stage.</td>
+</tr>
+<tr>
+<td>Kept separate because equivalence was not clear</td>
+<td>Dedicated bootstrap nodes vs bootstrap gate; recipe cache vs checkpoint-state caution; finish validation vs normal finish node; multi-node correction split vs single policy node.</td>
+</tr>
+<tr>
+<td>Neutral cells</td>
+<td>All <code>0.0</code> cells are either unmentioned or balanced; unmentioned cells use the user-selected neutral override.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="reproducibility-snippet">Reproducibility Snippet<a class="headerlink" href="#reproducibility-snippet" title="Permanent link">&para;</a></h2>
+<p>The numeric tables above were computed from the score matrix using this exact data shape:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>M[evaluator][aspect] = score in [-1, 1]
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>w_i = 0.1
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>alpha_j = 1 / 19
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>c_ij = 1 after neutral fill
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>mean_j = sum_i M[i][j] / 10
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>variance_j = sum_i (M[i][j] - mean_j)^2 / 10
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>center_distance_i = sqrt(sum_j alpha_j * (M[i][j] - mean_j)^2)
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>pairwise_distance_i_k = sqrt(sum_j alpha_j * (M[i][j] - M[k][j])^2)
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>medoid_score_i = sum_k 0.1 * pairwise_distance_i_k
+</code></pre></div>
+<h2 id="final-answer">Final Answer<a class="headerlink" href="#final-answer" title="Permanent link">&para;</a></h2>
+<p>By closest opinion to the equal-weight overall vector, the ranking is:</p>
+<ol>
+<li>DS</li>
+<li>MI</li>
+<li>G55</li>
+<li>G54</li>
+<li>OP</li>
+<li>Q36</li>
+<li>Q37</li>
+<li>GL</li>
+<li>KI</li>
+<li>GE</li>
+</ol>
+<p>By medoid centrality, the ranking is:</p>
+<ol>
+<li>DS</li>
+<li>MI</li>
+<li>G55</li>
+<li>G54</li>
+<li>OP</li>
+<li>Q36</li>
+<li>Q37</li>
+<li>GL</li>
+<li>KI</li>
+<li>GE</li>
+</ol>
+<p>Both calculations select <code>deepseek-4-pro-range.md</code> as the most representative evaluator opinion in this set.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Korridzy &mdash; content licensed <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC&nbsp;BY&nbsp;4.0</a>
+
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/Korridzy" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.tabs", "navigation.top", "navigation.instant", "navigation.instant.progress", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1519 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Notes and experiments by Korridzy.">
+      
+      
+        <meta name="author" content="Korridzy">
+      
+      
+        <link rel="canonical" href="https://wtf.korridzy.com/twilight-of-the-gods/materials/analyse_pf/opus-4.7-range/">
+      
+      
+      
+      
+        
+          <link rel="alternate" href="/" hreflang="en">
+        
+          <link rel="alternate" href="/ru/" hreflang="ru">
+        
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Planner Graph Refactor — Proposal Ranking and Analysis - wtf</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+  <script defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="098e6142-2d46-44cb-9b0e-e5073990c842"></script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#planner-graph-refactor--proposal-ranking-and-analysis" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="wtf" class="md-header__button md-logo" aria-label="wtf" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            wtf
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Planner Graph Refactor — Proposal Ranking and Analysis
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/ru/" hreflang="ru" class="md-select__link">
+              Русский
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../ru/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../archive/2026/" class="md-tabs__link">
+          
+  
+  
+  Archive
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../category/ai-agents/" class="md-tabs__link">
+          
+  
+  
+  Categories
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="wtf" class="md-nav__button md-logo" aria-label="wtf" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    wtf
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ru/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archive
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Archive
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Categories
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Categories
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/ai-agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI agents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/llm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/langgraph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LangGraph
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/refactoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Refactoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-evaluation-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Evaluation framework
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-ranked-proposals-best--weakest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Ranked proposals (best → weakest)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Ranked proposals (best → weakest)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1--gpt-54-proposalmd-recommended-baseline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        #1 — gpt-5.4-proposal.md (recommended baseline)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2--gpt-55-proposalmd-most-production-ready" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        #2 — gpt-5.5-proposal.md (most production-ready)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3--deepseek-4-pro-proposalmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        #3 — deepseek-4-pro-proposal.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4--glm-51-proposalmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        #4 — glm-5.1-proposal.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5--kimi-26-proposalmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        #5 — kimi-2.6-proposal.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6--qwen-36-plus-proposalmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        #6 — qwen-3.6-plus-proposal.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7--qwen-37-max-proposalmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        #7 — qwen-3.7-max-proposal.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8--opus-proposalmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        #8 — opus-proposal.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9--mimo-25-pro-proposalmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        #9 — mimo-2.5-pro-proposal.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10--gemini-31-pro-proposalmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        #10 — gemini-3.1-pro-proposal.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-synthesis-convergent-agreements-and-divergent-calls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Synthesis: convergent agreements and divergent calls
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Synthesis: convergent agreements and divergent calls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#where-all-proposals-agree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where all proposals agree
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-they-diverge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where they diverge
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-recommendation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Recommendation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Recommendation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-structural-baseline--gpt-54" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Structural baseline — gpt-5.4
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-additions-from-gpt-55" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Additions from gpt-5.5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-targeted-idea-from-deepseek-4-pro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Targeted idea from deepseek-4-pro
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-staged-migration-6-commits-each-green" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Staged migration (6 commits, each green)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-what-to-avoid-from-the-other-proposals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 What to avoid from the other proposals
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-summary-ranking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Summary ranking
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="planner-graph-refactor--proposal-ranking-and-analysis">Planner Graph Refactor — Proposal Ranking and Analysis<a class="headerlink" href="#planner-graph-refactor--proposal-ranking-and-analysis" title="Permanent link">&para;</a></h1>
+<p><strong>Reviewer:</strong> Sisyphus (Claude Opus 4.7)
+<strong>Date:</strong> 2026-06-08
+<strong>Source proposals:</strong> <code>docs/planner-graph-ref/proposals/*.md</code> (10 proposals)
+<strong>Reference:</strong> <code>docs/planner-graph-ref/current-graph.md</code></p>
+<hr />
+<h2 id="1-evaluation-framework">1. Evaluation framework<a class="headerlink" href="#1-evaluation-framework" title="Permanent link">&para;</a></h2>
+<p>All ten proposals agree on the same problem statement: <code>plan_node()</code> (≈350 lines) is a god-node that hides 7–12 distinct concerns behind a trivial <code>route_after_plan</code> that just returns <code>decision.action</code>. They diverge on <strong>how aggressively</strong> to split that monolith and <strong>where</strong> to draw the boundaries.</p>
+<p>I rank each proposal against the following axes:</p>
+<table>
+<thead>
+<tr>
+<th>Axis</th>
+<th>What I am asking</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Graph honesty</strong></td>
+<td>Does the resulting Mermaid diagram describe the real control flow?</td>
+</tr>
+<tr>
+<td><strong>Granularity fit</strong></td>
+<td>Are nodes scoped at a useful unit of work — neither monolithic nor chatty?</td>
+</tr>
+<tr>
+<td><strong>LangGraph idiom</strong></td>
+<td>Do nodes own mutations, edges stay pure, single-interrupt invariant preserved?</td>
+</tr>
+<tr>
+<td><strong>Migration risk</strong></td>
+<td>Can the change ship in incremental steps without breaking checkpoints/tests?</td>
+</tr>
+<tr>
+<td><strong>State surface</strong></td>
+<td>How clean are the additions to <code>State</code> / <code>PlannerState</code>?</td>
+</tr>
+<tr>
+<td><strong>Test seams</strong></td>
+<td>Do the new node boundaries give us unit-testable surfaces for retry caps, calculator routing, redirects, etc.?</td>
+</tr>
+<tr>
+<td><strong>Document quality</strong></td>
+<td>Is the proposal precise (line ranges, helper names, edge maps) or just sketched?</td>
+</tr>
+</tbody>
+</table>
+<p>A strong proposal scores well on <strong>graph honesty + idiom + migration</strong>, not just on "smallest diff" or "most nodes".</p>
+<hr />
+<h2 id="2-ranked-proposals-best--weakest">2. Ranked proposals (best → weakest)<a class="headerlink" href="#2-ranked-proposals-best--weakest" title="Permanent link">&para;</a></h2>
+<h3 id="1--gpt-54-proposalmd-recommended-baseline">#1 — <code>gpt-5.4-proposal.md</code> (recommended baseline)<a class="headerlink" href="#1--gpt-54-proposalmd-recommended-baseline" title="Permanent link">&para;</a></h3>
+<p><strong>Six-node pipeline:</strong> <code>tick → bootstrap_gate → prepare_context → acquisition_gate → llm_plan → decision_policy → &lt;action&gt;</code>.</p>
+<p><strong>What is good:</strong></p>
+<ul>
+<li><strong>Best balance of granularity.</strong> Six phases is enough to expose the real lifecycle (iteration, bootstrap, prep, deterministic acquire, LLM, normalization) without descending into per-rule fragmentation.</li>
+<li><strong>Explicit anti-patterns section</strong> ("do not move mutations into edges", "do not turn every rule into a node", "do not increment iterations in every gate", "do not move interrupts into policy gates"). This is exactly the discipline that several other proposals lack.</li>
+<li><strong>Single <code>decision_policy</code> node</strong> consolidates the five post-LLM rewrites instead of chaining them. This is the correct trade-off: the rewrites are sequential, pure transformations on a single <code>PlannerDecision</code> — separate nodes for each would add checkpoint hops without improving clarity.</li>
+<li><strong>Migration order is staged correctly</strong>: extract <code>tick</code> first (cheapest, lowest blast radius), then <code>bootstrap_gate</code>, then <code>prepare_context</code>, then <code>acquisition_gate</code>, then slim <code>llm_plan_node</code>, finally <code>decision_policy</code>. Each stage ships green.</li>
+<li><strong>Explicit non-goals</strong>: keeps <code>ask_user</code> as the only interrupt, keeps <code>run_planner_step()</code> contract, keeps domain helpers owning business logic.</li>
+<li><strong>Edge purity discipline</strong> is called out directly: "conditional edge functions should stay simple and side-effect free."</li>
+</ul>
+<p><strong>What is weak:</strong></p>
+<ul>
+<li>No explicit handling of the LLM-failure case for the calculator-blocked path. (gpt-5.5 fixes this by adding <code>llm_failed: bool</code> to state.)</li>
+<li>Less code-level detail than gpt-5.5 or qwen-3.7-max — useful for review but somebody implementing it must still author the helper signatures.</li>
+<li>The single <code>decision_policy</code> node will still be ~80 LOC and several concerns deep; the proposal acknowledges this implicitly but does not provide a sub-structure (e.g., named helper chain inside the node).</li>
+</ul>
+<p><strong>Verdict:</strong> The most architecturally honest proposal. Best one to adopt as the structural baseline.</p>
+<hr />
+<h3 id="2--gpt-55-proposalmd-most-production-ready">#2 — <code>gpt-5.5-proposal.md</code> (most production-ready)<a class="headerlink" href="#2--gpt-55-proposalmd-most-production-ready" title="Permanent link">&para;</a></h3>
+<p><strong>Seven-node pipeline:</strong> <code>enter_iteration → prepare_schema → require_region/require_currency → acquisition_gate → plan → normalize_decision → retry_gate → maybe_calculate → &lt;action&gt;</code>.</p>
+<p><strong>What is good:</strong></p>
+<ul>
+<li><strong>Strict ownership tables</strong> for every node ("owns iteration lifecycle only", "owns deterministic state preparation", etc.) make node contracts unambiguous.</li>
+<li><strong>Adds <code>llm_failed: bool</code></strong> (or <code>decision_origin</code> enum) to state — the cleanest way to preserve the current safeguard that a failed LLM finishes rather than getting redirected into <code>reflect</code> and failing again. This is a real defect that gpt-5.4, kimi-2.6, and opus-proposal do not address explicitly.</li>
+<li><strong>Explicitly resists</strong> adding <code>prepared_recipes</code> to state ("not unless serialization of <code>FieldAcquisition</code> is proven safe"). This is the right instinct — <code>recipes</code> is a derived cache, and several other proposals (deepseek-4-pro, qwen-3.7-max) add it to state without justifying serializer compatibility against <code>MSGPACK_ALLOWLIST</code>.</li>
+<li><strong>Test-mapping section</strong> is the most thorough of the set: every existing decision test in <code>tests/planner/test_planner_decisions.py</code> gets a target node.</li>
+<li><strong>Step 1 is "pure helper extraction without graph change"</strong> — the safest possible first commit.</li>
+<li><strong>Explicit non-goals</strong> prevent scope creep into the outer conversation graph and the <code>PlannerDecision</code> action enum.</li>
+</ul>
+<p><strong>What is weak:</strong></p>
+<ul>
+<li>Splits <code>normalize_decision</code> and <code>retry_gate</code> and <code>maybe_calculate</code> into three separate post-LLM nodes. Functionally clean, but adds two extra checkpoint hops per iteration vs. gpt-5.4's single <code>decision_policy</code>. The "more nodes and edges" cost is acknowledged but not measured.</li>
+<li>Splits <code>require_region</code> and <code>require_currency</code> into two distinct nodes rather than one parameterised <code>require_core_field</code>. Cosmetic redundancy.</li>
+<li>The graph diagram becomes visually larger; reviewers must keep more node names in head.</li>
+</ul>
+<p><strong>Verdict:</strong> Most precise and complete write-up; combines very well with gpt-5.4.</p>
+<hr />
+<h3 id="3--deepseek-4-pro-proposalmd">#3 — <code>deepseek-4-pro-proposal.md</code><a class="headerlink" href="#3--deepseek-4-pro-proposalmd" title="Permanent link">&para;</a></h3>
+<p><strong>Four-node pipeline:</strong> <code>guard → prepare → plan → adjust</code>, with a self-loop on <code>plan</code> for post-LLM decomposition.</p>
+<p><strong>What is good:</strong></p>
+<ul>
+<li><strong>Smallest non-trivial split</strong> that still answers the problem: gates upfront, prep next, LLM minimal, corrections after.</li>
+<li><strong>Single <code>adjust</code> node</strong> for all post-LLM rewrites is the same correct call as gpt-5.4's <code>decision_policy</code>.</li>
+<li><strong>Self-loop on <code>plan</code></strong> is a clever way to handle the case where the LLM targets a <code>requires_components</code> field that has no decomposition yet — re-prompt with augmented recipes. Most other proposals bury this in <code>normalize_decision</code>/<code>enforce_policy</code>.</li>
+<li><strong>Concrete line ranges and a trade-off table</strong> make the proposal easy to review against the source.</li>
+<li><strong>Tightest mapping</strong> between extracted blocks (846–887 → guard, 889–1035 → prepare, 1037–1088 → plan, 1090–1192 → adjust).</li>
+</ul>
+<p><strong>What is weak:</strong></p>
+<ul>
+<li><strong>Adds <code>recipes</code> to State</strong> without addressing the <code>MSGPACK_ALLOWLIST</code> / checkpointer compatibility concern that gpt-5.5 flagged explicitly. <code>FieldAcquisition</code> is a Pydantic type; storing it in state risks serializer churn.</li>
+<li><strong>Self-loop on <code>plan</code></strong> doubles the LLM hit for composite-target cases — acceptable but worth flagging as a cost.</li>
+<li><strong><code>prepare</code> carries calculator-cap + auto-complete + acquisition-task selection + composition</strong> — that is four concerns squeezed into one "prep" node, which is heavier than the name suggests.</li>
+<li>The "guard rebuilds recipes" mitigation in the Risk section ("<code>prepare</code> and <code>plan</code> both rebuild recipes when decomps change") signals state-sync friction that the proposal does not fully resolve.</li>
+</ul>
+<p><strong>Verdict:</strong> A clean middle-ground if you do not want six or seven nodes, with one genuinely novel idea (the <code>plan</code> self-loop) worth lifting into the recommended solution.</p>
+<hr />
+<h3 id="4--glm-51-proposalmd">#4 — <code>glm-5.1-proposal.md</code><a class="headerlink" href="#4--glm-51-proposalmd" title="Permanent link">&para;</a></h3>
+<p><strong>Two-node pipeline:</strong> <code>pre_check → acquire_or_plan → &lt;action&gt;</code>. Keeps post-LLM rewriting inline in <code>acquire_or_plan</code>. Option B (extract <code>validate_decision</code>) is explicitly deferred.</p>
+<p><strong>What is good:</strong></p>
+<ul>
+<li><strong>Most conservative pragmatic option.</strong> Solves the worst part of the problem (pre-LLM guards become a graph-visible phase) without touching the post-LLM logic at all.</li>
+<li><strong>Honestly trades clarity for stability</strong>: keeps the migration small enough that planner-decision tests can be ported piece by piece.</li>
+<li><strong>Recognises</strong> that the "post-LLM rewriting" cluster is itself a coherent sub-concern, and proposes extracting it later (Phase 4) only if <code>acquire_or_plan</code> proves still too complex.</li>
+<li><strong>Identifies the loop-back edge change</strong> (<code>plan → pre_check</code>) as the key checkpoint-compatibility risk and proposes a test for resume-after-interrupt.</li>
+<li><strong>Concrete <code>_build_plan_output</code> helper proposal</strong> for collapsing the 9-way return pattern — orthogonal but useful.</li>
+</ul>
+<p><strong>What is weak:</strong></p>
+<ul>
+<li>After phase 1, <code>acquire_or_plan</code> is still ~200 LOC. The graph is more honest at the front but unchanged at the back, so calculator-cap / search-cap / redirect tests still need broad fixtures.</li>
+<li><strong><code>_pre_check_route</code> as a <code>Literal[...]</code> string field</strong> is workable but uglier than gpt-5.4's <code>decision.action</code>-based dispatch. The proposal also suggests extending the <code>Action</code> enum with guard variants and then rejects it, which is the right call but adds room for confusion.</li>
+</ul>
+<p><strong>Verdict:</strong> The right migration if the team has low risk budget and wants to land Phase 1 quickly without committing to a six-stage redesign. Should be viewed as <strong>Phase 1 of gpt-5.4/gpt-5.5</strong>, not a competing endpoint.</p>
+<hr />
+<h3 id="5--kimi-26-proposalmd">#5 — <code>kimi-2.6-proposal.md</code><a class="headerlink" href="#5--kimi-26-proposalmd" title="Permanent link">&para;</a></h3>
+<p><strong>Eight-node pipeline:</strong> <code>tick → ask_region/ask_currency → prepare → calc_gate → acquire → route_direct → decide → enforce_policy → &lt;action&gt;</code>.</p>
+<p><strong>What is good:</strong></p>
+<ul>
+<li><strong>Explicit decision matrix at the end</strong> (mapping every block in <code>plan_node</code> to its destination node + rationale) — very useful for implementers.</li>
+<li><strong>Splits bootstrap into dedicated <code>ask_region</code>/<code>ask_currency</code> nodes</strong> which makes the "structural, not LLM" nature of those questions visible on the graph.</li>
+<li><strong><code>route_direct</code> adapter node</strong> is a smart way to converge deterministic-acquisition decisions and LLM decisions into the same <code>enforce_policy</code> pipeline without duplicating post-processing.</li>
+<li>Concrete LOC estimates per node (<code>decide</code> ~30, <code>prepare</code> ~30, <code>enforce_policy</code> ~120). Useful sanity check.</li>
+</ul>
+<p><strong>What is weak:</strong></p>
+<ul>
+<li><strong>Bootstrap split is over-resolved.</strong> <code>ask_region</code> and <code>ask_currency</code> produce identical decision shapes (<code>PlannerDecision(action="ask_user", ...)</code>) with different field paths; one parameterised <code>require_core_field</code> node would express the same thing without graph noise.</li>
+<li><strong><code>route_direct</code> is a single-purpose adapter node</strong> that exists only to bridge two upstream nodes into one downstream node. A direct edge with a shared post-processor would do the same job.</li>
+<li><strong><code>enforce_policy</code> remains heavy (~120 LOC)</strong> with several rewrites + caps stitched together. Splitting the bootstrap but not the policy is an inverted priority — the bootstrap is structurally simple, the policy chain is where bugs hide.</li>
+</ul>
+<p><strong>Verdict:</strong> Solid mid-tier. Some good ideas (decision matrix, <code>route_direct</code> adapter pattern) but the bootstrap split is graph-decorative.</p>
+<hr />
+<h3 id="6--qwen-36-plus-proposalmd">#6 — <code>qwen-3.6-plus-proposal.md</code><a class="headerlink" href="#6--qwen-36-plus-proposalmd" title="Permanent link">&para;</a></h3>
+<p><strong>Six-ish-node pipeline:</strong> <code>preflight → ask_region/ask_currency → observe_region/observe_currency → decompose → plan → route_finish_check → &lt;action&gt;</code>. Moves post-LLM redirects into <code>route_after_plan</code> (an edge function, not a node).</p>
+<p><strong>What is good:</strong></p>
+<ul>
+<li><strong><code>route_finish_check</code> is a sharp idea</strong>: today's <code>finish</code> edge does not validate that finishing is appropriate; this proposal inserts a check that can loop back to <code>plan</code> if work still remains.</li>
+<li><strong>Phase-by-phase migration</strong> with concrete <code>_build_state_graph()</code> snippets — easy to follow.</li>
+<li><strong>Decomposition becomes its own node</strong> rather than living inside either prep or plan. This matches the "decompose before planning, not during" mental model.</li>
+</ul>
+<p><strong>What is weak (major issue):</strong></p>
+<ul>
+<li><strong>Moves redirect logic and per-field cap enforcement into the edge function <code>route_after_plan</code>.</strong> This is the <strong>biggest single anti-pattern in any proposal</strong>. LangGraph conditional edges should be pure: read state, return a label. Putting <code>_redirect_derived_direct_decision</code>, <code>_redirect_premature_ask_for_web_field</code>, search-cap and ask-user-cap checks, and "logging" into a conditional-edge function violates the idiom that other proposals (notably gpt-5.4) flag explicitly. The redirects also mutate the decision, which is even worse — edges should not mutate.</li>
+<li><strong>Dedicated <code>observe_region</code> / <code>observe_currency</code> nodes</strong> duplicate the per-target dispatch that <code>observe_user_node</code> already handles via <code>target_field</code> switching. This adds two nodes and breaks the existing single-observe-user invariant.</li>
+</ul>
+<p><strong>Verdict:</strong> Has one good idea (<code>route_finish_check</code>) wrapped in a serious idiomatic violation. The redirect-in-edge approach should not be adopted.</p>
+<hr />
+<h3 id="7--qwen-37-max-proposalmd">#7 — <code>qwen-3.7-max-proposal.md</code><a class="headerlink" href="#7--qwen-37-max-proposalmd" title="Permanent link">&para;</a></h3>
+<p><strong>Ten-node pipeline:</strong> <code>check_termination → check_region_currency → compose_schema → check_calculator → acquisition_routing → check_completion → llm_decide → post_process → enforce_caps → route_decision → &lt;action&gt;</code>.</p>
+<p><strong>What is good:</strong></p>
+<ul>
+<li><strong>Most code-complete proposal</strong>: every node has a worked implementation, every routing function is sketched. Useful as an implementation reference.</li>
+<li><strong>Explicit transient state fields</strong> (<code>_route</code>, <code>_llm_failed</code>) marked as <code>NotRequired[str]</code> and excluded from checkpointing — addresses one of the concerns raised in gpt-5.5.</li>
+<li><strong>Recognises the <code>route_finish_check</code> problem</strong> that qwen-3.6-plus surfaced, and integrates it as <code>check_completion</code>.</li>
+</ul>
+<p><strong>What is weak:</strong></p>
+<ul>
+<li><strong>Per-node <code>_route</code> hint field on State</strong> is verbose: every guard node has to set <code>_route</code> and a separate routing function has to read it. This adds I/O at every edge for what is essentially a glorified return value. Other proposals (deepseek, gpt-5.4) achieve the same with a <code>decision.action</code> check or a small named routing function — cleaner.</li>
+<li><strong>Ten nodes is at the upper end of useful granularity.</strong> The graph diagram becomes harder to scan than the original problem; the gain over gpt-5.4's six nodes is marginal.</li>
+<li><strong><code>compose_schema</code> and <code>check_calculator</code> are separated</strong> even though composition is a prereq for calculator state evaluation in the same iteration — a single <code>prepare_context</code> (per gpt-5.4) covers both.</li>
+<li>Several state writes happen in routing/observation paths (<code>route_decision</code> does <code>_emit_decision_event</code>) — minor side-effect leak.</li>
+</ul>
+<p><strong>Verdict:</strong> Good as a reference implementation source but over-decomposed. Pick its concrete code, not its graph shape.</p>
+<hr />
+<h3 id="8--opus-proposalmd">#8 — <code>opus-proposal.md</code><a class="headerlink" href="#8--opus-proposalmd" title="Permanent link">&para;</a></h3>
+<p><strong>Roughly thirteen-node pipeline:</strong> <code>g_iter_cap → g_region → emit_region → g_currency → emit_currency → enrich_schema → g_calc_caps → emit_calc_*  → acquire → emit_acq/emit_auto_finish → plan_llm → c_target_decompose → c_redirect_derived → c_redirect_web → c_search_cap → c_ask_cap → c_calc_adjust → dispatch</code>.</p>
+<p><strong>What is good:</strong></p>
+<ul>
+<li><strong>The cleanest theoretical decomposition</strong>: every concern is its own node with a single responsibility. The naming convention (<code>g_*</code> for gates, <code>c_*</code> for correctors) is helpful.</li>
+<li><strong><code>enrich_schema</code> as a pure no-decision node</strong> is the right boundary.</li>
+<li><strong>Adds <code>llm_failed: bool</code></strong> explicitly with documented read/write semantics.</li>
+<li><strong>Per-node "writes" table</strong> clarifies state ownership precisely.</li>
+<li>Honestly <strong>acknowledges the cost</strong> of "up to 10 checkpointer hops per iteration" and proposes mitigation (use <code>add_edge</code> not <code>add_conditional_edges</code> where target is static).</li>
+</ul>
+<p><strong>What is weak:</strong></p>
+<ul>
+<li><strong>Too chatty for a production planner.</strong> Each conversation turn already costs an LLM call plus several search hops; multiplying the checkpoint writes by 10× per iteration is a real cost under <code>PostgresSaver</code>. The proposal's own mitigation ("use <code>add_edge</code>") admits the design's overhead.</li>
+<li><strong><code>c_*</code> corrector chain is a straight-line <code>add_edge</code> chain</strong> — which is structurally identical to a single <code>decision_policy</code> node calling the same helpers in order. The "diagram becomes truthful" benefit is real but partly cosmetic.</li>
+<li>The proposal itself flags this in its alternatives section: deepseek-4-pro's "deeper decomposition (16 nodes)" was rejected as "too chatty"; opus-proposal lands at 13 and runs into the same problem.</li>
+</ul>
+<p><strong>Verdict:</strong> Architecturally elegant, operationally heavy. Useful as the <em>limit</em> of how far decomposition can go — but the right answer sits at the gpt-5.4 / gpt-5.5 level.</p>
+<hr />
+<h3 id="9--mimo-25-pro-proposalmd">#9 — <code>mimo-2.5-pro-proposal.md</code><a class="headerlink" href="#9--mimo-25-pro-proposalmd" title="Permanent link">&para;</a></h3>
+<p><strong>Three-node pipeline:</strong> <code>guards → acquire → decide → &lt;action&gt;</code>. Post-LLM redirects and per-field caps stay inside <code>decide</code>.</p>
+<p><strong>What is good:</strong></p>
+<ul>
+<li><strong>Minimal, low-risk migration</strong> with a clean Phase-1 strategy (extract helpers without changing topology).</li>
+<li><strong>Open questions section at the end</strong> is honest about the unresolved trade-offs.</li>
+</ul>
+<p><strong>What is weak:</strong></p>
+<ul>
+<li><strong>Does not solve the problem.</strong> The whole point of the refactor is to expose hidden routing; <code>decide</code> ends up still owning the LLM call + all redirects + all cap enforcement. The proposal's own table shows <code>decide</code> at ~80 LOC, which is exactly the "god-node lite" trap.</li>
+<li><strong><code>acquire</code> populates <code>next_acquisition_task</code> on state</strong> but the deterministic-acquisition-vs-LLM-call branch happens inside <code>decide</code>, not at the graph level. So the graph still shows <code>guards → acquire → decide</code>, hiding the deterministic short-circuit.</li>
+<li>Three nodes is <strong>the same trap as the current architecture</strong> — just renamed.</li>
+</ul>
+<p><strong>Verdict:</strong> Honest minimum, but not enough to justify the migration cost.</p>
+<hr />
+<h3 id="10--gemini-31-pro-proposalmd">#10 — <code>gemini-3.1-pro-proposal.md</code><a class="headerlink" href="#10--gemini-31-pro-proposalmd" title="Permanent link">&para;</a></h3>
+<p><strong>Three-node pipeline:</strong> <code>prepare_state → evaluate_rules → llm_plan → &lt;action&gt;</code>.</p>
+<p><strong>What is good:</strong></p>
+<ul>
+<li><strong>Cleanest separation between "state mutation" (<code>prepare_state</code>) and "deterministic rules" (<code>evaluate_rules</code>) and "LLM call" (<code>llm_plan</code>).</strong> The conceptual split is good.</li>
+<li><strong>Concise and easy to read</strong> — one page of mermaid and three nodes.</li>
+</ul>
+<p><strong>What is weak:</strong></p>
+<ul>
+<li><strong><code>evaluate_rules</code> becomes a new god-node:</strong> the proposal explicitly says it handles max_iters, aborted, region, currency, calculator status/caps, blocked-state acquisition, and auto-finish. That is six concerns interleaved in one function — the same anti-pattern, only smaller.</li>
+<li><strong>No post-LLM rewriting story.</strong> The redirects (<code>_redirect_derived_direct_decision</code>, <code>_redirect_premature_ask_for_web_field</code>, calculator adjustment, search/ask caps) are not mentioned at all. They presumably end up inside <code>llm_plan</code> — but that breaks the "LLM-only" framing the proposal asserts.</li>
+<li><strong>Returning <code>None</code> from <code>evaluate_rules</code></strong> as the "needs LLM" signal is a workable pattern but the proposal does not specify how the routing function distinguishes "rule produced a decision" from "no rule fired" robustly.</li>
+</ul>
+<p><strong>Verdict:</strong> A good sketch of the philosophy; insufficient as a migration plan. Useful for orientation but should not be adopted as-is.</p>
+<hr />
+<h2 id="3-synthesis-convergent-agreements-and-divergent-calls">3. Synthesis: convergent agreements and divergent calls<a class="headerlink" href="#3-synthesis-convergent-agreements-and-divergent-calls" title="Permanent link">&para;</a></h2>
+<h3 id="where-all-proposals-agree">Where all proposals agree<a class="headerlink" href="#where-all-proposals-agree" title="Permanent link">&para;</a></h3>
+<ol>
+<li><code>plan_node()</code> must be split. None of the proposals defend the status quo.</li>
+<li>A pre-LLM "guard / preparation / bootstrap" phase belongs at the graph level, not inside the LLM node.</li>
+<li>The LLM node should shrink to <strong>prompt build + structured call + finish-on-LLM-failure</strong>, nothing else.</li>
+<li>Loop-back edges from action nodes (<code>observe</code>, <code>calculate</code>, <code>reflect</code>, <code>observe_user</code>) should re-enter the graph at the new top node (<code>tick</code> / <code>guard</code> / <code>pre_check</code> / <code>enter_iteration</code>), not at the LLM node.</li>
+<li><code>ask_user</code> remains the single interrupting node.</li>
+<li>The outer conversation graph (<code>route_if_needed → planner_step → persist</code>) is out of scope.</li>
+</ol>
+<h3 id="where-they-diverge">Where they diverge<a class="headerlink" href="#where-they-diverge" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Decision point</th>
+<th>Conservative</th>
+<th>Middle</th>
+<th>Aggressive</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Node count for planning phase</strong></td>
+<td>2 (glm), 3 (mimo, gemini)</td>
+<td>4 (deepseek), 6 (gpt-5.4), 6+ (qwen-3.6)</td>
+<td>7 (gpt-5.5), 8 (kimi), 10 (qwen-3.7), 13 (opus)</td>
+</tr>
+<tr>
+<td><strong>Bootstrap region/currency</strong></td>
+<td>one gate (deepseek, glm)</td>
+<td>one node with branch (gpt-5.4, gemini)</td>
+<td>two dedicated nodes (kimi, qwen-3.6, opus)</td>
+</tr>
+<tr>
+<td><strong>Post-LLM rewrites</strong></td>
+<td>inline (glm, mimo, gemini)</td>
+<td>one policy node (gpt-5.4, deepseek)</td>
+<td>chain of corrector nodes (gpt-5.5, opus)</td>
+</tr>
+<tr>
+<td><strong>Decomposition before plan</strong></td>
+<td>inline (most)</td>
+<td>own node (qwen-3.6)</td>
+<td>as part of <code>prepare_context</code> (gpt-5.4)</td>
+</tr>
+<tr>
+<td><strong>LLM-failure signal in state</strong></td>
+<td>not addressed (gpt-5.4, deepseek, kimi, qwen, glm, mimo, gemini)</td>
+<td><code>llm_failed: bool</code> (gpt-5.5, opus, qwen-3.7)</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Acquisition cache in state</strong></td>
+<td>rebuilt per node (gpt-5.5)</td>
+<td><code>recipes</code>/<code>dynamic_decompositions</code> in state (deepseek, qwen-3.7)</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Redirect placement</strong></td>
+<td>inside the node</td>
+<td>edge function (qwen-3.6 — anti-pattern)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The strong proposals stay in the middle column.</p>
+<hr />
+<h2 id="4-recommendation">4. Recommendation<a class="headerlink" href="#4-recommendation" title="Permanent link">&para;</a></h2>
+<p>Adopt the <strong>structural shape of <code>gpt-5.4-proposal.md</code></strong> plus <strong>two precise additions from <code>gpt-5.5-proposal.md</code></strong> and <strong>one targeted idea from <code>deepseek-4-pro-proposal.md</code></strong>.</p>
+<h3 id="41-structural-baseline--gpt-54">4.1 Structural baseline — <code>gpt-5.4</code><a class="headerlink" href="#41-structural-baseline--gpt-54" title="Permanent link">&para;</a></h3>
+<p>Six-phase pipeline:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>START → tick → bootstrap_gate → prepare_context → acquisition_gate → llm_plan → decision_policy → &lt;action&gt;
+</code></pre></div>
+<p>All loop-back edges re-enter at <code>tick</code>. <code>ask_user</code> stays the single interrupt node. <code>decision_policy</code> is one node, not a corrector chain.</p>
+<h3 id="42-additions-from-gpt-55">4.2 Additions from <code>gpt-5.5</code><a class="headerlink" href="#42-additions-from-gpt-55" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Add <code>llm_failed: bool</code> (or <code>decision_origin: Literal["deterministic","llm","llm_error"]</code>) to <code>PlannerState</code>.</strong> Without it, the calculator-blocked recovery path can redirect an LLM failure into <code>reflect</code> and re-fail. gpt-5.4 silently inherits this risk; gpt-5.5 fixes it explicitly.</li>
+<li><strong>Do not add <code>prepared_recipes</code> / <code>recipes</code> to state</strong> (gpt-5.5's negative recommendation). Rebuild from <code>dynamic_decompositions + static_field_acquisition</code> in each node that needs them, until <code>FieldAcquisition</code> is proven compatible with <code>MSGPACK_ALLOWLIST</code> in <code>checkpoint_serde.py</code>. Deepseek-4-pro and qwen-3.7-max get this wrong.</li>
+</ol>
+<h3 id="43-targeted-idea-from-deepseek-4-pro">4.3 Targeted idea from <code>deepseek-4-pro</code><a class="headerlink" href="#43-targeted-idea-from-deepseek-4-pro" title="Permanent link">&para;</a></h3>
+<p><strong>Keep the <code>plan</code> self-loop for the composite-target case.</strong> When <code>llm_plan</code> returns a decision targeting a <code>requires_components</code> field that has no decomposition yet, the cleanest place to generate a decomposition and re-prompt is a self-edge on <code>llm_plan</code>, not a corrector inside <code>decision_policy</code>. Other proposals stuff this into post-processing, which makes the LLM-decomposition LLM call invisible at the graph level. The deepseek self-loop exposes it.</p>
+<h3 id="44-staged-migration-6-commits-each-green">4.4 Staged migration (6 commits, each green)<a class="headerlink" href="#44-staged-migration-6-commits-each-green" title="Permanent link">&para;</a></h3>
+<p>Reusing the gpt-5.4 sequence with one adjustment:</p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>What</th>
+<th>Risk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Extract <code>tick</code> (iteration + abort + max_iters). Rewire all loop-back edges from <code>plan</code> to <code>tick</code>.</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Extract <code>bootstrap_gate</code> (region + currency). Single node with internal branch; one decision per call.</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Extract <code>prepare_context</code> (proactive decompositions, recipe build, ready-field composition).</td>
+<td>Low–Medium</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Extract <code>acquisition_gate</code> (calculator caps, calculator success, blocked-calc next task, auto-finish).</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Slim <code>plan</code> → <code>llm_plan</code> (LLM call only). Add <code>llm_failed</code> state field. Add <code>plan → plan</code> self-loop for composite-target decomposition.</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Extract <code>decision_policy</code> (derived-redirect, web-preferred-redirect, search cap, ask-user cap, <code>_adjust_calculation_decision</code>).</td>
+<td>Medium</td>
+</tr>
+</tbody>
+</table>
+<p>After Stage 6, replace <code>current-graph.md</code> with the new mermaid and link this proposal as the accepted ADR. Update <code>tests/planner/test_planner_decisions.py</code> to target the appropriate node per case (see gpt-5.5 §"Tests to update or add").</p>
+<h3 id="45-what-to-avoid-from-the-other-proposals">4.5 What to avoid from the other proposals<a class="headerlink" href="#45-what-to-avoid-from-the-other-proposals" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>opus-proposal's 13-node corrector chain</strong> — too chatty for the value it adds.</li>
+<li><strong>qwen-3.6's redirect-in-edge-function pattern</strong> — violates LangGraph edge purity.</li>
+<li><strong>kimi-2.6's split bootstrap nodes</strong> — graph noise without semantic gain.</li>
+<li><strong>qwen-3.7-max's <code>_route</code> hint field on State</strong> — verbose dispatch; prefer <code>decision.action</code>-based routing.</li>
+<li><strong>mimo-2.5-pro and gemini-3.1-pro</strong> — under-decomposed; do not solve the original problem.</li>
+</ul>
+<hr />
+<h2 id="5-summary-ranking">5. Summary ranking<a class="headerlink" href="#5-summary-ranking" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Proposal</th>
+<th>One-line verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>gpt-5.4-proposal.md</code></td>
+<td>Best architectural balance; adopt the six-phase shape.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>gpt-5.5-proposal.md</code></td>
+<td>Most precise write-up; harvest <code>llm_failed</code> state + test map + recipe-rebuild rule.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>deepseek-4-pro-proposal.md</code></td>
+<td>Clean four-phase split; harvest the <code>plan</code> self-loop idea.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>glm-5.1-proposal.md</code></td>
+<td>Right Phase-1 stop if risk budget is tight.</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>kimi-2.6-proposal.md</code></td>
+<td>Solid; over-decomposes bootstrap.</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>qwen-3.6-plus-proposal.md</code></td>
+<td>Good <code>route_finish_check</code> idea wrapped in an edge-purity violation.</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>qwen-3.7-max-proposal.md</code></td>
+<td>Useful as a code reference; graph shape is over-resolved.</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>opus-proposal.md</code></td>
+<td>Theoretically pure; operationally heavy.</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>mimo-2.5-pro-proposal.md</code></td>
+<td>Honest minimum; does not actually solve the problem.</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>gemini-3.1-pro-proposal.md</code></td>
+<td>Right philosophy, insufficient detail; <code>evaluate_rules</code> becomes a new god-node.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Recommended path:</strong> <code>gpt-5.4</code> structure + <code>gpt-5.5</code> state hygiene + <code>deepseek-4-pro</code> self-loop — staged in six green commits per §4.4.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Korridzy &mdash; content licensed <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC&nbsp;BY&nbsp;4.0</a>
+
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/Korridzy" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.top", "navigation.instant", "navigation.instant.progress", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
