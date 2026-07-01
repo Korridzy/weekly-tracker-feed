@@ -2128,7 +2128,7 @@
 <h3 id="approach-one-do-the-scores-agree">Approach one. Do the scores agree?<a class="headerlink" href="#approach-one-do-the-scores-agree" title="Permanent link">&para;</a></h3>
 <p>The first thing you want to do is simply compare the models' average scores. It turned out that opinions on the architectural proposals themselves can be boiled down to a fairly clear consensus.</p>
 <p>In the chart below, each line shows how one proposal was scored by the different models, and the colored dashed line is its average across all the scores.</p>
-<p><img alt="Combined chart of proposal scores across the models" src="../article-diagrams/en/rankings-chart.svg" /></p>
+<p><img alt="Combined chart of proposal scores across the models" src="article-diagrams/rankings-chart.svg" /></p>
 <p>The "clumping" of the lines for Gemini-3.1-pro is because it sorted the solutions into 4 groups instead of producing a full ranking.</p>
 <p>You can also note the suspicious tangle of lines for Kimi-2.6. It's as if it handed out its scores somewhat at random.</p>
 <h4 id="best-proposals-the-summary">Best proposals: the summary<a class="headerlink" href="#best-proposals-the-summary" title="Permanent link">&para;</a></h4>
@@ -2314,7 +2314,7 @@
 <p>I couldn't compute the most skilled analyst from the texts of the analyses. So I'll compute it from metrics. And the only metric I really have is the ranks each review handed out to the proposals.</p>
 <p>First an artificial center is built: the arithmetic mean of each proposal's rank across all the analyses. Then each report is compared against that average ranking. As a control, the medoid is computed separately by measuring the total distance from each real report to all the others.</p>
 <p>This method shows how accurately an analyst predicted the distribution of the refactoring proposals' ranks in the aggregate rating.</p>
-<p><img alt="Evaluator ranks compared by closeness to the average ranking and by medoid" src="../article-diagrams/en/evaluator-center-medoid-bump-v3.svg" /></p>
+<p><img alt="Evaluator ranks compared by closeness to the average ranking and by medoid" src="article-diagrams/evaluator-center-medoid-bump-v3.svg" /></p>
 <p>Both methods showed that the best predictor of the overall rating was GPT-5.5. Further down the list there are minor discrepancies between the two computation methods, but minor is exactly what they are. One position either way. And the medoid distances show that the models that swapped places differ by only hundredths and thousandths.</p>
 <p>It's fairly expected that GPT-5.4 and GPT-5.5 predicted the final rating well. And it's fairly surprising that MiMo-2.5-pro and Qwen-3.7-max creep up toward the top of the table. Then again, the score chart bears it out. Those Chinese analysts land fairly close to the average.</p>
 <h3 id="deus-ex-machina">Deus ex machina<a class="headerlink" href="#deus-ex-machina" title="Permanent link">&para;</a></h3>
@@ -2325,11 +2325,11 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>You are skilled software architect specializing in llm agentic development. In docs/planner-graph-ref/analyse there are some analitic reports about proposals to refactor current planner component graph. Evaluate those reports and create ranged list of them in docs/planner-graph-ref/best-analyst/&lt;model&gt;-ba-range.md with explanation of what good and bad sides you can see in each. Range them by principle of what report is the best only report to read for having enough information to make a deliberated decision of what proposal to choose for implementation.
 </code></pre></div>
 <p>The results of the two meta-analyses diverged in the details but not in the main thrust:</p>
-<p><img alt="Analyst-report ranks in the Fable-5 and GPT-5.5 meta-analysis" src="../article-diagrams/en/best-analyst-bump-fable-gpt.svg" /></p>
+<p><img alt="Analyst-report ranks in the Fable-5 and GPT-5.5 meta-analysis" src="article-diagrams/best-analyst-bump-fable-gpt.svg" /></p>
 <p>The chart shows unanimous endorsement of Fable-5's analysis. After that, each judge rates its own corporate approach to the problem a touch higher. And word is the Chinese analysts to watch first are Qwen-3.7-max and GLM-5.1. Maybe DeepSeek-4-pro too.</p>
 <p>And all these assessments diverge quite a bit from the results of the best rating predictor. Which is no surprise. These are somewhat different questions, after all. That's exactly why they're split into separate parts of the analysis.</p>
 <p>Let's go ahead and see exactly how they diverge:</p>
-<p><img alt="Best analyst: Fable-5 and GPT-5.5 meta-analyses on the sides, ranking closeness to the average in the center" src="../article-diagrams/en/best-analyst-bump-fable-center-gpt.svg" /></p>
+<p><img alt="Best analyst: Fable-5 and GPT-5.5 meta-analyses on the sides, ranking closeness to the average in the center" src="article-diagrams/best-analyst-bump-fable-center-gpt.svg" /></p>
 <p>As for trends, I'll point out that the GPT family tops the ratings on both dimensions, GLM-5.1 and Qwen-3.7-max sit in the middle, and Gemini-3.1-pro is at the bottom.</p>
 <h5 id="methods-for-evaluating-the-analysts">Methods for evaluating the analysts<a class="headerlink" href="#methods-for-evaluating-the-analysts" title="Permanent link">&para;</a></h5>
 <p><strong>Fable-5</strong> rated each report on five dimensions:</p>
