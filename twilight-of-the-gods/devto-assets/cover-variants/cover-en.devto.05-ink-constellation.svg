@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="840" viewBox="0 0 1000 420" role="img" aria-labelledby="title desc">
+<title id="title">Twilight of the Gods cover variant 05</title>
+<desc id="desc">Minimal ink constellation cover with a central god node and sparse separated graph nodes.</desc>
+<defs>
+  <radialGradient id="wash" cx="78%" cy="42%" r="46%"><stop offset="0%" stop-color="#ddd6fe" stop-opacity="0.65"/><stop offset="100%" stop-color="#faf8f3" stop-opacity="0"/></radialGradient>
+  <style>text{font-family:Baskerville,Georgia,serif}.sans{font-family:Verdana,Arial,sans-serif}.ink{fill:#0c0a09}.muted{fill:#57534e}.line{fill:none;stroke-linecap:round;stroke-linejoin:round}.violet{stroke:#7c3aed}.thin{stroke:#a78bfa}.gray{stroke:#d6d3d1}.node{fill:#faf8f3;stroke:#7c3aed;stroke-width:2.1}.dot{fill:#7c3aed}</style>
+</defs>
+<rect width="1000" height="420" fill="#faf8f3"/>
+<circle cx="745" cy="176" r="205" fill="url(#wash)"/>
+<g transform="translate(520 40)">
+  <path class="line gray" stroke-width="1.2" d="M0 70 C150 24 288 42 458 92 M30 330 C162 282 300 294 452 246" opacity="0.7"/>
+  <path class="line thin" stroke-width="1.9" d="M150 168 C86 102 74 217 132 239 C214 270 244 88 151 75 C80 66 76 284 188 262"/>
+  <path class="line violet" stroke-width="2.8" d="M205 168 C280 110 332 86 422 62 M205 168 C292 164 350 170 438 184 M205 168 C282 220 330 260 400 310"/>
+  <path class="line thin" stroke-width="1.7" d="M150 168 L72 104 M150 168 L78 280 M150 168 L232 52"/>
+  <circle class="node" cx="150" cy="168" r="62"/><circle class="dot" cx="150" cy="168" r="8"/>
+  <circle class="node" cx="422" cy="62" r="15"/><circle class="node" cx="438" cy="184" r="15"/><circle class="node" cx="400" cy="310" r="15"/>
+  <circle fill="#faf8f3" stroke="#a8a29e" cx="72" cy="104" r="9"/><circle fill="#faf8f3" stroke="#a8a29e" cx="78" cy="280" r="9"/><circle fill="#faf8f3" stroke="#a8a29e" cx="232" cy="52" r="9"/>
+</g>
+<text class="ink" x="58" y="125" font-size="62" font-weight="700" letter-spacing="-1.5">Twilight of the Gods</text>
+<text class="sans muted" x="62" y="171" font-size="22">Fable and 10 more LLMs on a code-reorganization task</text>
+<text class="sans muted" x="62" y="350" font-size="16" font-weight="700">Korridzy · June 2026 · wtf.korridzy.com</text>
+<path d="M62 205 C102 196 142 196 182 205" fill="none" stroke="#7c3aed" stroke-width="4" stroke-linecap="round"/>
+</svg>

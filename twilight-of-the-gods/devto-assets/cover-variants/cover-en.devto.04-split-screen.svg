@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="840" viewBox="0 0 1000 420" role="img" aria-labelledby="title desc">
+<title id="title">Twilight of the Gods cover variant 04</title>
+<desc id="desc">Split-screen cover showing chaos on the left side of a graph panel and clean nodes on the right.</desc>
+<defs>
+  <filter id="card" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#111827" flood-opacity="0.13"/></filter>
+  <style>text{font-family:Gill Sans,Verdana,Arial,sans-serif}.ink{fill:#111827}.muted{fill:#57534e}.line{fill:none;stroke-linecap:round;stroke-linejoin:round}.violet{stroke:#7c3aed}.pale{stroke:#c4b5fd}.gray{stroke:#a8a29e}.node{fill:#fffaf0;stroke:#7c3aed;stroke-width:2}.mutednode{fill:#fffaf0;stroke:#a8a29e;stroke-width:1.5}</style>
+</defs>
+<rect width="1000" height="420" fill="#faf8f3"/>
+<rect x="515" y="0" width="485" height="420" fill="#f5f3ff"/>
+<path d="M515 0 L462 420" stroke="#e7e5e4" stroke-width="2"/>
+<g transform="translate(552 58)" filter="url(#card)">
+  <rect x="0" y="0" width="390" height="292" rx="28" fill="#fffaf0" stroke="#e7e5e4"/>
+  <path class="line pale" stroke-width="2" d="M94 146 C30 56 22 214 94 226 C170 239 180 54 86 68 C20 80 58 278 144 248"/>
+  <path class="line gray" stroke-width="1.7" d="M94 146 L36 62 M94 146 L42 244 M94 146 L168 52 M94 146 L168 252"/>
+  <path class="line violet" stroke-width="3" d="M154 146 C214 111 264 84 328 58 M154 146 C228 146 285 154 342 178 M154 146 C210 194 264 230 324 254"/>
+  <circle class="node" cx="94" cy="146" r="54"/><circle fill="#7c3aed" cx="94" cy="146" r="9"/>
+  <circle class="mutednode" cx="36" cy="62" r="9"/><circle class="mutednode" cx="42" cy="244" r="9"/><circle class="mutednode" cx="168" cy="52" r="9"/><circle class="mutednode" cx="168" cy="252" r="9"/>
+  <circle class="node" cx="328" cy="58" r="14"/><circle class="node" cx="342" cy="178" r="14"/><circle class="node" cx="324" cy="254" r="14"/>
+</g>
+<text class="ink" x="58" y="119" font-size="57" font-weight="800" letter-spacing="-1.8">Twilight of the Gods</text>
+<text class="muted" x="61" y="166" font-size="23">Fable and 10 more LLMs on a code-reorganization task</text>
+<rect x="61" y="194" width="132" height="6" rx="3" fill="#7c3aed"/>
+<text class="muted" x="61" y="350" font-size="16" font-weight="700">Korridzy · June 2026 · wtf.korridzy.com</text>
+</svg>

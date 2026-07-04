@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="840" viewBox="0 0 1000 420" role="img" aria-labelledby="title desc">
+<title id="title">Twilight of the Gods cover variant 02</title>
+<desc id="desc">Blueprint-like cover with a god-node graph being separated into a clean pipeline.</desc>
+<defs>
+  <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#e7e5e4" stroke-width="1"/></pattern>
+  <filter id="lift" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="8" stdDeviation="9" flood-color="#0f172a" flood-opacity="0.10"/></filter>
+  <style>text{font-family:Trebuchet MS,Verdana,sans-serif}.ink{fill:#111827}.muted{fill:#44403c}.line{fill:none;stroke-linecap:round;stroke-linejoin:round}.violet{stroke:#7c3aed}.thin{stroke:#a78bfa}.gray{stroke:#a8a29e}.node{fill:#fdfbf7;stroke:#7c3aed;stroke-width:2}.box{fill:#fdfbf7;stroke:#d6d3d1;stroke-width:1.3}</style>
+</defs>
+<rect width="1000" height="420" fill="#fdfbf7"/><rect width="1000" height="420" fill="url(#grid)" opacity="0.78"/>
+<path d="M0 330 L1000 250 L1000 420 L0 420 Z" fill="#f5f3ff" opacity="0.65"/>
+<g transform="translate(545 66)" filter="url(#lift)">
+  <path class="line thin" stroke-width="2" d="M76 150 C22 92 10 214 76 229 C155 247 158 72 70 72 C18 72 48 294 136 257"/>
+  <path class="line gray" stroke-width="1.7" d="M76 150 L30 38 M76 150 L24 290 M76 150 L178 40 M76 150 L178 276"/>
+  <path class="line violet" stroke-width="3.2" d="M152 150 H245 H330 H418"/>
+  <path class="line violet" stroke-width="2.4" d="M245 150 C264 98 296 78 330 78 M330 150 C350 206 382 232 418 250"/>
+  <circle class="node" cx="76" cy="150" r="58"/><circle fill="#7c3aed" cx="76" cy="150" r="10"/>
+  <circle class="box" cx="30" cy="38" r="10"/><circle class="box" cx="24" cy="290" r="10"/><circle class="box" cx="178" cy="40" r="10"/><circle class="box" cx="178" cy="276" r="10"/>
+  <rect class="node" x="220" y="127" width="50" height="46" rx="12"/><rect class="node" x="305" y="127" width="50" height="46" rx="12"/><rect class="node" x="393" y="127" width="50" height="46" rx="12"/>
+  <circle class="node" cx="330" cy="78" r="15"/><circle class="node" cx="418" cy="250" r="15"/>
+</g>
+<rect x="54" y="64" width="433" height="186" rx="18" fill="#fdfbf7" stroke="#d6d3d1"/>
+<text class="ink" x="80" y="126" font-size="52" font-weight="800" letter-spacing="-1.4">Twilight of the Gods</text>
+<text class="muted" x="82" y="173" font-size="22">Fable and 10 more LLMs on a code-reorganization task</text>
+<text class="muted" x="82" y="352" font-size="16" font-weight="700">Korridzy · June 2026 · wtf.korridzy.com</text>
+</svg>
