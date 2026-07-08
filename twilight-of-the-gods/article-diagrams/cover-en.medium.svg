@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0b1028"/>
+
+  <g stroke="#94a3b8" stroke-width="4" fill="#111a3a">
+    <rect x="48" y="60" width="390" height="515" rx="10"/>
+    <rect x="502" y="60" width="650" height="350" rx="10"/>
+    <rect x="502" y="430" width="650" height="145" rx="10"/>
+  </g>
+
+  <g font-family="DejaVu Sans Mono, monospace" font-weight="900">
+    <text x="827" y="112" text-anchor="middle" font-size="36" fill="#facc15">GAME OVER</text>
+  </g>
+
+  <g transform="translate(657 103) scale(0.68)" fill="#2dd4bf" shape-rendering="crispEdges">
+    <rect x="160" y="80" width="160" height="40"/>
+    <rect x="120" y="120" width="240" height="40"/>
+    <rect x="100" y="160" width="280" height="80"/>
+    <rect x="140" y="240" width="200" height="40"/>
+    <rect x="150" y="165" width="40" height="40" fill="#0b1028"/>
+    <rect x="290" y="165" width="40" height="40" fill="#0b1028"/>
+    <rect x="200" y="235" width="80" height="20" fill="#0b1028"/>
+    <rect x="40" y="240" width="80" height="40"/>
+    <rect x="0" y="280" width="80" height="40"/>
+    <rect x="360" y="240" width="80" height="40"/>
+    <rect x="420" y="280" width="80" height="40"/>
+    <rect x="130" y="280" width="40" height="100"/>
+    <rect x="310" y="280" width="40" height="100"/>
+    <rect x="190" y="280" width="40" height="140"/>
+    <rect x="250" y="280" width="40" height="140"/>
+    <rect x="190" y="30" width="100" height="40" fill="#facc15"/>
+  </g>
+
+  <text x="827" y="406" text-anchor="middle" font-family="DejaVu Sans Mono, monospace" font-weight="900" font-size="18" fill="#f472b6">INSERT TOKENS TO REFACTOR</text>
+
+  <g font-family="DejaVu Sans Mono, monospace" font-weight="900">
+    <text x="538" y="476" font-size="26" fill="#f8fafc">▶ Analyze</text>
+    <text x="538" y="516" font-size="26" fill="#f8fafc">  Refactor</text>
+    <text x="538" y="556" font-size="26" fill="#f8fafc">  Run away</text>
+  </g>
+
+  <g font-family="DejaVu Sans Mono, monospace" font-weight="900" fill="#ffffff">
+    <text x="78" y="142" font-size="48">TWILIGHT</text>
+    <text x="78" y="198" font-size="48">OF THE GODS</text>
+    <text x="78" y="336" font-size="26" fill="#2dd4bf">Fable and 10 more LLMs</text>
+    <text x="78" y="376" font-size="26" fill="#2dd4bf">reorganize code</text>
+    <text x="78" y="488" font-size="26" fill="#2dd4bf">Comparison</text>
+  </g>
+</svg>
