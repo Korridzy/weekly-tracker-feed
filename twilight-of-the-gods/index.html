@@ -3914,7 +3914,7 @@
 </table>
 <h2 id="takeaways">Takeaways<a class="headerlink" href="#takeaways" title="Permanent link">&para;</a></h2>
 <p><strong>Which model to use for generating architecture.</strong></p>
-<p>The simpler the decision you need to make, the more readily you can just take a proposal from Fable or GPT-5.5. And now that Fable is unavailable outside the US, the choice between Opus and GPT is far from obvious. As a quick default I'd lean toward GPT.</p>
+<p>The simpler the decision you need to make, the more readily you can just take a proposal from Fable or GPT-5.5. And in cases where Fable is unjustifiably expensive, the choice between Opus and GPT is far from obvious. As a quick default I'd lean toward GPT.</p>
 <p>But if the problem really deserves careful thought, it's better to generate several proposals from whatever models you have access to or prefer. What's more, several proposals from the same model can differ quite a lot. Using a few cheap generations from GLM, Kimi, or Qwen, you can try to reach a result comparable to using the expensive US flagships.</p>
 <p>In practice, for the project I chose GPT-5.4's solution with minor improvements borrowed from Opus and GPT-5.5. And not because Fable hadn't been released yet at the time. It's because pulling <code>bootstrap_gate</code> out into its own node struck me as a good move for the project's anticipated future development. And I'd most likely have picked the same GPT-5.4 variant even with Fable's proposal on the table, borrowing only the neat <code>decision_origin</code> idea.</p>
 <p><strong>Which model to use as an evaluator.</strong></p>
